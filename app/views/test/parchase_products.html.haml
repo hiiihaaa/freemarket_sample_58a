@@ -1,0 +1,66 @@
+%body
+  .wrapper
+    %header.header
+      %h1.header__logo
+        %a.opa{:href => "#topへ移動"}
+          %img.header__logo__icon{:alt => "mercari", :src => "https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?1855818912"}/
+
+    .main
+      %h2.main__top 購入内容の確認
+      .main__product
+        .main__product__info
+          %img.main__product__info__image{:alt => "product_image", :src => "https://rr.img.naver.jp/mig?src=http%3A%2F%2Fimgcc.naver.jp%2Fkaze%2Fmission%2FUSER%2F20130322%2F18%2F1563448%2F32%2F403x403xa3d346eed3cc8edcd8eb176e.jpg&twidth=1000&theight=0&qlt=80&res_format=jpg&op=r"}/
+          .main__product__info__name いい女
+        %form
+          .main__product__price
+            .main__product__price--left $1,000,000
+            .main__product__price--right 送料込み
+          .point.btn ポイントはありません
+          .main__product__payment
+            .main__product__payment--left 支払い金額
+            .main__product__payment--right $1,000,000
+          - if true
+            .main__product__caution
+              この商品はゆうゆうメルカリ便を利用しているため、アプリからのみ購入できます。
+          .btn 購入する
+          - if true
+            .main__product__appNavi
+              .main__product__appNavi__caution
+              アプリをお持ちでない方は以下よりインストールしてご利用いただけます
+              .main__product__appNavi__link
+                %a.opa{:href => "https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8"}
+                  %img.main__product__appNavi__icon{:src => "https://www-mercari-jp.akamaized.net/assets/img/common/common/app-store.svg?1855818912"}/
+                %a.opa{:href => "https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja"}
+                  %img.main__product__appNavi__icon{:src => "https://www-mercari-jp.akamaized.net/assets/img/common/common/google-play.svg?1855818912"}/
+      .main__address
+        .main__address__top 配送先
+        .main__address__postalCode 〒000-1107
+        .main__address__detail XXXXXXXXXXXX
+        .main__address__name 山田　太郎
+        %a.opa{:href => "#住所変更画面へ"}
+          %span.change 変更する &gt;
+      .main__termsOfPayment
+        .main__termsOfPayment__top 支払い方法
+        .main__termsOfPayment__cardNo ********1107
+        .main__termsOfPayment__expirationDate 02/22
+        %div
+          %img.main__termsOfPayment__icon{:src => "https://www-mercari-jp.akamaized.net/assets/img/card/visa.svg?1855818912"}/
+        %a.opa{:href => "#カード変更画面へ"}
+          %span.change 変更する &gt;
+
+    %footer.footer
+      %ul.footer__link.opa
+        %li
+          %a{:href => "#プライバシー"}
+            %span.link プライバシーポリシー
+        %li.footer__link__a
+          %a{:href => "#メルカリ利用規約"}
+            %span.link メルカリ利用規約
+        %li.footer__link__a
+          %a{:href => "#特定商取引に関する表記"}
+            %span.link 特定商取引に関する表記
+      .footer__mercari
+        .footer__mercari__logo
+          %a.opa{:href => "#topへ移動"}
+            %img.footer__mercari__logo__icon{:src => "https://www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?1855818912"}/
+        %small.footer__mercari__logo__c ©️ Mercari, Inc.
