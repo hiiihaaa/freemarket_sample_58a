@@ -526,6 +526,7 @@ h2 {
 .nav-item-link-prev-next{
   margin: 24px auto 0;
   width: 700px;
+  height: 25px;
 }
 ul{
   list-style: none;
@@ -564,7 +565,7 @@ ul{
 .icon-arrow-right:before{
   content: '\e005';
 }
-.item-sociat-media-box{
+.item-social-media-box{
   margin: 24px auto;
   padding: 32px 0 24px;
   width: 700px;
@@ -781,3 +782,4 @@ button{
 .bread-crumbs li:last-child {
   font-weight: 600;
 }
+
