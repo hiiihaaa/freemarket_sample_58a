@@ -217,24 +217,123 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 }
 
 .content__main--advertisement_bar {
-  height: 290px;
+  position: relative;
+}
+
+.content__main--advertisement_bar__box {
+  height: 170px;
   left: 50%;
   margin-left: -50vw;
   position: relative;
   top: 0px;
   width: 100vw;
   overflow: hidden;
-  background-color: khaki;
 }
 
-.content__main--advertisement_bar__box {
-  color: inherit;
-  text-decoration: none;
-  height: 290px;
+.content__main--advertisement_bar__box--link {
   position: relative;
   background-size: cover;
   height: 170px;
+  background-image: url(https://web-jp-assets.mercdn.net/_next/static/images/top-banner-kaushika-8f6ea67….jpg);
+  /* background-image: url(test); */
   background-position: center center;
+}
+
+.content__main--advertisement_bar__box--details {
+  margin-top: -170px;
+}
+
+.content__main--advertisement_bar__box--details__specific {
+  position: relative;
+  background-size: cover;
+  height: 170px;
+  background-image: url(https://web-jp-assets.mercdn.net/_next/static/images/top-banner-main-892151c….jpg);
+  background-position: center center;
+}
+
+.content__main--advertisement_bar__box--details__specific--pic_element {
+  -webkit-box-align: start;
+  align-items: start;
+  display: flex;
+  height: 100%;
+  position: relative;
+  margin: 0px auto;
+}
+
+.content__main--advertisement_bar__box--details__specific--pic_element__picture {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  height: 170px;
+}
+
+.content__main--advertisement_bar__box--details__specific--pic_element__picture img {
+  vertical-align: middle;
+}
+
+.content__main--advertisement_bar__box--details__specific--pic_element__font_area {
+  height: 100%;
+  position: relative;
+  width: 100%;
+  padding: 20px 40px;
+}
+
+.content__main--advertisement_bar__box--details__specific--pic_element__font_area--upper {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 16px;
+  white-space: pre-wrap;
+}
+
+.content__main--advertisement_bar__box--details__specific--pic_element__font_area--middle {
+  display: none;
+  font-size: 16px;
+  line-height: 1.77777;
+  margin-bottom: 24px;
+}
+
+.content__main--advertisement_bar__box--details__specific--pic_element__font_area--lower {
+  background-color: rgba(255, 255, 255, 0.4);
+  bottom: 0px;
+  left: 0px;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  padding: 5px;
+}
+
+.content__main--advertisement_bar__box--details__specific--pic_element__font_area--lower__icons {
+  display: inline-block;
+  height: 32px;
+  width: 110px;
+  margin-left: 20px;
+}
+
+.content__main--advertisement_bar__box--details__specific--pic_element__font_area--lower__icons img {
+  vertical-align: middle;
+}
+
+.content__main--advertisement_bar__box--details--arrow {
+  background-color: transparent;
+  cursor: pointer;
+  height: 46px;
+  width: 31px;
+  -webkit-appearance: none;
+  background-image: url(https://web-jp-assets.mercdn.net/_next/static/images/carousel-prev-af7ca88….png);
+  border-width: initial;
+  border-style: none;
+  border-color: initial;
+  border-image: initial;
+  padding: 0px;
+}
+
+.left {
+  margin-left: 60px;
+}
+
+.right {
+  margin-right: 60px;
 }
 
 .content__main--advertisement_bar__sample_view {
@@ -335,6 +434,20 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   padding: 5px 14px 5px 5px;
 }
 
+.content__main--latest-items__box--top_bar__more-btn:before {
+  bottom: 0px;
+  content: "";
+  height: 8px;
+  position: absolute;
+  right: 2px;
+  top: 0px;
+  transform: rotate(-45deg);
+  width: 8px;
+  border-bottom: 2px solid rgb(0, 149, 238);
+  border-right: 2px solid rgb(0, 149, 238);
+  margin: auto;
+}
+
 .content__main--latest-items__box--merchandises {
   display: flex;
   flex-wrap: wrap;
@@ -342,10 +455,124 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 }
 
 .content__main--latest-items__box--merchandises__merchandise {
-  width: 33.3333%;
+  /* width: 33.3333%;
   height:2.8em;
   background-color: greenyellow;
-  /*　仮仕様 */
+  　仮仕様 */
+  width: 20%;
+  padding: 3px;
+}
+
+.content__main--latest-items__box--merchandises__merchandise--block {
+  width: 100%;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  vertical-align: top;
+}
+
+.content__main--latest-items__box--merchandises__merchandise--block__element {
+  width: 100%;
+  -webkit-box-align: center;
+  align-items: center;
+  display: flex;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .18);
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+  flex-direction: column-reverse;
+  margin: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.content__main--latest-items__box--merchandises__merchandise--block__element figcaption {
+  box-sizing: border-box;
+  color: #222;
+  font-size: 14px;
+  height: 64px;
+  line-height: 1.4em;
+  padding: 0 12px;
+  white-space: normal;
+  word-break: break-word;
+  -webkit-box-align: center;
+  align-items: center;
+  display: flex;
+  width: 100%;
+}
+
+.content__main--latest-items__box--merchandises__merchandise--block__element figcaption span {
+  display: inline-block;
+  height: 2.8em;
+  overflow: hidden;
+  position: relative;
+}
+
+.content__main--latest-items__box--merchandises__merchandise--block__element figcaption span:after {
+  background: linear-gradient(90deg,hsla(0,0%,100%,0),#fff 72%);
+  bottom: 0;
+  content: "";
+  height: 50%;
+  position: absolute;
+  right: 0;
+  width: 50%;
+}
+
+.content__main--latest-items__box--merchandises__merchandise--block__element--pic_box {
+  height: 0;
+  overflow: hidden;
+  padding: 0 0 100%;
+  position: relative;
+  width: 100%;
+}
+
+.content__main--latest-items__box--merchandises__merchandise--block__element--pic_box span[aria-label=Price] {
+  -webkit-box-align: center;
+  align-items: center;
+  background: rgba(0,0,0,.4);
+  border-radius: 0 14px 14px 0;
+  bottom: 8px;
+  box-sizing: border-box;
+  color: #fff;
+  display: inline-flex;
+  font-size: 17px;
+  height: 28px;
+  letter-spacing: .02em;
+  margin: 0;
+  padding: 0 12px;
+  position: absolute;
+  z-index: 2;
+}
+
+.content__main--latest-items__box--merchandises__merchandise--block__element--pic_box img {
+  bottom: 0;
+  position: absolute;
+  top: 0;
+}
+
+.content__main--latest-items__box--merchandises__merchandise--block__element img {
+  height: 100%;
+  object-fit: cover;
+  vertical-align: top;
+  width: 100%;
+  z-index: 1;
+}
+
+.content__main--latest-items__box--merchandises__merchandise--block:after {
+  border: 1px solid transparent;
+  bottom: 0;
+  box-sizing: border-box;
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition-duration: .1s;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  z-index: 1;
 }
 
 .put-up-btns {
