@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="merukari_product_detail.css">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stytlesheet"><!--アイコンを入れるためのもの。本番環境ではこれを消してgemfileに gem "font-awesome-sass" を書き込んでbundleinstall-->
+  </head>
+  <body>
+    <header class="sp-header visible-sp with-shadow">
+      <div class="sp-header-inner">
+        <div class="logo">
+          <a href="メルカリURL">
+            <img src="https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?1855818912" alt="merucari">
+          </a>
+        </div>
+        <div class="sp-header-user-nav clearfix">
+          <a href="新規会員登録画面URL" class="sp-header-btn btn-red">新規会員</a>
+          <a href="ログイン画面URL" class="sp-header-btn sp-header-signup">ログイン</a>
+        </div>
+      </div>
+      <div class="search-bar">
+        <form action="検索画面URL" class="sp-header-form">
+          <input type="search" name="keyword" value placeholder="何をお探しですか？" class="sp-header-search input-default">
+          <i class="icon-search"></i>
+        </form>
+      </div>
+    </header>
+    <header class="pc-header visible-pc with-shadow">
+      <div class="pc-header-inner">
+        <div class="pc-header-top">
+          <div>
+            <a href="メルカリURL">
+              <img src="https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2356214421" alt="mercari" width="134" height="36">
+            </a>
+          </div>
+          <form action="検索URL" class="pc-header-form">
+            <input type="search" name="keyword" value placeholder="何かお探しですか？" class="input-default">
+            <i class="icon-search">
+
+            </i>
+          </form>
+        </div>
+        <div class="pc-header-nav-box clearfix">
+          <nav class="l-left">
+            <ul class="pc-header-nav">
+              <li>
+                <h2>
+                  <a href="カテゴリーURL" class="pc-header-nav-root list-parent">
+                    <i class="icon-list pc-header-cat-brand-icon">
+
+                    </i>
+                    <span>カテゴリーから探す</span>
+                  </a>
+                </h2>
+                <!--<ul class="pc-header-nav-parent-wrap" data-mega="1" style="width: auto;">
+                  <li class="pc-header-nav-parent">
+                    <h3>
+                      <a href="カテゴリーURL">カテゴリー名</a>
+                    </h3>
+                    <ul class="pc-header-nav-child-wrap" data-mega="2">
+                      <li class="pc-jeader-nav-child">
+                        <a href="カテゴリーURL">カテゴリー名</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>  長すぎるので保留-->
+              </li>
+              <li>
+                <h2>
+                  <a href="ブランドURL"class="pc-header-nav-root list-parent">
+                    <i class="icon-tag pc-header-cat-brand-icon">
+
+                    </i>
+                    <span>ブランドから探す</span>
+                  </a>
+
+
+                </h2>
+              </li>
+            </ul>
+          </nav>
+          <div class=l-right>
+            <ul class="pc-header-login-nav">
+              <li>
+                <a href="新規会員登録画面URL" class="sp-header-btn btn-red">新規会員登録</a>
+              </li>
+              <li>
+                <a href="ログイン画面URL" class="sp-header-btn header-login">ログイン</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!--ヘッダー-->
+    <section class="product_detail l-single-container">
+      <h1 class="product_name">
+        商品名
+      </h1>
+      <p class="product_wording">
+        『'商品名'』は、'X'回の取引実績を持つ'ユーザー名'さんから出品されました。'ブランド名'('カテゴリー名')の商品で、'〇〇県'から'〇〜〇日'で発送されます。
+      </p>
+      <div class="product_main_content claarfix">
+        <div class="item_image">
+          <div class="owl-carousel owl-loaded owl-drag">
+            <div class="owl-stage-outer">
+              <div class="owl-stage" style="left: -600px; width: 900px;">
+                <div class="owl-item" style="width: 300px;">
+                  <div class="owl-item-inner">
+                    <img data-src="imageURL" alt="商品名" class="owllazy" src="imageURL" style="opacity: 1;">
+                  </div>
+                </div>
+                <!--上記５行を画像の枚数分繰り返し、画像URLをそれぞれ入れる-->
+              </div>
+            </div>
+            <div class="owl-nav disabled">
+              <div class="owl-prev">prev</div>
+              <div class="owl-next">next</div>
+            </div>
+            <div class="owl-dots">
+              <div class="owl-dot">
+                <span></span>
+                <div class="owl-dot-inner">
+                  <img src="imageURL">
+                </div>
+              </div>
+              <!--上記6行を画像の枚数分繰り返し、画像URLをそれぞれ入れる-->
+            </div>
+          </div>
+        </div>
+        <div class="item-prige-box text-center visible-sp">
+          <span class="item-price bold">¥X,XXX</span>
+          <span class="item-tax">(税込)</span>
+          <span class="item-shipping-fee">送料込み</span>
+        </div>
+        <section class="visible-sp">
+          <div class="item-btn-float-area">
+            <a class="item-buy-btn" href="購入画面URL">購入画面に進む</a>
+          </div>
+        </section>
+        <table class="item-detail-table">
+          <tbody>
+            <tr>
+              <th>出品者</th>
+              <td>
+                <a href="ユーザーページURL">出品者名</a>
+                <div>
+                  <div class="item-user-ratings">
+                    <i class="icon-good">
+                    </i>
+                    <span>00<!--評価数--></span>
+                  </div>
+                  <div class="item-user-ratings">
+                    <i class="icon-normal">
+                      <!--アイコン入れる-->
+                    </i>
+                    <span>00<!--評価数--></span>
+                  </div>
+                  <div class="item-user-ratings">
+                    <i class="icon-bad">
+                      <!--アイコン入れる-->
+                    </i>
+                    <span>00<!--評価数--></span>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th>カテゴリー</th>
+              <td>
+                <a href="カテゴリーURL">
+                  <div>カテゴリー名</div>
+                </a>
+                <!--上記3行を必要回数繰り返す-->
+              </td>
+            </tr>
+            <tr>
+              <th>ブランド</th>
+              <td>
+                <a href="ブランドURL">
+                  <div>ブランド名</div>
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <th>商品の状態</th>
+              <td>実際の商品の状態</td>
+            </tr>
+            <tr>
+              <th>配送料の負担</th>
+              <td>送料込みor着払い</td>
+            </tr>
+            <tr>
+              <th>配送の方法</th>
+              <td>配送方法</td>
+            </tr>
+            <tr>
+              <th>配送元の地域</th>
+              <td>
+                <a href="都道府県URL">都道府県名</a>
+              </td>
+            </tr>
+            <tr>
+              <th>発送日の目安</th>
+              <td>○〜○日で発送</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="item-price-box text-center">
+        <span class="item-price bold">¥0,000</span>
+        <span class="item-tax">(税込)</span>
+        <span class="item-shipping-fee">送料込み</span>
+      </div>
+      <a class="item-buy-btn" href="購入画面URL">購入画面に進む</a>
+      <!-- <a class="item-action-text" data-toggle="open-app" data-url-scheme="mercari://" data-action="item/openDetail" data-key="id=mxxxxxxxxxxx>" data-play-id="com.kouzoh.mercari" data-adjust-url="http://app.adjust.io/xio2ii?campaign=iOS&adgroup=items.buy_button1">アプリで購入</a> ※アプリ関係なので必要ないかも-->
+      <div class="item-description f14">
+        <p class="item-description-inner">商品の詳細
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+      </div>
+      <div class="item-button-container clearfix">
+        <div class="item-button-left">
+          <a href="いいねURL" class="item-button item-button-like">
+            <i class="icon-like-border">
+              <!--アイコン入れる？-->
+            </i>
+            <span>いいね！</span>
+            <span data-num="like">X<!--X=いいねの数--></span>
+          </a>
+          <a href="通報フォームURL" class="item-button item-button-report clearfix">
+            <i class="icon-flag">
+              <!--アイコン入れる？-->
+            </i>
+            <span>不適切な商品の報告</span>
+          </a>
+        </div>
+        <div class="item-button-right">
+          <a href="安心安全への取り組みURL" target="_blank">
+            <i class="icon-lock">
+              <!--アイコン入れる？-->
+            </i>
+            <span>あんしん・あんぜんへの取り組み</span>
+          </a>
+        </div>
+      </div>
+    </section>
+    <div class="item-detail-message">
+      <div class="message-container">
+        <div class="message-content">
+          <ul class="message-items">
+            <li class="clearfix">
+              <a href="ユーザーページURL" class="message-user">
+                <figure>
+                  <div>
+                    <img src="画像URL" alt>
+                  </div>
+                  <figcaption class="bold">
+                    ユーザー名
+                  </figcaption>
+                </figure>
+              </a>
+              <div class="message-body">
+                <div class="message-body-text">
+                  "コメント内容"
+                  <br>
+                  "コメント内容二行目"
+                </div>
+                <div class="message-icons clearfix">
+                  <time class="message-icon-left">
+                    <i class="icon-time">
+
+                    </i>
+                    <span>XX日前</span>
+                  </time>
+                  <div class="message-icon-right">
+                    <form action="コメント通報ページURL" method="POST">
+                      <button type="submit">
+                        <i class="icon-flag">
+
+                        </i>
+                      </button>
+                      <input type="hidden" name="redirect_url_key" value="item_detail">
+                    </form>
+                  </div>
+
+                </div>
+                <i class="icon-balloon">
+
+                </i>
+              </div>
+
+            </li>
+            <!--上記42行をコメントの数だけ用意-->
+          </ul>
+        </div>
+        <div class="message-content">
+          <form action="URL" method="POST" class="message-form">
+            <p>
+              相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+            </p>
+            <input type="hidden" name="item_id" value="商品ID">
+            <input type="hidden" name="item_id" value="item_detail">
+            <textarea type="text" name="body" value class="textarea-default" disabled></textarea>
+            <button type="submit" class="message-submit byn-default btn-gray">
+              <span>コメントする</span>
+            </button>
+          </form>
+        </div>
+        <aside class="modal" data-modal="delete-comment" data-close="modat">
+          <div class="modal-inner modal-banner">
+            <div class="modal-body">
+              <div class="modal-head bold">確認</div>
+              <div data-comment="body"></div>
+              <br>"本当にこのコメントを削除してよろしいですか？"
+            </div>
+            <form action="URL">
+              <div class="clearfix">
+                <div class="modal-btn modal-btn-cancel" data-close="modal">キャンセル</div>
+                <button type="submit" class="modal-btn modal-btn-submit">
+                  削除する
+                </button>
+              </div>
+                <input type="hidden" name="item_id" value="商品ID">
+                <input type="hidden" name="comment_id" value>
+                <input type="hidden" name="redirect_url_key" value="item_detail">
+                <input type="hidden" name="__csrf_value" value="何か">
+            </form>
+          </div>
+        </aside>
+      </div>
+    </div>
+    <ul class="nav-item-link-prev-next clearfix">
+      <li class="nav-item-link-prev">
+        <a href="別商品(左)URL">
+          <i class="icon-arrow-left"></i>
+          "商品名"
+        </a>
+      </li>
+      <li class="nav-item-link-next">
+        <a href="別商品(右)URL">
+          "商品名"
+          <i class="icon-arrow-right"></i>
+        </a>
+      </li>
+    </ul>
+    <div class="item-social-media-box">
+      <div class="text-center">
+        <div class="fb-save fb_iframe_widget" data-uri="何かのURL?" fb-xfbml-state="rendered" fb-iframe-plugin-query="何かのURL">
+          <span style="vertical-align: top; width: 0px; height: 0px; overflow:hidden;">
+            <iframe name="商品id?" width="1000px" height="1000px" title="fb: save Facebook Social Plugin" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" src="facebookURL" style="border: none; visibility: visible; width: 0px; height: 0px;">
+              <!--document-->
+            </iframe>
+          </span>
+        </div>
+      </div>
+      <ul class="social-media-box">
+        <li>
+          <a href="facebookURL" target="_blank" class="share-btn" data-window-name="facebook_window">
+            <i class="icon-facebook">
+
+            </i>
+          </a>
+        </li>
+        <li>
+          <a href="twitterURL" target="_blank" class="share-btn" data-window-name="twitter_window">
+            <i class="icon-twitter">
+
+            </i>
+          </a>
+        </li>
+        <li class="social-hidden-item">
+          <a href="lineURL" target="_blank">
+            <i class="icon-line"></i>
+          </a>
+        </li>
+        <li>
+          <a href="pinterestURL" target="_blank" class="share-btn" data-window-name="pinterest_window">
+            <i class="icon-pinterest">
+
+            </i>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="items-in-user-profile">
+      <section class="item-box-container clearfix related-item-column items-in-user-profile">
+        <h2 class="items-box-head">
+          <a href="URL">ユーザー名さんのその他の出品</a>
+        </h2>
+        <div class="items-box-content clearfix">
+          <section class="items-box">
+            <a href="商品ページURL">
+              <figure class="items-box-photo __web-inspector-hide-shortcut__">
+                <img data-src="画像URL" class="lazyloaded" alt="商品名" src="画像URL">
+              </figure>
+              <div class="items-box-body">
+                <h3 class="items-box-name font-2">
+                  商品名
+                </h3>
+                <div class="items-box-num">
+                  <div class="items-box-price font-5">¥X,XXX</div>
+                  <div class="font-2">
+                    <i class="icon-like-border">
+
+                    </i>
+                    <span>X<!--いいねの数--></span>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </section>
+          <!--上記21行を必要数繰り返す-->
+        </div>
+      </section>
+      <section class="items-box-container clearfix related-item-column">
+        <h2 class="items-box-head">
+          <a href="ブランドURL">
+            ブランド、カテゴリー　その他の商品
+          </a>
+        </h2>
+        <div class="items-box-content clearfix">
+          <section class="items-box">
+            <a href="商品ページURL">
+              <figure class="items-box-photo">
+                <img data-src="画像URL" class=" lazyloaded" alt="商品名" src="画像URL">
+              </figure>
+              <div class="items-box-body">
+                <h3 class="items-box-name font-2">
+                  "商品名"
+                </h3>
+                <div class="items-box-num">
+                  <div class="items-box-price font-5">¥X,XXX</div>
+                  <div class="font-2">
+                    <i class="icon-like-border">
+
+                    </i>
+                    <span>X<!--いいねの数--></span>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </section>
+          <!--上記21行を必要数繰り返す-->
+        </div>
+      </section>
+    </div>
+    <aside class="modal" data-modal="report-item" data-close="modal">
+      <div class="modal-inner modal-banner">
+        <div class="modal-body">
+          <div class="modal-head bold">確認</div>
+          "不適切な商品を報告しますか？"
+        </div>
+        <div class="clearfix">
+          <div class="modal-btn modal-btn-cancel" data-close="modal">キャンセル</div>
+          <a href="URL">
+            <button class="modal-btn modal-btn-submit">はい</button>
+          </a>
+        </div>
+      </div>
+    </aside>
+    <nav class="bread-crumbs pos-bottom">
+      <ul>
+        <li itemscope itemtype="URL">
+          <a href="メルカリURL" itemprop="url">
+            <span itemprop="title">メルカリ</span>
+          </a>
+          <i class="icon-arrow-right2">
+          </i>
+        </li>
+        <li itemscope itemtype="URL">
+          <span itemprop="title">商品名</span>
+        </li>
+      </ul>
+    </nav>
+    <!--フッター-->
+  </body>
+</html>
