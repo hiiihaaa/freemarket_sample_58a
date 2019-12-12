@@ -1,0 +1,216 @@
+body {
+  background-color: #f5f5f5;
+}
+
+.main-wrapper {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  padding: 0 0 40px;
+  margin: 40px auto 0;
+  width: 1020px;
+
+}
+
+.mypage-user {
+  background-color: #f5f5f5;
+  width: 700px;
+}
+
+.mypage-user-header {
+
+}
+
+.mypage-user-icon {
+  background-color: lightblue;
+  height: 200px;
+  padding: 20px;
+  text-align: center;
+}
+
+.mypage-user-icon__profile {
+  background-color: blue;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+}
+.mypage-user-icon__nickname {
+  margin: 8px 0 0;
+  font-size: 14px;
+}
+.mypage-user-icon__number {
+  display: flex;
+  justify-content: center;
+  font-size: 14px;
+  margin-top: 8px;
+}
+.mypage-user-icon__number span {
+  margin-left: 8px;
+}
+.mypage-user-icon__number__exhibit {
+  margin-left: 16px;
+}
+
+
+
+.mypage-user-list {
+  background-color: white;
+}
+
+.mypage-user-list__boxtab {
+  display: flex;
+}
+.mypage-user-list__boxtab a {
+  width: 350px;
+  position: relative;
+  display: block;
+  color: #333;
+  font-size: 16px;
+  line-height: 72px;
+  text-align: center;
+}
+
+.mypage-user-list__boxtab__active {
+  height: 72px;
+  border-top: 2px solid red;
+  background-color: white;
+}
+.mypage-user-list__boxtab__nonactive {
+  height: 74px;
+  background-color: #eee;
+}
+
+.box-tab-contents-list {
+  height: 59.42px;
+  border-bottom: 1px solid #eee;
+  padding: 16px;
+}
+
+
+
+.figure {
+  width: 48px;
+  height: 48px;
+  float: left;
+}
+.box-tab-contents-list-body {
+  width: 560px;
+  height: 42px;
+  margin: 0 40px 0 68px;
+  font-size: 14px;
+}
+.box-tab-contents-list-body-timeicon {
+  opacity: 0.5;
+  height: 16px;
+  display: flex;
+}
+.box-tab-contents-list-body-time {
+  font-size: 14px;
+  height: 18px;
+  margin-left: 8px;
+}
+
+.box-tab-contents-list-index {
+  text-align: center;
+  padding: 16px;
+
+}
+.box-tab-contents-list-index a {
+  display: block;
+  font-size: 14px;
+  line-height: 56px;
+  width: 668px;
+  height: 56px;
+  background-color:#EEEEEE;
+}
+
+.right-content-product-header {
+  background-color: white;
+  margin-top: 40px;
+  height: 72px;
+  line-height: 72px;
+  padding: 0 16px;
+}
+
+.trading-products {
+  background-color: white;
+  height: 59.42px;
+  border-bottom: 1px solid #eee;
+  padding: 16px;
+}
+
+.trading-products-status {
+  height: 22px;
+  width: 60px;
+  font-size: 12px;
+  background-color: gray;
+  margin-top: 8px;
+  text-align: center;
+  color: white;
+  line-height: 22px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.left-bar {
+  width: 280px;
+}
+
+.left-bar-top , .left-bar-middle , .left-bar-bottom {
+  font-size: 14px;
+  background-color: white;
+  min-height: 48px;
+  color: black;
+}
+
+.left-bar a {
+  display: block;
+  padding: 16px;
+  border-top: 1px solid #eee;
+}
+
+.left-bar h3 {
+  font-size: 16px;
+  margin: 40px 0 0 0;
+}
+
+
+
+
+
+
+
+
+
+.left-bar {
+  width: 280px;
+}
+
+.left-bar-top , .left-bar-middle , .left-bar-bottom {
+  font-size: 14px;
+  background-color: white;
+  min-height: 48px;
+  color: black;
+}
+
+.left-bar a {
+  display: block;
+  padding: 16px;
+  border-top: 1px solid #eee;
+}
+
+.left-bar h3 {
+  font-size: 16px;
+  margin: 40px 0 0 0;
+}
