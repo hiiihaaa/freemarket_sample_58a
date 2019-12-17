@@ -1,0 +1,175 @@
+header{
+  height: 128px;
+  background-color: #F5F5F5;
+  display: flex;
+  justify-content: center;
+}
+.logo{
+  width: 185px;
+  height: 49px;
+  padding-top: 40px;
+  margin-top: 0px;
+}
+.process{
+  width: 508px;
+  height: 32px;
+  display: flex;
+  font-size: 12px;
+  padding-top: 40px;
+  padding-left: 44px;
+  color: #ccc;
+  font-weight: bold;
+}
+li{
+  list-style: none;
+  margin-right: 40px;
+}
+.process__info--first,.process__info--second,.process__info--third,.process__info--fourth,.process__info--fifth{
+  text-align: center;
+}
+.process__info--first,.process__info{
+  color: red;
+}
+.process__info--first::after{
+  content: “----“;
+  position: absolute;
+  left: 25px;
+  color: #ccc;
+}
+.process__info--first{
+  position: relative;
+}
+.process__info--second::before{
+  content: “------“;
+  right: 40px;
+  position: absolute;
+  color: #ccc;
+}
+.process__info--second::after{
+  content: “”;
+  position: absolute;
+  color: #ccc;
+  border-bottom: 100px;
+}
+.process__info--second{
+  position: relative;
+}
+.main{
+  background-color: #F5F5F5;
+}
+.user__info{
+  font-size: 22px;
+  font-weight: bold;
+  width: 700px;
+  height: 97px;
+  text-align: center;
+  padding: 32px;
+  margin: 0 auto;
+  border-bottom: solid 1px;
+  border-color: #ccc;
+  background-color: white;
+  box-sizing: border-box;
+}
+.user__input{
+  width: 668px;
+  margin: 0 auto;
+  padding: 24px 16px 40px 16px;
+  background-color: white;
+}
+.user__input--center{
+  width: 343px;
+  margin: 0 auto;
+}
+.user__input--entry{
+  font-weight: bold;
+  font-size: 14px;
+}
+.changecolor{
+  border: solid 1px;
+  background-color: red;
+  color: white;
+  font-weight: 100;
+  padding: 2px 4px;
+  margin-left: 8px;
+}
+.user__input--name{
+  width: 155px;
+  height: 28px;
+  padding: 10px 16px 8px 16px;
+  margin-top: 8px;
+  margin-right: 8px;
+  box-sizing: content-box;
+  font-size: 15px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+.user__input--lastname{
+  width: 100px;
+  height: 28px;
+  padding: 10px 16px 8px 16px;
+  margin-top: 8px;
+  box-sizing: content-box;
+  font-size: 15px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+.margin{
+  margin-top: 10px;
+}
+.user__input--zipcode,.user__input--prefectures,.user__input--citytownvillage,.user__input--banchi,.user__input--buildings,.user__input--tel{
+  width: 300px;
+  height: 28px;
+  padding: 10px 16px 8px 16px;
+  margin-top: 8px;
+  box-sizing: content-box;
+  font-size: 15px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+.margin-b{
+  margin-top: 35px;
+}
+.changegray{
+  border: solid 1px;
+  background-color: gray;
+  color: white;
+  font-weight: 100;
+  padding: 2px 4px;
+  margin-left: 8px;
+}
+.next__page{
+  width: 341px;
+  height: 48px;
+  background-color: red;
+  color: white;
+  cursor: pointer;
+  font-size: 15px;
+  margin-top: 35px;
+}
+footer{
+  background-color: #F5F5F5;
+ 
+}
+footer p{
+  margin-top: 0;
+  color: #333;
+  padding: 70px 0 0px 0;
+  font-size: 12px;
+  text-align: center;
+}
+.privacy{
+  margin-right: 10px;
+}
+.terms{
+  margin-right: 10px;
+}
+.footer__logo--url{
+  width: 80px;
+  height: 65px;
+  margin:0 auto;
+  padding-top: 35px;
+}
+.fotter__logo--small{
+  padding-top: 25px;
+  font-size: 10px;
+}
