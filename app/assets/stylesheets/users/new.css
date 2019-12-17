@@ -1,6 +1,6 @@
 header{
   height: 128px;
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
   display: flex;
   justify-content: center;
 }
@@ -31,7 +31,7 @@ li{
   color: red;
 }
 .process__info--first::after{
-  content: “----“;
+  content: "----";
   position: absolute;
   left: 25px;
   color: #ccc;
@@ -40,13 +40,13 @@ li{
   position: relative;
 }
 .process__info--second::before{
-  content: “------“;
+  content: "------";
   right: 40px;
   position: absolute;
   color: #ccc;
 }
 .process__info--second::after{
-  content: “”;
+  content: "";
   position: absolute;
   color: #ccc;
   border-bottom: 100px;
@@ -55,7 +55,7 @@ li{
   position: relative;
 }
 .main{
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
 }
 .user__info{
   font-size: 22px;
@@ -147,8 +147,7 @@ li{
   margin-top: 35px;
 }
 footer{
-  background-color: #F5F5F5;
- 
+  background-color: #f5f5f5;
 }
 footer p{
   margin-top: 0;
