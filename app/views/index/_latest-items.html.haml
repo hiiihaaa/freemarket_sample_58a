@@ -5,25 +5,25 @@
       -# DBより「仮」部分の名前取得
     %a.content__main--latest-items__box--top_bar__more-btn{:href => "test"}
       もっと見る
-  = render 'index/merchandises'
+  = render partial: "index/merchandises", collection: @products, as: :product
 .content__main--latest-items__box
   .content__main--latest-items__box--top_bar
     .content__main--latest-items__box--top_bar__title
       「仮」新着アイテム2
     %a.content__main--latest-items__box--top_bar__more-btn{:href => "test"}
       もっと見る
-  = render 'index/merchandises'
+  = render partial: "index/merchandises", collection: @products, as: :product
 .content__main--latest-items__box
   .content__main--latest-items__box--top_bar
     .content__main--latest-items__box--top_bar__title
       「仮」新着アイテム3
     %a.content__main--latest-items__box--top_bar__more-btn{:href => "test"}
       もっと見る
-  = render 'index/merchandises'
+  = render partial: "index/merchandises", collection: @products, as: :product
 .content__main--latest-items__box
   .content__main--latest-items__box--top_bar
     .content__main--latest-items__box--top_bar__title
       「仮」新着アイテム4
     %a.content__main--latest-items__box--top_bar__more-btn{:href => "test"}
       もっと見る
-  = render 'index/merchandises'
+  = render partial: "index/merchandises", collection: @products, as: :product
