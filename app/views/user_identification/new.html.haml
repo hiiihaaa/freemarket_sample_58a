@@ -27,6 +27,7 @@
           .process__info--fifth ●
     .main
       .user__info 住所入力
+      / = form_for @user_indentification, url: user_identification_create_path, method: :post do |f|
       .user__input
         .user__input--center
           .user__input--entry.margin-b
