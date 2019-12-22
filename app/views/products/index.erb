@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset='utf-8'>
+  <title>メルカリ</title>
+  <meta content='商品出品ページ' name='description'>
+  <link href="products_sell.css" type="text/css" rel='stylesheet'>
+  <link rel="icon" href="favicon.ico" sizes="20x20"> </head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>
+        <a href="https://www.mercari.com/jp/">
+          <img src="https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2356214421" alt="mercari">
+        </a>
+      </h1>
+    </header>
+    <main class="main">
+      <section class="l-container buy-item-container">
+        <div class="sell-container">
+          <div data-reactroot="">
+            <div class="sell-container-inner">
+              <h2 class="l-head">商品の情報を入力</h2>
+              <form class="sell-form">
+                <div class="sell-upload-box">
+                  <h3 class="sell-upload-head">
+                    <!-- react-text: 7 -->出品画像
+                    <!-- /react-text --><span class="form-require">必須</span>
+                    <p>最大10枚までアップロードできます</p>
+                    <div class="sell-dropbox-container clearfix state-image-number-10">
+                      <div class="sell-upload-items-container">
+                        <div class="sell-upload-items have-item-0">
+                          <ul> </ul>
+                        </div>
+                      </div>
+                      <div class="sell-upload-drop-box"> 
+                      <% if @product.image.present %>
+                        <%= form_for @product do |f| %>
+                        <%= f.label "ドラッグアンドドロップまたはクリックしてファイルをアップロード" %>
+                        <%= f.file_field :image %>
+                        <% end %>
+                      </div>
+                    </div>
+                </div>
+                <div class="sell-content">
+                  <div class="form-group__name"> <label>商品名<span class="form-require">必須</span></label>
+                    <div><input class="input-name" value="" placeholder="商品名（必須 40文字まで)"> </div>
+                  </div>
+                  <div class="form-group__text"> <label>商品の説明<span class="form-require">必須</span></label> <textarea class="textarea-default" rows="5" placeholder="商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"></textarea> </div>
+                </div>
+                <div class="sell-content clearfix">
+                  <h3 class="sell-sub-head">商品の詳細</h3>
+                  <div class="sell-form-box">
+                    <div class="form-group__category"> <label>カテゴリー<span class="form-require">必須</span></label>
+                      <div>
+                        <div class="select-wrap"> <select class="select-default">
+                        <img src = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAM1BMVEX///9LS0s4ODixsbGtra2hoaE1NTWgoKC6urq1tbW2tra7u7slJSUzMzPY2Ng/Pz9wcHALWQqaAAAD50lEQVR4nO3d21bbQBBEUYSRYyMI/P/XRtNxYmFJ1ty6u2ZW1buytHPs5g1eXjiO4ziO4ziO4ziO4ziO4ziO4ziO4ziO4ziOi91v7xc4XOEbTh9jnfdQ2/gxlTw+vQ6v2MRxfsMC4nQeBmziDByG8yX38Sk8Dk0cb2+YSZw+hwGbeAMOw2cWcfr3OCxxXLxhBvFyHgZs4gKY8128LB+HJI4Pb5hI/FEQkvgATK24AsIRV8A04mX9OBhxA5jyQd0oCEbcBMZX3CwIRdwBzm/4HvP45XPncRjiLnD+0R9BfN9/HIT4BBhT8X37OwhEfAqcv4sHxKcFIYgHwKOKBwUBiIfAueJ1//HrMdCZGAF8RrzGPO5KjALOb7hDjCroSowE7lWMLOhIjAZuV7zu/6AHISYA5x/9K2JCQSdiEnBdMfo76EZMBD5+FxMLOhCTgT8rZgCNiRnAJfGU+hE1J2YB5w/q6QbMe9yQmAmc31CImQUNidnAvxWzC5oRC4BSsUhoQSwCDq9vRZ9SC2IZ8PwW/g3oiuUFwYl1gMDEWkBYYj0g6LmpcWQWRLyKNQsKEa1i3YJCLPsv+wUFXBcUYlnFusT6BYWIU1GjIBRRCwhD1AOCEDWBEOdG58gsiN4VdQsK0beidkEhelbULyhEv4oWBYXoVdGmoCPRDuhEtAS6EG2BDufG6sgsiLYVrQsK0bKifUEh2lX0KChEq4o+BYVoU9GroBnRE2hC9AUaEL2B6ufG78gsiJoV/QsKUa8iQkEhalXEKChEnYooBYWoURGnoBIRC6hARANWJ+IBK58bpCOzINariFhQiLUqYhYUYp2KqAWFWKMibkEhlldELliBOMIDS4lf31/owFJi0WyApeemYNpHZkH0qWhVUIgeFe0KCtG+omVBIVpXtC0oRNuK1gXNiR5AU6IP0JDoBTQ7N/ZHZkG0qOhXUIj6FT0LClG7om9BIepW9C4oRM2K/gXDFIkYQEUiClCNiANUOjcIR+Y+hYpIBcOqV8QqGFa5IlrBsKoV8QqGVayIWDCsGhEVWI2IC6xERAZWOTeYR+a+4orYBcMKK6IXDCv7pUUNAIsqtlAwLP+XhzUCzCa2A8wktgTMIrYFzDg3rRyZ+xIrtlYwLKliewXDEiq2WDAsumKbBcMiK7ZaMCyK2DIwitg2MILYOvDw3LR7ZO57WrH9gmFPKvZQMGy3Yh8Fw3Yq9lIwbLNiPwXDNoh9ATeIvQFXxP6AD+empyNz36JijwXD/lfss2DYrWKvBcOkYr8Fw+aKPRcMO310Diz+c/Ycx3Ecx3Ecx3Ecx3Ecx3Ecx3Ecx3Ecx3Ecx5XsD1DVOzu0/p3DAAAAAElFTkSuQmCC" ,class="yajirushi">
+                      <option value="">---</option>
+                      <option value="1">レディース</option>
+                      <option value="2">メンズ</option>
+                      <option value="3">ベビー・キッズ</option>
+                      <option value="4">インテリア・住まい・小物</option>
+                      <option value="5">本・音楽・ゲーム</option>
+                      <option value="1328">おもちゃ・ホビー・グッズ</option>
+                      <option value="6">コスメ・香水・美容</option>
+                      <option value="7">家電・スマホ・カメラ</option>
+                      <option value="8">スポーツ・レジャー</option>
+                      <option value="9">ハンドメイド</option>
+                      <option value="1027">チケット</option>
+                      <option value="1318">自動車・オートバイ</option>
+                      <option value="10">その他</option>
+                    </select> </div>
+                      </div>
+                      <!-- react-empty: 55 -->
+                    </div>
+                    <div class="form-group__status"> <label><!-- react-text: 58 -->商品の状態<!-- /react-text -->
+                    <span class="form-require">必須</span>
+                  </label>
+                      <div class="select-wrap"> <i class="yajirushi"></i> <select class="select-default">
+                      <option value="">---</option>
+                      <option value="1">新品、未使用</option>
+                      <option value="2">未使用に近い</option>
+                      <option value="3">目立った傷や汚れなし</option>
+                      <option value="4">やや傷や汚れあり</option>
+                      <option value="5">傷や汚れあり</option>
+                      <option value="6">全体的に状態が悪い</option>
+                    </select> </div>
+                      <!-- react-empty: 64 -->
+                    </div>
+                  </div>
+                </div>
+                <div class="sell-content clearfix"> <span class="sell-sub-head">配送について</span> <a href="/jp/help_center/article/68/" target="_blank" class="form-question">?</a>
+                  <div class="sell-form-box">
+                    <div class="form-group__send"> <label><!-- react-text: 71 -->配送料の負担<!-- /react-text -->
+                    <span class="form-require">必須</span>
+                  </label>
+                      <div class="select-wrap"> <i class="yajirushi"></i> <select class="select-default">
+                      <option value="">---</option>
+                      <option value="2">送料込み(出品者負担)</option>
+                      <option value="1">着払い(購入者負担)</option>
+                    </select> </div>
+                      <!-- react-empty: 77 -->
+                    </div>
+                    <div class="form-group__send__2"> <label><!-- react-text: 80 -->発送元の地域<!-- /react-text -->
+                    <span class="form-require">必須</span>
+                  </label>
+                      <div class="select-wrap"> <i class="yajirushi"></i> <select class="select-default">
+                      <option value="">---</option>
+                      <option value="1">北海道</option>
+                      <option value="2">青森県</option>
+                      <option value="3">岩手県</option>
+                      <option value="4">宮城県</option>
+                      <option value="5">秋田県</option>
+                      <option value="6">山形県</option>
+                      <option value="7">福島県</option>
+                      <option value="8">茨城県</option>
+                      <option value="9">栃木県</option>
+                      <option value="10">群馬県</option>
+                      <option value="11">埼玉県</option>
+                      <option value="12">千葉県</option>
+                      <option value="13">東京都</option>
+                      <option value="14">神奈川県</option>
+                      <option value="15">新潟県</option>
+                      <option value="16">富山県</option>
+                      <option value="17">石川県</option>
+                      <option value="18">福井県</option>
+                      <option value="19">山梨県</option>
+                      <option value="20">長野県</option>
+                      <option value="21">岐阜県</option>
+                      <option value="22">静岡県</option>
+                      <option value="23">愛知県</option>
+                      <option value="24">三重県</option>
+                      <option value="25">滋賀県</option>
+                      <option value="26">京都府</option>
+                      <option value="27">大阪府</option>
+                      <option value="28">兵庫県</option>
+                      <option value="29">奈良県</option>
+                      <option value="30">和歌山県</option>
+                      <option value="31">鳥取県</option>
+                      <option value="32">島根県</option>
+                      <option value="33">岡山県</option>
+                      <option value="34">広島県</option>
+                      <option value="35">山口県</option>
+                      <option value="36">徳島県</option>
+                      <option value="37">香川県</option>
+                      <option value="38">愛媛県</option>
+                      <option value="39">高知県</option>
+                      <option value="40">福岡県</option>
+                      <option value="41">佐賀県</option>
+                      <option value="42">長崎県</option>
+                      <option value="43">熊本県</option>
+                      <option value="44">大分県</option>
+                      <option value="45">宮崎県</option>
+                      <option value="46">鹿児島県</option>
+                      <option value="47">沖縄県</option>
+                      <option value="99">未定</option>
+                    </select> </div>
+                      <!-- react-empty: 86 -->
+                    </div>
+                    <div class="form-group__send__2"> <label><!-- react-text: 89 -->発送までの日数<!-- /react-text -->
+                    <span class="form-require">必須</span>
+                  </label>
+                      <div class="select-wrap"> <i class="yajirushi"></i> <select class="select-default">
+                      <option value="">---</option>
+                      <option value="1">1~2日で発送</option>
+                      <option value="2">2~3日で発送</option>
+                      <option value="3">4~7日で発送</option>
+                    </select> </div>
+                      <!-- react-empty: 95 -->
+                    </div>
+                  </div>
+                </div>
+                <div class="sell-content  clearfix">
+                  <div class="sell-content__en">
+                    <div class="price-1">販売価格(300〜9,999,999) <a href="/jp/help_center/article/64/" target="_blank" class="form-question">?</a></div>
+                    <div class="price-2">
+                      <div class="form-group">価格 <span class="form-require">必須</span> <span class="l-right sell-price-input">¥ </span> </div>
+                    </div>
+                    <div class="price-3">
+                      <div> <input class="input-default" placeholder="例）300  "> </div>
+                    </div>
+                    <div class="price-4"></div>
+                    <div class="price-5">
+                      <div class="l-left__10">販売手数料 (10%) </div>
+                    </div>
+                    <div class="price-6"> <span class="l-right">-</span> </div>
+                    <div class="price-7"></div>
+                    <div class="price-8"> <span class="l-left--profit">販売利益</span> </div>
+                    <div class="price-9">
+                      <div class="l-right">-</div>
+                    </div>
+                    </ul>
+                  </div>
+                </div>
+                <div class="modal" role="dialog" tabindex="-1">
+                  <div class="modal-inner"> </div>
+                </div>
+            </div>
+            <div class="sell-content sell-btn-box">
+              <div>
+                <p> <a href="/jp/help_center/getting_started/prohibited_items/" target="_blank">禁止されている出品</a>、<a href="/jp/help_center/getting_started/prohibited_conduct/" target="_blank">行為</a>を必ずご確認ください。 </p>
+                <p> またブランド品でシリアルナンバー等がある場合はご記載ください。<a href="/jp/help_center/getting_started/counterfeit_goods/" target="_blank">偽ブランドの販売</a>は犯罪であり処罰される可能性があります。 </p>
+                <p>また、出品をもちまして<a href="/jp/seller_terms/">加盟店規約</a>に同意したことになります。 </p>
+              </div><button type="submit" class="btn-default btn-red">出品する</button><a class="btn-default btn-gray">もどる</a> </div>
+            </form>
+            <div class="overlay"> </div>
+          </div>
+        </div>
+  </div>
+  </section>
+  </main>
+</body>
+<footer class="footer-container1">
+  <div class="box box-1"><a href="リンク貼る" , class="link">プライバシーポリシー</a></div>
+  <div class="box box-2"><a href="リンク貼る" , class="link">メルカリ利用規約</a></div>
+  <div class="box box-3"><a href="リンク貼る" , class="link">特定商取引に関する表記</a></div>
+  <div class="footer-container2">
+    <div class="box box-4"><a href="リンク貼る" class="footer-logo">
+      <img src="https://www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?1855818912" alt="mercari" width="80" height="65"></a> </div> <small>© Mercari, Inc.</small> </div>
+  </div>
+</footer>
+</div>
