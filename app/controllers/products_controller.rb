@@ -1,10 +1,11 @@
 class ProductsController < ApplicationController
+  before_action :set_product
   def index
-    @product = Product.find(params[:id])
+    @products = Product.find(params[:id])
   end
 
   def set_product
-    @product = Product.find(params[:id])
+    @products = Product.find(params[:id])
   end
 
   private

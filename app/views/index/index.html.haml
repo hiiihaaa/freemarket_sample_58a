@@ -109,7 +109,8 @@
                   おもちゃ・ホビー・グッズ
         / 新着アイテム一覧　各カテゴリーで共通
         .content__main--latest-items
-          = render partial: "index/latest-items", collection: @products, as: :product
+          -# - @products.each do |product|
+          = render partial: "index/latest-items"
         .content__main--famous-items
           .content__main--famous-items__title
             人気のブランド
@@ -128,7 +129,8 @@
                 %a.content__main--famous-items__box--btns__title--font
                   ナイキ
         .content__main--latest-items
-          = render partial: "index/latest-items", collection: @products, as: :product
+          -# - @products.each do |product|
+          -#   = render partial: "index/latest-items"
     .put-up-btns
       %a.put-up-btns__circle{:href => "test"}
         .put-up-btns__circle--button
