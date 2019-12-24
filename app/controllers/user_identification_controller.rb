@@ -11,6 +11,7 @@ class UserIdentificationController < ApplicationController
       building: params[:building]
     )
     @user_identification.save
+    
   end
 
 end

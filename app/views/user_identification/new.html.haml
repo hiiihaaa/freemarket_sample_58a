@@ -27,7 +27,7 @@
           .process__info--fifth ●
 
     
-  = form_with(model: @user_identification) do |form|
+  = form_with(model: @user_identification,local: true) do |form|
     .main
       .user__info 住所入力
       .user__input
