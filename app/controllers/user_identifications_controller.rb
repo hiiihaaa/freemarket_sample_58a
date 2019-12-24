@@ -9,6 +9,7 @@ class UserIdentificationsController < ApplicationController
       city: params[:city],
       block: params[:block],
       building: params[:building],
+      telnumber: params[:telnumber],
       users_id: params[:user_id]
     )
 
