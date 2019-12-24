@@ -25,46 +25,38 @@
         %li.process__complete
           完了
           .process__info--fifth ●
+
+    
+  = form_with(model: @user_identification) do |form|
     .main
       .user__info 住所入力
-      / = form_for @user_indentification, url: user_identification_create_path, method: :post do |f|
       .user__input
         .user__input--center
-          .user__input--entry.margin-b
-            お名前（全角）
-            %span.changecolor 必須
-            %input.user__input--name{:placeholder => "例 山田"}/
-            %input.user__input--lastname{:placeholder => "例 太郎"}/
-          .user__input--entry.margin
-            お名前（カナ）
-            %span.changecolor 必須
-            %input.user__input--name{:placeholder => "例 ヤマダ"}/
-            %input.user__input--lastname{:placeholder => "例 タロウ"}/
           .user__input--postcode.margin-b
             郵便番号
             %span.changecolor 必須
-            %input.user__input--zipcode{:name => "post_number", :placeholder => "例 123-4567"}/
+            = form .text_field :post_number ,class:"user__input--zipcode",placeholder:"例 123-4567"
           .user__input--prefecture.margin-b
             都道府県
             %span.changecolor 必須
-            %input.user__input--prefectures{:name => "prefecture", :placeholder => "例 東京都"}/
+            = form .text_field :prefecture ,class:"user__input--prefectures",placeholder:"例 東京都"
           .user__input--prefecture.margin-b
             市町村
             %span.changecolor 必須
-            %input.user__input--prefectures{:name => "city", :placeholder => "例 渋谷区"}/
+            = form .text_field :city ,class:"user__input--prefectures",placeholder:"例 渋谷区"
           .user__input--banchis.margin-b
             番地
             %span.changecolor 必須
-            %input.user__input--banchi{:name => "block", :placeholder => "例 1丁目3-56"}/
+            = form .text_field :block ,class:"user__input--banchi",placeholder:"例 1丁目3-56"
           .user__input--building.margin-b
             建物名
             %span.changegray 任意
-            %input.user__input--buildings{:name => "building", :placeholder => "例 森ビル３階"}/
+            = form .text_field :building ,class:"user__input--buildings",placeholder:"例 森ビル３階"
           .user__input--phone.margin-b
             電話番号
             %span.changegray 任意
-            %input.user__input--tel{:placeholder => "例 090-1111-1111"}/
-          %button.next__page.margin-b 次へ進む
+            = form .text_field :tel_number ,class:"user__input--tel",placeholder:"例 090-1111-1111"
+          = form.submit class:"next__page",value:"次へ進む"
     %footer
       .footer__logo
         %p
