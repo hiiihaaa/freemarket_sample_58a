@@ -123,12 +123,13 @@
 -#             %img{:alt => "Thumbnail of \"ダウンコート　ロング\"", :src => "https://static.mercdn.net/thumb/photos/m62953289899_1.jpg?1575447069"}/
 %ul.content__main--latest-items__box--merchandises
   = @products.each do |product|
-    .content__main--latest-items__box--merchandises__merchandise
-      .content__main--latetst-items__box--merchandises__merchandise--block
-        %figure.content__main--latest-items__box--merchandises__merchandise--block__element
-          %figcaption
-            %span
-              = product.name
-          .content__main--latest-items__box--merchandises__merchandise--block__element--pic_box
-            %span{"aria-label" => "Price"}
-              = "¥#{product.price.to_s(:delimited)}"
+    %li.content__main--latest-items__box--merchandises__merchandise
+      %div{:style => "visibility: visible; transition: all 0.5s ease 0s; opacity: 1;"}
+        = link_to "test", class: "content__main--latetst-items__box--merchandises__merchandise--block" do
+          %figure.content__main--latest-items__box--merchandises__merchandise--block__element
+            %figcaption
+              %span
+                = product.name
+            .content__main--latest-items__box--merchandises__merchandise--block__element--pic_box
+              %span{"aria-label" => "Price"}
+                = "¥#{product.price.to_s(:delimited)}"
