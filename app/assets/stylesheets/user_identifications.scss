@@ -109,17 +109,6 @@ li {
   margin-left: 8px;
 }
 
-.user__input--name {
-  width: 155px;
-  height: 28px;
-  padding: 10px 16px 8px 16px;
-  margin-top: 8px;
-  margin-right: 8px;
-  box-sizing: content-box;
-  font-size: 15px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-}
 
 .user__input--lastname {
   width: 100px;
@@ -136,7 +125,7 @@ li {
   margin-top: 10px;
 }
 
-.user__input--zipcode, .user__input--prefectures, .user__input--citytownvillage, .user__input--banchi, .user__input--buildings, .user__input--tel {
+.user__input--name, .user__input--zipcode, .user__input--prefectures, .user__input--citytownvillage, .user__input--banchi, .user__input--buildings, .user__input--tel {
   width: 300px;
   height: 28px;
   padding: 10px 16px 8px 16px;

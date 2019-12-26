@@ -33,15 +33,9 @@
       .user__input
         .user__input--center
           .user__input--entry.margin-b
-            お名前（全角）
+            ユーザーID
             %span.changecolor 必須
-            = form .text_field :user_id ,class:"user__input--name",placeholder:"例 山田"
-            %input.user__input--lastname{:placeholder => "例 太郎"}/
-          .user__input--entry.margin
-            お名前（カナ）
-            %span.changecolor 必須
-            %input.user__input--name{:placeholder => "例 ヤマダ"}/
-            %input.user__input--lastname{:placeholder => "例 タロウ"}/
+            = form .text_field :user_id ,class:"user__input--name",placeholder:"例 15"
           .user__input--postcode.margin-b
             郵便番号
             %span.changecolor 必須
