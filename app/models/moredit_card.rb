@@ -1,0 +1,2 @@
+class MoreditCard < ApplicationRecord
+end
