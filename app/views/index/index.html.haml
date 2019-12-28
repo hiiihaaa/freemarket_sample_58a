@@ -11,8 +11,8 @@
       .header
         .header__upper
           .header__upper--leftbox
-            %a.main_logo
-              %img.mercari_logo{:alt => "mercari", :src => "https://web-jp-assets.mercdn.net/_next/static/images/logo-acdd90ac4f472d5a6f7a330d33ab1225.svg"}/
+            = link_to root_path, class: "main_logo" do
+              = image_tag "https://web-jp-assets.mercdn.net/_next/static/images/logo-acdd90ac4f472d5a6f7a330d33ab1225.svg", alt: "mercari", class: "mercari_logo"
           %form.header__upper--form{:action => "test"}
             %input.header__upper--form__input{:name => "keyword", :placeholder => "何かお探しですか？", :type => "search", :value => ""}/
             %button.header__upper--form__search
@@ -21,36 +21,36 @@
         .header__lower
           .header__lower--leftbox
             .header__lower--leftbox__search
-              %a.header__lower--leftbox__search--box{:href => "test"}
+              = link_to "test", class: "header__lower--leftbox__search--box" do
                 %svg.header__lower--leftbox__search--box__icon{"aria-hidden" => "true", :height => "16", :viewbox => "0 0 20 16", :width => "20"}
                   %path{:d => "M18.799 15.25h-11.5a1.25 1.25 0 1 1 0-2.5h11.5a1.25 1.25 0 0 1 0 2.5zm0-6h-11.5a1.25 1.25 0 1 1 0-2.5h11.5a1.25 1.25 0 0 1 0 2.5zm0-6h-11.5a1.25 1.25 0 1 1 0-2.5h11.5a1.25 1.25 0 0 1 0 2.5zM2 16a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0-6a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0-6a2 2 0 1 0 0-4 2 2 0 0 0 0 4z", :fill => "currentColor", "fill-rule" => "nonzero"}
                 カテゴリーから探す
             .header__lower--leftbox__search
-              %a.header__lower--leftbox__search--box{:href => "test"}
+              = link_to "test", class: "header__lower--leftbox__search--box" do
                 %svg.header__lower--leftbox__search--box__icon{"aria-hidden" => "true", :height => "16", :viewbox => "0 0 23 16", :width => "23"}
                   %path{:d => "M6.315 0L4.473 1.806 2.833.019.73 1.977l1.69 1.84L1.198 5.02c-1.594 1.594-1.594 4.188-.01 5.772L6.3 16h13.272a3.08 3.08 0 0 0 3.077-3.077V3.076A3.08 3.08 0 0 0 19.57 0H6.315zm13.46 12.925a.211.211 0 0 1-.205.205H7.504L3.227 8.771a1.226 1.226 0 0 1-.01-1.71L4.38 5.92l1.28 1.371a2.68 2.68 0 1 0 2.13-1.93L6.433 3.907 7.49 2.87h12.082a.211.211 0 0 1 .206.205v9.848h-.002z", :fill => "currentColor", "fill-rule" => "nonzero"}
                 ブランドから探す
           .header__lower--rightbox
             .header__lower--rightbox__sign_up
-              %a.header__lower--rightbox__sign_up--btn{:href => "test"}
+              = link_to "test", class: "header__lower--rightbox__sign_up--btn" do
                 新規会員登録
             .header__lower--rightbox__log_in
-              %a.header__lower--rightbox__log_in--btn{:href => "test"}
+              = link_to "test", class: "header__lower--rightbox__log_in--btn" do
                 ログイン
     .content
       .content__main
         .content__main--advertisement_bar
           .content__main--advertisement_bar__box
-            %a{:href => "https://jp-news.mercari.com/2019/12/05/kaushika-kaudake", :rel => "noopener noreferrer", :target => "_blank"}
+            = link_to "https://jp-news.mercari.com/2019/12/05/kaushika-kaudake", rel: "noopener noreferrer", target: "_blank" do
               .content__main--advertisement_bar__box--link
             .content__main--advertisement_bar__box--details{:style => "box-sizing: border-box; display: block; height: auto; position: relative; visibility: inherit; width: 100%;"}
               .slider-frame{:style => "box-sizing:border-box;display:block;height:100%;margin:0px;-moz-box-sizing:border-box;-ms-transform:translate(0, 0);overflow:hidden;padding:0;position:relative;touch-action:pinch-zoom pan-y;transform:translate3d(0, 0, 0);-webkit-transform:translate3d(0, 0, 0)"}
                 %ul.slider-list{:style => "transform: translate3d(-2066px, 0px, 0px); position: relative; display: block; margin: 0px; padding: 0px; height: 290px; width: 3099px; cursor: pointer; box-sizing: border-box; touch-action: pan-y pinch-zoom;"}
                   %li.slider-slide{:style => "box-sizing: border-box; display: inline-block; height: auto; left: 3099px; list-style-type: none; margin: auto 0px; position: absolute; top: 0px; transform: scale(1); transition: transform 0.4s linear 0s; vertical-align: top; width: 1033px;"}
-                    %a{:href => "https://jp-news.mercari.com/2019/12/05/kaushika-kaudake", :rel => "noopener noreferrer", :target => "_blank"}
+                    = link_to "https://jp-news.mercari.com/2019/12/05/kaushika-kaudake", rel: "noopener noreferrer", target: "_blank" do
                       .content__main--advertisement_bar__box--details__specific{"aria-hidden" => "true"}
                   %li.slider-slide{:style => "box-sizing: border-box; display: inline-block; height: auto; left: 1033px; list-style-type: none; margin: auto 0px; position: absolute; top: 0px; transform: scale(1); transition: transform 0.4s linear 0s; vertical-align: top; width: 1033px;"}
-                    %a{:href => "https://www.mercari.com/jp/featured/camp/"}
+                    = link_to "https://www.mercari.com/jp/featured/camp/" do
                       .content__main--advertisement_bar__box--details__specific{"aria-hidden" => "true"}
                   %li.slider-slide.slide-visible{:style => "box-sizing: border-box; display: inline-block; height: auto; left: 2066px; list-style-type: none; margin: auto 0px; position: absolute; top: 0px; transform: scale(1); transition: transform 0.4s linear 0s; vertical-align: top; width: 1033px;"}
                     .content__main--advertisement_bar__box--details__specific
@@ -66,10 +66,10 @@
                             %br/
                             購入時も安心な独自システムのアプリです
                           .content__main--advertisement_bar__box--details__specific--pic_element__font_area--lower
-                            %a{:href => "https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8", :rel => "noopener noreferrer", :target => "_blank"}
-                              %img.content__main--advertisement_bar__box--details__specific--pic_element__font_area--lower__icons{:alt => "", :src => "https://web-jp-assets.mercdn.net/_next/static/images/app-store-a5c17948c6fd6d5b60b13d421cd60b35.svg"}/
-                            %a{:href => "https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja", :rel => "noopener noreferrer", :target => "_blank"}
-                              %img.content__main--advertisement_bar__box--details__specific--pic_element__font_area--lower__icons{:alt => "", :src => "https://web-jp-assets.mercdn.net/_next/static/images/google-play-495575abb895b405aa6336b2a4304958.svg"}/
+                            = link_to "https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8", rel: "noopener noreferrer", target: "_blank" do
+                              = image_tag "https://web-jp-assets.mercdn.net/_next/static/images/app-store-a5c17948c6fd6d5b60b13d421cd60b35.svg", alt: "", class: "content__main--advertisement_bar__box--details__specific--pic_element__font_area--lower__icons"
+                            = link_to "https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja", rel: "noopener noreferrer", target: "_blank" do
+                              = image_tag "https://web-jp-assets.mercdn.net/_next/static/images/google-play-495575abb895b405aa6336b2a4304958.svg", alt: "", class: "content__main--advertisement_bar__box--details__specific--pic_element__font_area--lower__icons"
               .slider-control-centerleft{:style => "position:absolute;top:50%;left:0;transform:translateY(-50%);-webkit-transform:translateY(-50%);-ms-transform:translateY(-50%)"}
                 .content__main--advertisement_bar__box--details--arrow.left
               .slider-control-centerright{:style => "position:absolute;top:50%;right:0;transform:translateY(-50%);-webkit-transform:translateY(-50%);-ms-transform:translateY(-50%)"}
@@ -96,16 +96,16 @@
           .content__main--famous-items__box
             %ul.content__main--famous-items__box--btns
               %li.content__main--famous-items__box--btns__title
-                %a.content__main--famous-items__box--btns__title--font
+                = link_to "test", class: "content__main--famous-items__box--btns__title--font" do
                   レディース
               %li.content__main--famous-items__box--btns__title
-                %a.content__main--famous-items__box--btns__title--font
+                = link_to "test", class: "content__main--famous-items__box--btns__title--font" do
                   メンズ
               %li.content__main--famous-items__box--btns__title
-                %a.content__main--famous-items__box--btns__title--font
+                = link_to "test", class: "content__main--famous-items__box--btns__title--font" do
                   家具・スマホ・カメラ
               %li.content__main--famous-items__box--btns__title
-                %a.content__main--famous-items__box--btns__title--font
+                = link_to "test", class: "content__main--famous-items__box--btns__title--font" do
                   おもちゃ・ホビー・グッズ
         / 新着アイテム一覧　各カテゴリーで共通
         .content__main--latest-items
@@ -116,21 +116,21 @@
           .content__main--famous-items__box
             %ul.content__main--famous-items__box--btns
               %li.content__main--famous-items__box--btns__title
-                %a.content__main--famous-items__box--btns__title--font
+                = link_to "test", class: "content__main--famous-items__box--btns__title--font" do
                   シャネル
               %li.content__main--famous-items__box--btns__title
-                %a.content__main--famous-items__box--btns__title--font
+                = link_to "test", class: "content__main--famous-items__box--btns__title--font" do
                   ルイヴィトン
               %li.content__main--famous-items__box--btns__title
-                %a.content__main--famous-items__box--btns__title--font
+                = link_to "test", class: "content__main--famous-items__box--btns__title--font" do
                   シュプリーム
               %li.content__main--famous-items__box--btns__title
-                %a.content__main--famous-items__box--btns__title--font
+                = link_to "test", class: "content__main--famous-items__box--btns__title--font" do
                   ナイキ
         .content__main--latest-items
           = render partial: "index/latest-items"
     .put-up-btns
-      %a.put-up-btns__circle{:href => "test"}
+      = link_to "test", class: "put-up-btns__circle" do
         .put-up-btns__circle--button
           .put-up-btns__circle--button__letter
             出品
@@ -144,13 +144,13 @@
           .download-bar__box--left__middle
             今すぐ無料ダウンロード
           .download-bar__box--left__lower
-            %img.download-bar__box--left__lower--mercari-icon{:alt => "", :src => "https://web-jp-assets.mercdn.net/_next/static/images/mercari_icon-f75780e32e41e052c8aaa8b446331cd8.png"}/
-            %a.download-bar__box--left__lower--itunes{:href => "https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8", :target => "_blank"}
-              %img.download-bar__box--left__lower--icon{:alt => "", :src => "https://web-jp-assets.mercdn.net/_next/static/images/app-store-a5c17948c6fd6d5b60b13d421cd60b35.svg"}/
-            %a.download-bar__box--left__lower--google{:href => "https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja", :target => "_blank"}
-              %img.download-bar__box--left__lower--icon{:alt => "", :src => "https://web-jp-assets.mercdn.net/_next/static/images/google-play-495575abb895b405aa6336b2a4304958.svg"}/
+            = image_tag "https://web-jp-assets.mercdn.net/_next/static/images/mercari_icon-f75780e32e41e052c8aaa8b446331cd8.png", alt: "", class: "download-bar__box--left__lower--mercari-icon"
+            = link_to "https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8", class: "download-bar__box--left__lower--itunes", target: "_blank" do
+              = image_tag "https://web-jp-assets.mercdn.net/_next/static/images/app-store-a5c17948c6fd6d5b60b13d421cd60b35.svg", alt: "", class: "download-bar__box--left__lower--icon"
+            = link_to "https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja", class: "download-bar__box--left__lower--google", target: "_blank" do
+              = image_tag "https://web-jp-assets.mercdn.net/_next/static/images/google-play-495575abb895b405aa6336b2a4304958.svg", alt: "", class: "download-bar__box--left__lower--icon"
         .download-bar__box--right
-          %img.download-bar__box--right__pic{:alt => "", :src => "https://web-jp-assets.mercdn.net/_next/static/images/download_app_pc-a4418175e8be071827ac88d073f40e4a.png"}/
+          = image_tag "https://web-jp-assets.mercdn.net/_next/static/images/download_app_pc-a4418175e8be071827ac88d073f40e4a.png", alt: "", class: "download-bar__box--right__pic"
     .footer
       %nav.footer__details
         .footer__details--box
@@ -158,24 +158,24 @@
             メルカリについて
           .footer__details--box__letters
             %li.footer__details--box__letters--letter
-              %a.footer__details--box__letters--letter{:href => "test"}
+              = link_to "test", class: "footer__details--box__letters-letter" do
                 会社概要（運営会社）
             %li.footer__details--box__letters--letter
-              %a.footer__details--box__letters--letter{:href => "test"}
+              = link_to "test", class: "footer__details--box__letters-letter" do
                 採用情報
             %li.footer__details--box__letters--letter
-              %a.footer__details--box__letters--letter{:href => "test"}
+              = link_to "test", class: "footer__details--box__letters-letter" do
                 プレスリリース
             %li.footer__details--box__letters--letter
-              %a.footer__details--box__letters--letter{:href => "test"}
+              = link_to "test", class: "footer__details--box__letters-letter" do
                 公式ブログ
             %li.footer__details--box__letters--letter
-              %a.footer__details--box__letters--letter{:href => "test"}
+              = link_to "test", class: "footer__details--box__letters-letter" do
                 メルカリロゴ利用ガイドライン
-            %a.footer__details--box__letters--logos{:href => "test", :target => "_blank"}
+            = link_to "test", class: "footer__details--box__letters--logos", target: "_blank" do
               %svg.footer__details--box__letters--logos__icon{"aria-hidden" => "true", :height => "16", :viewbox => "0 0 21 16", :width => "21"}
                 %path{:d => "M6.343 15.969c7.61 0 11.773-6.134 11.773-11.444 0-.172 0-.345-.008-.517a8.303 8.303 0 0 0 2.066-2.086 8.576 8.576 0 0 1-2.38.635A4.07 4.07 0 0 0 19.616.329a8.377 8.377 0 0 1-2.63.973 4.186 4.186 0 0 0-3.019-1.27c-2.283 0-4.14 1.803-4.14 4.023 0 .314.041.62.106.918A11.866 11.866 0 0 1 1.404.769a3.936 3.936 0 0 0-.557 2.023c0 1.396.735 2.628 1.84 3.35a4.278 4.278 0 0 1-1.872-.503v.055c0 1.945 1.428 3.577 3.317 3.945-.347.094-.71.141-1.09.141-.266 0-.524-.023-.774-.07.524 1.6 2.057 2.76 3.865 2.792a8.452 8.452 0 0 1-5.14 1.725 8.19 8.19 0 0 1-.985-.054 12.02 12.02 0 0 0 6.335 1.796", :fill => "currentColor", "fill-rule" => "evenodd"}
-            %a.footer__details--box__letters--logos{:href => "test", :target => "_blank"}
+            = link_to "test", class: "footer__details--box__letters--logos", target: "_blank" do
               %svg.footer__details--box__letters--logos__icon{"aria-hidden" => "true", :height => "16", :viewbox => "0 0 16 16", :width => "16"}
                 %path{:d => "M15.111 0H.89A.889.889 0 0 0 0 .889V15.11c0 .491.398.889.889.889h7.658V9.813H6.469V7.391h2.078V5.613c0-2.066 1.262-3.193 3.11-3.193.623-.002 1.244.03 1.863.096v2.15h-1.276c-1.002 0-1.197.478-1.197 1.178v1.543h2.397l-.31 2.422h-2.087V16h4.064c.491 0 .889-.398.889-.889V.89A.889.889 0 0 0 15.111 0z", :fill => "currentColor", "fill-rule" => "evenodd"}
         .footer__details--box
@@ -183,69 +183,69 @@
             ヘルプ&amp;ガイド
           .footer__details--box__letters
             %li.footer__details--box__letters--letter
-              %a.footer__details--box__letters--letter{:href => "test"}
+              = link_to "test", class: "footer__details--box__letters-letter" do
                 メルカリガイド
             %li.footer__details--box__letters--letter
-              %a.footer__details--box__letters--letter{:href => "test"}
+              = link_to "test", class: "footer__details--box__letters-letter" do
                 らくらくメルカリ便
             %li.footer__details--box__letters--letter
-              %a.footer__details--box__letters--letter{:href => "test"}
+              = link_to "test", class: "footer__details--box__letters-letter" do
                 ゆうゆうメルカリ便
             %li.footer__details--box__letters--letter
-              %a.footer__details--box__letters--letter{:href => "test"}
+              = link_to "test", class: "footer__details--box__letters-letter" do
                 大型メルカリ便
             %li.footer__details--box__letters--letter
-              %a.footer__details--box__letters--letter{:href => "test"}
+              = link_to "test", class: "footer__details--box__letters-letter" do
                 車体取引ガイド
             %li.footer__details--box__letters--letter
-              %a.footer__details--box__letters--letter{:href => "test"}
+              = link_to "test", class: "footer__details--box__letters-letter" do
                 メルカリあんしん・あんぜん宣言！
             %li.footer__details--box__letters--letter
-              %a.footer__details--box__letters--letter{:href => "test"}
+              = link_to "test", class: "footer__details--box__letters-letter" do
                 偽ブランド品撲滅への取り組み
             %li.footer__details--box__letters--letter
-              %a.footer__details--box__letters--letter{:href => "test"}
+              = link_to "test", class: "footer__details--box__letters-letter" do
                 メルカリボックス
         .footer__details--box
           %h2.footer__details--box__title
             プライバシーと利用規約
           .footer__details--box__letters
             %li.footer__details--box__letters--letter
-              %a.footer__details--box__letters--letter{:href => "test"}
+              = link_to "test", class: "footer__details--box__letters-letter" do
                 プライバシーポリシー
             %li.footer__details--box__letters--letter
-              %a.footer__details--box__letters--letter{:href => "test"}
+              = link_to "test", class: "footer__details--box__letters-letter" do
                 メルカリ利用規約
             %li.footer__details--box__letters--letter
-              %a.footer__details--box__letters--letter{:href => "test"}
+              = link_to "test", class: "footer__details--box__letters-letter" do
                 あんしんスマホサポート制度に関する利用特約
             %li.footer__details--box__letters--letter
-              %a.footer__details--box__letters--letter{:href => "test"}
+              = link_to "test", class: "footer__details--box__letters-letter" do
                 コンプライアンスポリシー
           .footer__details--box__letters
             %li.footer__details--box__letters--letter
-              %a.footer__details--box__letters--letter{:href => "test"}
+              = link_to "test", class: "footer__details--box__letters-letter" do
                 個人データの安全管理に係る基本方針
             %li.footer__details--box__letters--letter
-              %a.footer__details--box__letters--letter{:href => "test"}
+              = link_to "test", class: "footer__details--box__letters-letter" do
                 特定商取引に関する表記
             %li.footer__details--box__letters--letter
-              %a.footer__details--box__letters--letter{:href => "test"}
+              = link_to "test", class: "footer__details--box__letters-letter" do
                 資金決済法に基づく表示
             %li.footer__details--box__letters--letter
-              %a.footer__details--box__letters--letter{:href => "test"}
+              = link_to "test", class: "footer__details--box__letters-letter" do
                 法令遵守と犯罪抑止のために
         .footer__details--box
           %h2.footer__details--box__title
             国
           .footer__details--box__letters
             %li.footer__details--box__letters--letter
-              %a.footer__details--box__letters--letter{:href => "test"}
+              = link_to "test", class: "footer__details--box__letters-letter" do
                 日本
-              %a.footer__details--box__letters--letter{:href => "test"}
+              = link_to "test", class: "footer__details--box__letters-letter" do
                 United States
       .footer__end
-        %a.footer__end--logo
-          %img.footer__end--logo{:alt => "Mercari", :src => "https://web-jp-assets.mercdn.net/_next/static/images/logo-white-1a0696cf557ee1ed6f3c3444661d21ad.svg"}/
+        = link_to root_path, class: "footer__end--logo" do
+          = image_tag "https://web-jp-assets.mercdn.net/_next/static/images/logo-white-1a0696cf557ee1ed6f3c3444661d21ad.svg", alt: "Mercari", class: "footer__end--logo"
         %span.footer__end--copylight
           © 2019 Mercari
