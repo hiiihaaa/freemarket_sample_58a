@@ -545,6 +545,9 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   　仮仕様 */
   width: 19%;
   padding: 3px;
+  visibility: visible;
+  transition: all 0.5s ease 0s;
+  opacity: 1;
 }
 
 .content__main--latest-items__box--merchandises__merchandise--block {
