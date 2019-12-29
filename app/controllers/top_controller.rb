@@ -1,4 +1,4 @@
-class IndexController < ApplicationController
+class TopController < ApplicationController
   def index
     @products = Product.limit(10)
   end
