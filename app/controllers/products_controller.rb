@@ -1,8 +1,5 @@
 class ProductsController < ApplicationController
   before_action :set_product
-  def index
-    @products = Product.find(params[:id])
-  end
 
   private
   def set_product
