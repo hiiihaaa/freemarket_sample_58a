@@ -4,22 +4,22 @@
       .header__upper--leftbox
         = link_to root_path, class: "main_logo" do
           = image_tag "https://web-jp-assets.mercdn.net/_next/static/images/logo-acdd90ac4f472d5a6f7a330d33ab1225.svg", alt: "mercari", class: "mercari_logo"
-      %form.header__upper--form{:action => "test"}
-        %input.header__upper--form__input{:name => "keyword", :placeholder => "何かお探しですか？", :type => "search", :value => ""}/
+      %form.header__upper--form{action: "test"}
+        %input.header__upper--form__input{name: "keyword", placeholder: "何かお探しですか？", type: "search", value: ""}/
         %button.header__upper--form__search
           %svg.header__upper--form__search--search-btn{"aria-hidden" => "true", :height => "16", :viewbox => "0 0 16 16", :width => "16"}
-            %path{:d => "M11.435 10.063h-.723l-.256-.247a5.92 5.92 0 0 0 1.437-3.87 5.946 5.946 0 1 0-5.947 5.947 5.92 5.92 0 0 0 3.87-1.437l.247.256v.723L14.637 16 16 14.637l-4.565-4.574zm-5.489 0A4.111 4.111 0 0 1 1.83 5.946 4.111 4.111 0 0 1 5.946 1.83a4.111 4.111 0 0 1 4.117 4.116 4.111 4.111 0 0 1-4.117 4.117z", :fill => "currentColor", "fill-rule" => "nonzero"}
+            %path{d: "M11.435 10.063h-.723l-.256-.247a5.92 5.92 0 0 0 1.437-3.87 5.946 5.946 0 1 0-5.947 5.947 5.92 5.92 0 0 0 3.87-1.437l.247.256v.723L14.637 16 16 14.637l-4.565-4.574zm-5.489 0A4.111 4.111 0 0 1 1.83 5.946 4.111 4.111 0 0 1 5.946 1.83a4.111 4.111 0 0 1 4.117 4.116 4.111 4.111 0 0 1-4.117 4.117z", fill: "currentColor", "fill-rule": "nonzero"}
     .header__lower
       .header__lower--leftbox
         .header__lower--leftbox__search
           = link_to "test", class: "header__lower--leftbox__search--box" do
             %svg.header__lower--leftbox__search--box__icon{"aria-hidden" => "true", :height => "16", :viewbox => "0 0 20 16", :width => "20"}
-              %path{:d => "M18.799 15.25h-11.5a1.25 1.25 0 1 1 0-2.5h11.5a1.25 1.25 0 0 1 0 2.5zm0-6h-11.5a1.25 1.25 0 1 1 0-2.5h11.5a1.25 1.25 0 0 1 0 2.5zm0-6h-11.5a1.25 1.25 0 1 1 0-2.5h11.5a1.25 1.25 0 0 1 0 2.5zM2 16a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0-6a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0-6a2 2 0 1 0 0-4 2 2 0 0 0 0 4z", :fill => "currentColor", "fill-rule" => "nonzero"}
+              %path{d: "M18.799 15.25h-11.5a1.25 1.25 0 1 1 0-2.5h11.5a1.25 1.25 0 0 1 0 2.5zm0-6h-11.5a1.25 1.25 0 1 1 0-2.5h11.5a1.25 1.25 0 0 1 0 2.5zm0-6h-11.5a1.25 1.25 0 1 1 0-2.5h11.5a1.25 1.25 0 0 1 0 2.5zM2 16a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0-6a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0-6a2 2 0 1 0 0-4 2 2 0 0 0 0 4z", fill: "currentColor", "fill-rule": "nonzero"}
             カテゴリーから探す
         .header__lower--leftbox__search
           = link_to "test", class: "header__lower--leftbox__search--box" do
             %svg.header__lower--leftbox__search--box__icon{"aria-hidden" => "true", :height => "16", :viewbox => "0 0 23 16", :width => "23"}
-              %path{:d => "M6.315 0L4.473 1.806 2.833.019.73 1.977l1.69 1.84L1.198 5.02c-1.594 1.594-1.594 4.188-.01 5.772L6.3 16h13.272a3.08 3.08 0 0 0 3.077-3.077V3.076A3.08 3.08 0 0 0 19.57 0H6.315zm13.46 12.925a.211.211 0 0 1-.205.205H7.504L3.227 8.771a1.226 1.226 0 0 1-.01-1.71L4.38 5.92l1.28 1.371a2.68 2.68 0 1 0 2.13-1.93L6.433 3.907 7.49 2.87h12.082a.211.211 0 0 1 .206.205v9.848h-.002z", :fill => "currentColor", "fill-rule" => "nonzero"}
+              %path{d: "M6.315 0L4.473 1.806 2.833.019.73 1.977l1.69 1.84L1.198 5.02c-1.594 1.594-1.594 4.188-.01 5.772L6.3 16h13.272a3.08 3.08 0 0 0 3.077-3.077V3.076A3.08 3.08 0 0 0 19.57 0H6.315zm13.46 12.925a.211.211 0 0 1-.205.205H7.504L3.227 8.771a1.226 1.226 0 0 1-.01-1.71L4.38 5.92l1.28 1.371a2.68 2.68 0 1 0 2.13-1.93L6.433 3.907 7.49 2.87h12.082a.211.211 0 0 1 .206.205v9.848h-.002z", fill: "currentColor", "fill-rule": "nonzero"}
             ブランドから探す
       .header__lower--rightbox
         .header__lower--rightbox__sign_up
@@ -39,10 +39,10 @@
             %ul.slider-list
               %li.slider-slide
                 = link_to "https://jp-news.mercari.com/2019/12/05/kaushika-kaudake", rel: "noopener noreferrer", target: "_blank" do
-                  .content__main--advertisement_bar__box--details__specific{"aria-hidden" => "true"}
+                  .content__main--advertisement_bar__box--details__specific{"aria-hidden": "true"}
               %li.slider-slide.camp
                 = link_to "https://www.mercari.com/jp/featured/camp/" do
-                  .content__main--advertisement_bar__box--details__specific{"aria-hidden" => "true"}
+                  .content__main--advertisement_bar__box--details__specific{"aria-hidden": "true"}
               %li.slider-slide.slide-visible
                 .content__main--advertisement_bar__box--details__specific
                   .content__main--advertisement_bar__box--details__specific--pic_element
@@ -125,8 +125,8 @@
     .put-up-btns__circle--button
       .put-up-btns__circle--button__letter
         出品
-      %svg.put-up-btns__circle--button__pic{"aria-hidden" => "true", :height => "16", :viewbox => "0 0 18 16", :width => "18"}
-        %path{:d => "M6.3 0L4.653 1.778H1.8c-.99 0-1.8.8-1.8 1.778v10.666C0 15.2.81 16 1.8 16h14.4c.99 0 1.8-.8 1.8-1.778V3.556c0-.978-.81-1.778-1.8-1.778h-2.853L11.7 0H6.3zM9 13.333c-2.484 0-4.5-1.99-4.5-4.444 0-2.453 2.016-4.445 4.5-4.445s4.5 1.992 4.5 4.445c0 2.453-2.016 4.444-4.5 4.444zm0-1.6c1.59 0 2.88-1.273 2.88-2.844S10.59 6.044 9 6.044c-1.59 0-2.88 1.274-2.88 2.845 0 1.57 1.29 2.844 2.88 2.844z", :fill => "currentColor", "fill-rule" => "nonzero"}
+      %svg.put-up-btns__circle--button__pic{"aria-hidden": "true", height: "16", viewbox: "0 0 18 16", width: "18"}
+        %path{d: "M6.3 0L4.653 1.778H1.8c-.99 0-1.8.8-1.8 1.778v10.666C0 15.2.81 16 1.8 16h14.4c.99 0 1.8-.8 1.8-1.778V3.556c0-.978-.81-1.778-1.8-1.778h-2.853L11.7 0H6.3zM9 13.333c-2.484 0-4.5-1.99-4.5-4.444 0-2.453 2.016-4.445 4.5-4.445s4.5 1.992 4.5 4.445c0 2.453-2.016 4.444-4.5 4.444zm0-1.6c1.59 0 2.88-1.273 2.88-2.844S10.59 6.044 9 6.044c-1.59 0-2.88 1.274-2.88 2.845 0 1.57 1.29 2.844 2.88 2.844z", fill: "currentColor", "fill-rule": "nonzero"}
 %aside.download-bar
   .download-bar__box
     .download-bar__box--left
@@ -164,11 +164,11 @@
           = link_to "test", class: "footer__details--box__letters-letter" do
             メルカリロゴ利用ガイドライン
         = link_to "test", class: "footer__details--box__letters--logos", target: "_blank" do
-          %svg.footer__details--box__letters--logos__icon{"aria-hidden" => "true", :height => "16", :viewbox => "0 0 21 16", :width => "21"}
-            %path{:d => "M6.343 15.969c7.61 0 11.773-6.134 11.773-11.444 0-.172 0-.345-.008-.517a8.303 8.303 0 0 0 2.066-2.086 8.576 8.576 0 0 1-2.38.635A4.07 4.07 0 0 0 19.616.329a8.377 8.377 0 0 1-2.63.973 4.186 4.186 0 0 0-3.019-1.27c-2.283 0-4.14 1.803-4.14 4.023 0 .314.041.62.106.918A11.866 11.866 0 0 1 1.404.769a3.936 3.936 0 0 0-.557 2.023c0 1.396.735 2.628 1.84 3.35a4.278 4.278 0 0 1-1.872-.503v.055c0 1.945 1.428 3.577 3.317 3.945-.347.094-.71.141-1.09.141-.266 0-.524-.023-.774-.07.524 1.6 2.057 2.76 3.865 2.792a8.452 8.452 0 0 1-5.14 1.725 8.19 8.19 0 0 1-.985-.054 12.02 12.02 0 0 0 6.335 1.796", :fill => "currentColor", "fill-rule" => "evenodd"}
+          %svg.footer__details--box__letters--logos__icon{"aria-hidden": "true", height: "16", viewbox: "0 0 21 16", width: "21"}
+            %path{d: "M6.343 15.969c7.61 0 11.773-6.134 11.773-11.444 0-.172 0-.345-.008-.517a8.303 8.303 0 0 0 2.066-2.086 8.576 8.576 0 0 1-2.38.635A4.07 4.07 0 0 0 19.616.329a8.377 8.377 0 0 1-2.63.973 4.186 4.186 0 0 0-3.019-1.27c-2.283 0-4.14 1.803-4.14 4.023 0 .314.041.62.106.918A11.866 11.866 0 0 1 1.404.769a3.936 3.936 0 0 0-.557 2.023c0 1.396.735 2.628 1.84 3.35a4.278 4.278 0 0 1-1.872-.503v.055c0 1.945 1.428 3.577 3.317 3.945-.347.094-.71.141-1.09.141-.266 0-.524-.023-.774-.07.524 1.6 2.057 2.76 3.865 2.792a8.452 8.452 0 0 1-5.14 1.725 8.19 8.19 0 0 1-.985-.054 12.02 12.02 0 0 0 6.335 1.796", fill: "currentColor", "fill-rule": "evenodd"}
         = link_to "test", class: "footer__details--box__letters--logos", target: "_blank" do
-          %svg.footer__details--box__letters--logos__icon{"aria-hidden" => "true", :height => "16", :viewbox => "0 0 16 16", :width => "16"}
-            %path{:d => "M15.111 0H.89A.889.889 0 0 0 0 .889V15.11c0 .491.398.889.889.889h7.658V9.813H6.469V7.391h2.078V5.613c0-2.066 1.262-3.193 3.11-3.193.623-.002 1.244.03 1.863.096v2.15h-1.276c-1.002 0-1.197.478-1.197 1.178v1.543h2.397l-.31 2.422h-2.087V16h4.064c.491 0 .889-.398.889-.889V.89A.889.889 0 0 0 15.111 0z", :fill => "currentColor", "fill-rule" => "evenodd"}
+          %svg.footer__details--box__letters--logos__icon{"aria-hidden": "true", height: "16", viewbox: "0 0 16 16", width: "16"}
+            %path{d: "M15.111 0H.89A.889.889 0 0 0 0 .889V15.11c0 .491.398.889.889.889h7.658V9.813H6.469V7.391h2.078V5.613c0-2.066 1.262-3.193 3.11-3.193.623-.002 1.244.03 1.863.096v2.15h-1.276c-1.002 0-1.197.478-1.197 1.178v1.543h2.397l-.31 2.422h-2.087V16h4.064c.491 0 .889-.398.889-.889V.89A.889.889 0 0 0 15.111 0z", fill: "currentColor", "fill-rule": "evenodd"}
     .footer__details--box
       %h2.footer__details--box__title
         ヘルプ&amp;ガイド
