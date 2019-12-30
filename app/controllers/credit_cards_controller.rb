@@ -3,7 +3,7 @@ class CreditCardsController < ApplicationController
   require "payjp"
 
   def new
-    # @exp_month = ["--", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]
+    @exp_month = ["--", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]
 
     credit_card = CreditCard.where(user_id: current_user.id)
     redirect_to action: "show" if credit_card.exists?
