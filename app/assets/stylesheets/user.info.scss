@@ -24,11 +24,24 @@ header{
     margin-left: 20px;
   &--first,&--second,&--third,&--fourth,&--fifth{
     text-align: center;
-
-  }
+    }
   &--first,&--red{
-    color:red;}
+      color:red;
+      position: relative;
+    }
+  &--first::after{
+    content: "";
+    z-index: 100;
+    display: block;
+    width: 380px;
+    height: 2px;
+    background: #ccc;
+    position: absolute;
+    top: 8px;
+    left: 29px;
   }
+  }
+
   li{
     list-style: none;
     margin-right: 30px;
