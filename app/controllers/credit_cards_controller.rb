@@ -29,7 +29,7 @@ class CreditCardsController < ApplicationController
   end
   
   def delete
-    credit_card = CreditCard.where(user_id: current_user.id).first
+    credit_card = CreditCard.find_by(user_id: current_user.id).first
     if credit_card.blank?
     else
       Payjp.api_key = "sk_test_0d9443b9a1a637b9456b6f24"
