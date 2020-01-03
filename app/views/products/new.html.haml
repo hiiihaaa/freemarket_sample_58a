@@ -1,0 +1,89 @@
+.detailWrapper
+  = render './shareParts/detailHeader'
+
+  = form_with(model: @product, local: true, class: "detailMain") do |f|
+    %h2.exhibitionTop 商品情報を入力
+    .exhibitionImage
+      .captionWrap
+        .exhibitionImage__caption.caption 出品画像
+        %span.red 必須
+      .exhibitionImage__discription 最大10枚までアップロードできます
+      = f.fields_for :product_imgs do |m|
+        = m.file_field :img_url, class: "exhibitionImage__upload detailInput", placeholder: "ドラッグ&ドロップまたはクリックしてファイルをアップロード"
+    .exhibitionInfo
+      .exhibitionInfo__name
+        .captionWrap
+          .exhibitionInfo__caption.caption  商品名
+          %span.red 必須
+        = f.text_field :name, class: "exhibitionInfo__name__input detailInput", placeholder: "商品名(必須40文字まで)"
+      .exhibitionInfo__description
+        .captionWrap
+          .exhibitionInfo__description__caption.caption 商品の説明
+          %span.red 必須
+        = f.text_field :description, class: "exhibitionInfo__description__input detailInput", placeholder: "商品の説明(必須1,000文字以内) (色、素材、重さ、定価、注意点など) \n2010年ごろに１１万円で購入したジャケットです。ライトフレーで傷はありません。あわ\nせやすいのでおすすめです。".html_safe 
+    .exhibitionDetail.exhibitionLR
+      .exhibitionDetail--left 商品の詳細
+      .exhibitionDetail--right.exhibition--right
+        .exhibitionDetail__category
+          .captionWrap
+            .exhibitionDetail__caption.caption カテゴリー
+            %span.red 必須
+          = f.fields_for :categories do |m|
+            = m.select :name, @category, {}, {id: "p_category", class: "detailInput"}
+        .exhibitionDetail__status
+          .captionWrap
+            .exhibitionDetail__caption.caption 商品の状態
+            %span.red 必須
+          = f.select :status, @status, {}, {id: "p_status", class: "detailInput"}
+    .exhibitionDerivary.exhibitionLR
+      .exhibitionDerivary--left 配送について
+      .exhibitionDerivary--right.exhibition--right
+        .exhibitionDerivary__fee
+          .captionWrap
+            .exhibitionDerivary__caption.caption  送料の負担
+            %span.red 必須
+          = f.select :shipping_fee, @fee, {}, {id: "p_fee", class:"detailInput"}
+        .exhibitionDerivary__shipping_form
+          .captionWrap
+            .exhibitionDerivary__caption.caption  発送元の地域
+            %span.red 必須
+          = f.select :shipping_from, @todofuken, {}, {id: 'p_shipping_from', class: 'detailInput'}
+        .exhibitionDerivary__shipping_date
+          .captionWrap
+            .exhibitionDerivary__caption.caption  発送までの日数
+            %span.red 必須
+          = f.select :shipping_date, @shipping_date, {}, {id: "p_shipping_date", class:"detailInput"}
+    .exhibitionSellingPrice.exhibitionLR
+      .exhibitionSellingPrice--left 販売価格(300〜9,999,999)
+      .exhibitionSellingPrice--right.exhibition--right
+        .exhibitionSellingPrice__price
+          .exhibitionSellingPrice__price--LR.exhibitionLR
+            .captionWrap
+              .exhibitionSellingPrice__caption.caption 価格
+              %span.red 必須
+            .exhibitionSellingPrice__inputWrap.exhibitionLR
+              %span ¥
+              = f.text_field :price, id: "p_price", class: "detailInput", placeholder: "例) 300"
+        .exhibitionSellingPrice__commission.exhibitionLR
+          .exhibitionSellingPrice__commission--left 販売手数料（１０％)
+          .exhibitionSellingPrice__commission--right -
+        .exhibitionSellingPrice__profit.exhibitionLR
+          .exhibitionSellingPrice__profit--left 販売利益
+          .exhibitionSellingPrice__profit--lright -
+    .exhibitionExhibit
+      .exhibitionExhibit__description
+        = link_to "禁止されている品", "##", class: "Line"
+        %span 、
+        = link_to "行為", "##", class: "Line"
+        %span を必ずご確認ください。
+        %br
+          %span またブランド品でシリアルナンバー等がある場合はご記載ください。
+          = link_to "偽ブランドの販売", "##", class: "Line"
+          %span は犯罪であり処罰される可能性があります。
+        %span また、出品をもちまして
+        = link_to "加盟店契約", "##", class: "Line"
+        %span 同意したことになります。
+      = f.submit "出品する", class: "btn_exhibit"
+      = link_to "もどる", "purchase_products", class: "btn_back opa"
+  = render './shareParts/detailFooter'
+
