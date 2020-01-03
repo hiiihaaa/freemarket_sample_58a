@@ -5,7 +5,7 @@ class CreditCardsController < ApplicationController
   def new
     @exp_month = ["--", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]
 
-    credit_card = CreditCard.where(user_id: current_user.id)
+    credit_card = CreditCard.find_by(user_id: current_user.id)
     redirect_to action: "show" if credit_card.exists?
   end
 
@@ -29,7 +29,7 @@ class CreditCardsController < ApplicationController
   end
   
   def delete
-    credit_card = CreditCard.find_by(user_id: current_user.id).first
+    credit_card = CreditCard.find_by(user_id: current_user.id)
     if credit_card.blank?
     else
       Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
@@ -41,7 +41,7 @@ class CreditCardsController < ApplicationController
   end
 
   def show
-    credit_card = CreditCard.where(user_id: current_user.id).first
+    credit_card = CreditCard.find_by(user_id: current_user.id)
     if credit_card.blank?
       redirect_to action: "new"
     else
