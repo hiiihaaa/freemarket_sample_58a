@@ -1,7 +1,7 @@
 document.addEventListener(
   "DOMContentLoaded", e => {
     if (document.getElementById("token_submit") != null) { //token_submitというidがnullの場合、下記コードを実行しない
-      Payjp.setPublicKey("pk_test_c5dd5fa0cce328b8c51d5a7c")
+      Payjp.setPublicKey(ENV["PAYJP_KEY"])
       let btn = document.getElementById("token_submit"); 
       //発火
       btn.addEventListener("click", e => {
