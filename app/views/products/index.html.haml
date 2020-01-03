@@ -1,0 +1,326 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %link{:href => "merukari_product_detail.css", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "https://use.fontawesome.com/releases/v5.6.1/css/all.css", :rel => "stytlesheet"}/
+    / アイコンを入れるためのもの。本番環境ではこれを消してgemfileに gem "font-awesome-sass" を書き込んでbundleinstall
+  %body
+    %header.pc-header.visible-pc.with-shadow
+      .pc-header-inner
+        .pc-header-top
+          %div
+            %a{:href => "メルカリURL"}
+              %img{:alt => "mercari", :height => "36", :src => "https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2356214421", :width => "134"}/
+          %form.pc-header-form{:action => "検索URL"}
+            %input.input-default{:name => "keyword", :placeholder => "何かお探しですか？", :type => "search", :value => ""}/
+            %i.icon-search
+        .pc-header-nav-box.clearfix
+          %nav.l-left
+            %ul.pc-header-nav
+              %li
+                %h2
+                  %a.pc-header-nav-root.list-parent{:href => "カテゴリーURL"}
+                    %i.icon-list.pc-header-cat-brand-icon
+                    %span カテゴリーから探す
+                /
+                  <ul class="pc-header-nav-parent-wrap" data-mega="1" style="width: auto;">
+                  <li class="pc-header-nav-parent">
+                  <h3>
+                  <a href="カテゴリーURL">カテゴリー名</a>
+                  </h3>
+                  <ul class="pc-header-nav-child-wrap" data-mega="2">
+                  <li class="pc-jeader-nav-child">
+                  <a href="カテゴリーURL">カテゴリー名</a>
+                  </li>
+                  </ul>
+                  </li>
+                  </ul>  長すぎるので保留
+              %li
+                %h2
+                  %a.pc-header-nav-root.list-parent{:href => "ブランドURL"}
+                    %i.icon-tag.pc-header-cat-brand-icon
+                    %span ブランドから探す
+          .l-right
+            %ul.pc-header-login-nav
+              %li
+                %a.sp-header-btn.btn-red{:href => "新規会員登録画面URL"} 新規会員登録
+              %li
+                %a.sp-header-btn.header-login{:href => "ログイン画面URL"} ログイン
+    / ヘッダー
+    %section.product_detail.l-single-container
+      %h1.product_name
+        = @product.name
+      %p.product_wording
+        『
+        = @product.name
+        』は、'X'回の取引実績を持つ
+        = @user.nickname
+        さんから出品されました。
+        = @product.brand
+        の商品で、
+        = @product.shipping_from
+        から
+        = @product.shipping_date
+        されます。
+      .product_main_content.claarfix
+        .item_image
+          .owl-carousel.owl-loaded.owl-drag
+            .owl-stage-outer
+              .owl-stage{:style => "left: -600px; width: 900px;"}
+                .owl-item{:style => "width: 300px;"}
+                  .owl-item-inner
+                    %img.owllazy{:alt => "商品名", "data-src" => @product_image.image_url, :src => @product_image.image_url, :style => "opacity: 1;"}/
+                / 上記５行を画像の枚数分繰り返し、画像URLをそれぞれ入れる
+            .owl-nav.disabled
+              .owl-prev prev
+              .owl-next next
+            .owl-dots
+              .owl-dot
+                %span
+                .owl-dot-inner
+                  %img{:src => @product_image.image_url}/
+              / 上記6行を画像の枚数分繰り返し、画像URLをそれぞれ入れる
+        .item-prige-box.text-center.visible-sp
+          %span.item-price.bold ¥X,XXX
+          %span.item-tax (税込)
+          %span.item-shipping-fee 送料込み
+        %section.visible-sp
+          .item-btn-float-area
+            %a.item-buy-btn{:href => "購入画面URL"} 購入画面に進む
+        %table.item-detail-table
+          %tbody
+            %tr
+              %th 出品者
+              %td
+                %a{:href => "ユーザーページURL"} 
+                  = @user.nickname
+                %div
+                  .item-user-ratings
+                    %i.icon-good
+                    %span
+                      00
+                      / 評価数
+                  .item-user-ratings
+                    %i.icon-normal
+                      / アイコン入れる
+                    %span
+                      00
+                      / 評価数
+                  .item-user-ratings
+                    %i.icon-bad
+                      / アイコン入れる
+                    %span
+                      00
+                      / 評価数
+            %tr
+              %th カテゴリー
+              %td
+                %a{:href => "カテゴリーURL"}
+                  %div 
+                    = @category.name
+                / 上記3行を必要回数繰り返す
+            %tr
+              %th ブランド
+              %td
+                %a{:href => "ブランドURL"}
+                  %div 
+                  = @product.brand
+            %tr
+              %th 商品の状態
+              %td 
+                = @product.status
+            %tr
+              %th 配送料の負担
+              %td
+                = @product.shipping_fee
+            %tr
+              %th 配送の方法
+              %td
+                = @product.shipping_method
+            %tr
+              %th 配送元の地域
+              %td
+                %a{:href => "都道府県URL"} 
+                  = @product.shipping_from
+            %tr
+              %th 発送日の目安
+              %td
+                = @product.shipping_date
+      .item-price-box.text-center
+        %span.item-price.bold
+          ¥
+          = @product.price
+        %span.item-tax (税込)
+        %span.item-shipping-fee
+          = @product.shipping_fee
+      %a.item-buy-btn{:href => "購入画面URL"} 購入画面に進む
+      / <a class="item-action-text" data-toggle="open-app" data-url-scheme="mercari://" data-action="item/openDetail" data-key="id=mxxxxxxxxxxx>" data-play-id="com.kouzoh.mercari" data-adjust-url="http://app.adjust.io/xio2ii?campaign=iOS&adgroup=items.buy_button1">アプリで購入</a> ※アプリ関係なので必要ないかも
+      .item-description.f14
+        %p.item-description-inner
+          = @product.product_detail
+      .item-button-container.clearfix
+        .item-button-left
+          %a.item-button.item-button-like{:href => "いいねURL"}
+            %i.icon-like-border
+              / アイコン入れる？
+            %span いいね！
+            %span{"data-num" => "like"}
+              X
+              / X=いいねの数
+          %a.item-button.item-button-report.clearfix{:href => "通報フォームURL"}
+            %i.icon-flag
+              / アイコン入れる？
+            %span 不適切な商品の報告
+        .item-button-right
+          %a{:href => "安心安全への取り組みURL", :target => "_blank"}
+            %i.icon-lock
+              / アイコン入れる？
+            %span あんしん・あんぜんへの取り組み
+    .item-detail-message
+      .message-container
+        .message-content
+          %ul.message-items
+            %li.clearfix
+              %a.message-user{:href => "ユーザーページURL"}
+                %figure
+                  %div
+                    %img{:alt => "", :src => "画像URL"}/
+                  %figcaption.bold
+                    ユーザー名
+              .message-body
+                .message-body-text
+                  "コメント内容"
+                  %br/
+                  "コメント内容二行目"
+                .message-icons.clearfix
+                  %time.message-icon-left
+                    %i.icon-time
+                    %span XX日前
+                  .message-icon-right
+                    %form{:action => "コメント通報ページURL", :method => "POST"}
+                      %button{:type => "submit"}
+                        %i.icon-flag
+                      %input{:name => "redirect_url_key", :type => "hidden", :value => "item_detail"}/
+                %i.icon-balloon
+            / 上記42行をコメントの数だけ用意
+        .message-content
+          = render 'comments/comment'
+          -# %form.message-form{:action => "URL", :method => "POST"}
+          -#   %p
+          -#     相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+          -#   %input{:name => "item_id", :type => "hidden", :value => "商品ID"}/
+          -#   %input{:name => "item_id", :type => "hidden", :value => "item_detail"}/
+          -#   %textarea.textarea-default{:name => "body", :type => "text", :value => ""}
+          -#   %button.message-submit.byn-default.btn-gray{:type => "submit"}
+          -#     %span コメントする
+        %aside.modal{"data-close" => "modat", "data-modal" => "delete-comment"}
+          .modal-inner.modal-banner
+            .modal-body
+              .modal-head.bold 確認
+              %div{"data-comment" => "body"}
+              = succeed "\"\u{672c}\u{5f53}\u{306b}\u{3053}\u{306e}\u{30b3}\u{30e1}\u{30f3}\u{30c8}\u{3092}\u{524a}\u{9664}\u{3057}\u{3066}\u{3088}\u{308d}\u{3057}\u{3044}\u{3067}\u{3059}\u{304b}\u{ff1f}\"" do
+                %br/
+            %form{:action => "URL"}
+              .clearfix
+                .modal-btn.modal-btn-cancel{"data-close" => "modal"} キャンセル
+                %button.modal-btn.modal-btn-submit{:type => "submit"}
+                  削除する
+              %input{:name => "item_id", :type => "hidden", :value => "商品ID"}/
+              %input{:name => "comment_id", :type => "hidden", :value => ""}/
+              %input{:name => "redirect_url_key", :type => "hidden", :value => "item_detail"}/
+              %input{:name => "__csrf_value", :type => "hidden", :value => "何か"}/
+    %ul.nav-item-link-prev-next.clearfix
+      %li.nav-item-link-prev
+        %a{:href => "別商品(左)URL"}
+          %i.icon-arrow-left
+          "商品名"
+      %li.nav-item-link-next
+        %a{:href => "別商品(右)URL"}
+          "商品名"
+          %i.icon-arrow-right
+    .item-social-media-box
+      .text-center
+        .fb-save.fb_iframe_widget{"data-uri" => "何かのURL?", "fb-iframe-plugin-query" => "何かのURL", "fb-xfbml-state" => "rendered"}
+          %span{:style => "vertical-align: top; width: 0px; height: 0px; overflow:hidden;"}
+            %iframe{:allow => "encrypted-media", :allowfullscreen => "true", :allowtransparency => "true", :frameborder => "0", :height => "1000px", :name => "商品id?", :scrolling => "no", :src => "facebookURL", :style => "border: none; visibility: visible; width: 0px; height: 0px;", :title => "fb: save Facebook Social Plugin", :width => "1000px"}
+              / document
+      %ul.social-media-box
+        %li
+          %a.share-btn{"data-window-name" => "facebook_window", :href => "facebookURL", :target => "_blank"}
+            %i.icon-facebook
+        %li
+          %a.share-btn{"data-window-name" => "twitter_window", :href => "twitterURL", :target => "_blank"}
+            %i.icon-twitter
+        %li.social-hidden-item
+          %a{:href => "lineURL", :target => "_blank"}
+            %i.icon-line
+        %li
+          %a.share-btn{"data-window-name" => "pinterest_window", :href => "pinterestURL", :target => "_blank"}
+            %i.icon-pinterest
+    .items-in-user-profile
+      %section.item-box-container.clearfix.related-item-column.items-in-user-profile
+        %h2.items-box-head
+          %a{:href => "URL"} 
+            = @user.nickname 
+            さんのその他の出品
+        -num = 0
+        -@product_user_other.each do |product|
+          .items-box-content.clearfix
+            %section.items-box
+              %a{:href => "商品ページURL"}
+                %figure.items-box-photo.__web-inspector-hide-shortcut__
+                  %img.lazyloaded{:alt => "", "data-src" => "画像URL", :src => @product_user_other_image[num].image_url}/
+                .items-box-body
+                  %h3.items-box-name.font-2
+                    = product.name
+                  .items-box-num
+                    .items-box-price.font-5 
+                      ¥
+                      = product.price
+                    .font-2
+                      %i.icon-like-border
+                      %span
+                        X
+          -num += 1
+      %section.items-box-container.clearfix.related-item-column
+        %h2.items-box-head
+          %a{:href => "ブランドURL"}
+            = @category.name
+            その他の商品
+        -num = 0
+        -@category_same.each do |category|
+          .items-box-content.clearfix
+            %section.items-box
+              %a{:href => "商品ページURL"}
+                %figure.items-box-photo
+                  %img.lazyloaded{:alt => "", "data-src" => "", :src => @other_product_image[num].image_url}/
+                .items-box-body
+                  %h3.items-box-name.font-2
+                    = category.product.name
+                  .items-box-num
+                    .items-box-price.font-5
+                      ¥
+                      = category.product.price
+                    .font-2
+                      %i.icon-like-border
+                      %span
+                        X
+          -num += 1
+    %aside.modal{"data-close" => "modal", "data-modal" => "report-item"}
+      .modal-inner.modal-banner
+        .modal-body
+          .modal-head.bold 確認
+          "不適切な商品を報告しますか？"
+        .clearfix
+          .modal-btn.modal-btn-cancel{"data-close" => "modal"} キャンセル
+          %a{:href => "URL"}
+            %button.modal-btn.modal-btn-submit はい
+    %nav.bread-crumbs.pos-bottom
+      %ul
+        %li{:itemscope => "", :itemtype => "URL"}
+          %a{:href => "メルカリURL", :itemprop => "url"}
+            %span{:itemprop => "title"} メルカリ
+          %i.icon-arrow-right2
+        %li{:itemscope => "", :itemtype => "URL"}
+          %span{:itemprop => "title"} 商品名
