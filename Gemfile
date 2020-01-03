@@ -81,3 +81,4 @@ gem 'erb2haml'
 gem 'devise'
 gem "jquery-rails"
 gem 'font-awesome-rails'
+gem 'payjp'

@@ -241,6 +241,63 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 
 .content__main--advertisement_bar__box--details {
   margin-top: -170px;
+  box-sizing: border-box;
+  display: block;
+  height: auto;
+  position: relative;
+  visibility: inherit;
+  width: 100%;
+}
+
+.slider-frame {
+  box-sizing: border-box;
+  display: block;
+  height: 100%;
+  margin: 0px;
+  -moz-box-sizing: border-box;
+  -ms-transform: translate(0, 0);
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+  touch-action: pinch-zoom pan-y;
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+}
+
+.slider-list {
+  transform: translate3d(-2066px, 0px, 0px);
+  position: relative;
+  display: block;
+  margin: 0px;
+  padding: 0px;
+  height: 290px;
+  width: 3099px;
+  cursor: pointer;
+  box-sizing: border-box;
+  touch-action: pan-y pinch-zoom;
+}
+
+.slider-slide {
+  box-sizing: border-box;
+  display: inline-block;
+  height: auto;
+  left: 3099px;
+  list-style-type: none;
+  margin: auto 0px;
+  position: absolute;
+  top: 0px;
+  transform: scale(1);
+  transition: transform 0.4s linear 0s;
+  vertical-align: top;
+  width: 1033px;
+}
+
+.slider-slide.camp {
+  left: 1033px;
+}
+
+.slider-slide.slide-visible {
+  left: 2066px;
 }
 
 .content__main--advertisement_bar__box--details__specific {
@@ -312,6 +369,33 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 
 .content__main--advertisement_bar__box--details__specific--pic_element__font_area--lower__icons img {
   vertical-align: middle;
+}
+
+.slider-control-centerleft {
+  position:absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+}
+
+.slider-control-centerright {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+}
+
+.slider-control-bottomcenter {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
 }
 
 .content__main--advertisement_bar__box--details--arrow {
@@ -459,8 +543,11 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   height:2.8em;
   background-color: greenyellow;
   　仮仕様 */
-  width: 20%;
+  width: 19%;
   padding: 3px;
+  visibility: visible;
+  transition: all 0.5s ease 0s;
+  opacity: 1;
 }
 
 .content__main--latest-items__box--merchandises__merchandise--block {
