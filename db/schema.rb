@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 2019_12_18_182929) do
     t.string "brand"
     t.string "purchase_status"
     t.integer "category_id"
+
   end
 
 end
