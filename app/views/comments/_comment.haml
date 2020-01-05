@@ -1,0 +1,17 @@
+-# .message-form{:action => "URL", :method => "POST"}
+-#   = form_for [@product, @comment] do |f|
+-#     %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+-#     -# %input{:name => "item_id", :type => "hidden", :value => "商品ID"}/
+-#     -# %input{:name => "item_id", :type => "hidden", :value => "item_detail"}/
+-#     %textarea.textarea-default{:name => "body", :type => "text", :value => ""}
+-#     %button.message-submit.byn-default.btn-gray{:type => "submit"}
+-#       %span コメントする
+
+%form.message-form{:action => "URL", :method => "POST"}
+  %p
+    相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+  %input{:name => "item_id", :type => "hidden", :value => "商品ID"}/
+  %input{:name => "item_id", :type => "hidden", :value => "item_detail"}/
+  %textarea.textarea-default{:name => "body", :type => "text", :value => ""}
+  %button.message-submit.byn-default.btn-gray{:type => "submit"}
+    %span コメントする

@@ -1,0 +1,14 @@
+.items-box-content.clearfix
+  %section.items-box
+    %a{:href => "商品ページURL"}
+      %figure.items-box-photo
+        %img.lazyloaded{:alt => "", "data-src" => "画像URL", :src => "画像URL"}/
+      .items-box-body
+        %h3.items-box-name.font-2
+          = @product_category_other.name
+        .items-box-num
+          .items-box-price.font-5 ¥X,XXX
+          .font-2
+            %i.icon-like-border
+            %span
+              X

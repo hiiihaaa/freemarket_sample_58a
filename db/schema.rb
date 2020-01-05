@@ -17,15 +17,23 @@ ActiveRecord::Schema.define(version: 2019_12_30_042408) do
     t.string "name"
   end
 
-  create_table "credit_cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "user_id"
-    t.string "customer_id", null: false
-    t.string "card_id", null: false
-  end
-
-  create_table "customers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "content"
+    t.bigint "product_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_comments_on_product_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_likes_on_product_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
   create_table "product_images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -35,7 +43,6 @@ ActiveRecord::Schema.define(version: 2019_12_30_042408) do
 
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
-    t.text "description"
     t.string "size"
     t.string "status"
     t.string "shipping_fee"
@@ -45,7 +52,8 @@ ActiveRecord::Schema.define(version: 2019_12_30_042408) do
     t.integer "price"
     t.string "brand"
     t.string "purchase_status"
-    t.integer "category_id"
+    t.integer "user_id"
+    t.text "product_detail"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -58,13 +66,10 @@ ActiveRecord::Schema.define(version: 2019_12_30_042408) do
     t.string "lastname_kana", null: false
     t.datetime "birthday", null: false
     t.string "image"
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "comments", "products"
+  add_foreign_key "comments", "users"
+  add_foreign_key "likes", "products"
+  add_foreign_key "likes", "users"
 end
