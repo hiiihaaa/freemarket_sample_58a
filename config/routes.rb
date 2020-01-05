@@ -28,5 +28,14 @@ Rails.application.routes.draw do
   resources :products, only: [:new, :create, :edit, :update] do  # 仮置き
     resources :likes, only: [:create]
   end
-  resources :comments, only: [:index, :create]
+
+  devise_for :users
+  root to: "credit_card#new"
+  get "credit_card" => "credit_card#new"
+  
+  resources :products, only: [:new, :edit, :show, :create]
+  
+  get "purchase_product" => "products#purchase"
+  
+  resources :users, only: [:edit, :show]
 end
