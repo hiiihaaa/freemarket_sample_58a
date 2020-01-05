@@ -1,0 +1,38 @@
+= link_to "##", class: "exhibit" do
+  %p 出品
+  %i.fas.fa-camera
+.headerWrap
+  .header
+    .header__top
+      =link_to image_tag("https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2356214421",class: "header__top__icon"), "##"
+      %input{name: "cardNo", placeholder: "何かお探しですか？", class: "header__top__input input", value: ""}
+    .header__Nav
+      .header__Nav--left
+        =link_to "＃カテゴリ", class: "headerNavLeft__category" do
+          %i.fas.fa-list
+          カレゴリーから探す
+        =link_to "＃ブランド", class: "headerNavLeft__brand" do
+          %i.fas.fa-tag
+          ブランドから探す
+      .header__Nav--right
+        = link_to "＃いいね一覧", class: "headerNavLeft__good Nav--right" do
+          %i.far.fa-heart
+          いいね！一覧
+        = link_to "＃お知らせ", class: "headerNavLeft__news Nav--right" do
+          %i.far.fa-bell
+          お知らせ
+        = link_to "＃todo", class: "headerNavLeft__todo Nav--right" do
+          %i.fas.fa-check
+          やることリスト
+        = link_to  "＃mypage", class: "headerNavLeft__mypage Nav--right" do
+          = image_tag("https://static.mercdn.net/images/member_photo_noimage_thumb.png", class: "header__top__iconMypage")
+          マイページ
+.pagePathWrap
+  .pagePath
+    =link_to "メルカリ", "#メルカリ"
+    %i.fas.fa-chevron-right
+    =link_to "マイページ", "#mypage"
+    %i.fas.fa-chevron-right
+    =link_to "支払い方法", "#支払い方法"
+    %i.fas.fa-chevron-right
+    %span クレジットカード情報

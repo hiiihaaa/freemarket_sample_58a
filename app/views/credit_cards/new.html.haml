@@ -1,0 +1,64 @@
+%body
+  .rccWrapper
+    = render './shareParts/topHeader'
+    .main
+      =render './shareParts/topSidebar'
+      = form_with(model: @credit_card, local: true, url: pay_credit_cards_path, class: "registrationForm") do |f|
+        %h2.registrationForm__top クレジットカード情報入力
+        .registrationForm__form
+          .registrationForm__form__cardNo
+            .registrationForm__form__cardNo__caption.top
+              %h3.formCaption カード番号
+              %span.red 必須
+            = f.text_field :number, id: "number", class: "number input", placeholder: "半角数字のみ"
+            .registrationForm__form__cardNo__icon
+              %ul.registrationForm__form__cardNo__icon__lists
+                %li
+                  = image_tag("https://www-mercari-jp.akamaized.net/assets/img/card/visa.svg?2356214421", class: "cardIcon")
+                %li
+                  = image_tag("https://www-mercari-jp.akamaized.net/assets/img/card/master-card.svg?2356214421", class: "cardIcon")
+                %li
+                  = image_tag("https://www-mercari-jp.akamaized.net/assets/img/card/saison-card.svg?2356214421", class: "cardIcon")
+                %li
+                  = image_tag("https://www-mercari-jp.akamaized.net/assets/img/card/jcb.svg?2356214421", class: "cardIcon")
+                %li
+                  = image_tag("https://www-mercari-jp.akamaized.net/assets/img/card/american_express.svg?2356214421", class: "cardIcon")
+                %li
+                  = image_tag("https://www-mercari-jp.akamaized.net/assets/img/card/dinersclub.svg?2356214421", class: "cardIcon")
+                %li
+                  = image_tag("https://www-mercari-jp.akamaized.net/assets/img/card/discover.svg?2356214421", class: "cardIcon")
+          .registrationForm__form__expirationDate
+            .registrationForm__expirationDate__caption.top
+              %h3.formCaption 有効期限
+              %span.red 必須
+            .registrationForm__form__expirationDate__input
+              = f.select :exp_month, @exp_month, {}, {id: "exp_month", class: "exp_month"}
+              %span 月
+              %select{id: "exp_year", name: "exp_year", type: "text"}
+                %option{value: ""}--
+                %option{value: "2019"}19
+                %option{value: "2020"}20
+                %option{value: "2021"}21
+                %option{value: "2022"}22
+                %option{value: "2023"}23
+                %option{value: "2024"}24
+                %option{value: "2025"}25
+                %option{value: "2026"}26
+                %option{value: "2027"}27
+                %option{value: "2028"}28
+                %option{value: "2029"}29
+                %option{value: "2030"}30
+              %span 年
+          .registrationForm__form__securityCode
+            .registrationForm__form__securityCode__caption.top
+              %h3.formCaption セキュリコード
+              %span.red 必須
+            .registrationForm__form__securityCode__input
+              = f.text_field :cvc, id: :cvc, class: "input cvc", placeholder: "カード背面4桁もしくは3桁の番号"
+            .registrationForm__form__securityCode__help
+              %span ?
+              カード裏面の番号とは?
+          #card_token
+          = f.submit id: "token_submit", class: "registrationForm__form__submit red", value:"追加する"
+
+    = render './shareParts/topFooter'
