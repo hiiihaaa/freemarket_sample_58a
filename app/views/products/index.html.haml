@@ -1,10 +1,8 @@
 !!!
 %html
   %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %link{:href => "merukari_product_detail.css", :rel => "stylesheet", :type => "text/css"}/
-    %link{:href => "https://use.fontawesome.com/releases/v5.6.1/css/all.css", :rel => "stytlesheet"}/
-    / アイコンを入れるためのもの。本番環境ではこれを消してgemfileに gem "font-awesome-sass" を書き込んでbundleinstall
+    %meta{content: "text/html; charset=UTF-8", "http-equiv": "Content-Type"}/
+    %link{href: "merukari_product_detail.css", rel: "stylesheet", type: "text/css"}/
   %body
     %header.pc-header.visible-pc.with-shadow
       .pc-header-inner
@@ -12,8 +10,8 @@
           %div
             = link_to root_path do
               = image_tag "https://web-jp-assets.mercdn.net/_next/static/images/logo-acdd90ac4f472d5a6f7a330d33ab1225.svg", size: "134x36", alt: "mercari"
-          %form.pc-header-form{:action => "検索URL"}
-            %input.input-default{:name => "keyword", :placeholder => "何かお探しですか？", :type => "search", :value => ""}/
+          %form.pc-header-form{action: "検索URL"}
+            %input.input-default{name: "keyword", placeholder: "何かお探しですか？", type: "search", value: ""}/
             %i.icon-search
         .pc-header-nav-box.clearfix
           %nav.l-left
@@ -67,8 +65,8 @@
         .item_image
           .owl-carousel.owl-loaded.owl-drag
             .owl-stage-outer
-              .owl-stage{:style => "left: -600px; width: 900px;"}
-                .owl-item{:style => "width: 300px;"}
+              .owl-stage{style: "left: -600px; width: 900px;"}
+                .owl-item{style: "width: 300px;"}
                   .owl-item-inner
                     = image_tag @product_image.image_url, class: "owllazy", style: "opacity: 1;"
                 / 上記５行を画像の枚数分繰り返し、画像URLをそれぞれ入れる
@@ -164,7 +162,7 @@
             %i.icon-like-border
               / アイコン入れる？
             %span いいね！
-            %span{"data-num" => "like"}
+            %span{"data-num": "like"}
               X
               / X=いいねの数
           = link_to "通報フォームURL", class: "item-button item-button-report clearfix" do
@@ -197,10 +195,10 @@
                     %i.icon-time
                     %span XX日前
                   .message-icon-right
-                    %form{:action => "コメント通報ページURL", :method => "POST"}
-                      %button{:type => "submit"}
+                    %form{action: "コメント通報ページURL", method: "POST"}
+                      %button{type: "submit"}
                         %i.icon-flag
-                      %input{:name => "redirect_url_key", :type => "hidden", :value => "item_detail"}/
+                      %input{name: "redirect_url_key", type: "hidden", value: "item_detail"}/
                 %i.icon-balloon
             / 上記42行をコメントの数だけ用意
         .message-content
@@ -213,22 +211,22 @@
           -#   %textarea.textarea-default{:name => "body", :type => "text", :value => ""}
           -#   %button.message-submit.byn-default.btn-gray{:type => "submit"}
           -#     %span コメントする
-        %aside.modal{"data-close" => "modat", "data-modal" => "delete-comment"}
+        %aside.modal{"data-close": "modat", "data-modal": "delete-comment"}
           .modal-inner.modal-banner
             .modal-body
               .modal-head.bold 確認
-              %div{"data-comment" => "body"}
+              %div{"data-comment": "body"}
               = succeed "\"\u{672c}\u{5f53}\u{306b}\u{3053}\u{306e}\u{30b3}\u{30e1}\u{30f3}\u{30c8}\u{3092}\u{524a}\u{9664}\u{3057}\u{3066}\u{3088}\u{308d}\u{3057}\u{3044}\u{3067}\u{3059}\u{304b}\u{ff1f}\"" do
                 %br/
-            %form{:action => "URL"}
+            %form{action: "URL"}
               .clearfix
-                .modal-btn.modal-btn-cancel{"data-close" => "modal"} キャンセル
-                %button.modal-btn.modal-btn-submit{:type => "submit"}
+                .modal-btn.modal-btn-cancel{"data-close": "modal"} キャンセル
+                %button.modal-btn.modal-btn-submit{type: "submit"}
                   削除する
-              %input{:name => "item_id", :type => "hidden", :value => "商品ID"}/
-              %input{:name => "comment_id", :type => "hidden", :value => ""}/
-              %input{:name => "redirect_url_key", :type => "hidden", :value => "item_detail"}/
-              %input{:name => "__csrf_value", :type => "hidden", :value => "何か"}/
+              %input{name: "item_id", type: "hidden", value: "商品ID"}/
+              %input{name: "comment_id", type: "hidden", value: ""}/
+              %input{name: "redirect_url_key", type: "hidden", value: "item_detail"}/
+              %input{name: "__csrf_value", type: "hidden", value: "何か"}/
     %ul.nav-item-link-prev-next.clearfix
       %li.nav-item-link-prev
         = link_to "別商品(左)URL" do
@@ -240,9 +238,9 @@
           %i.icon-arrow-right
     .item-social-media-box
       .text-center
-        .fb-save.fb_iframe_widget{"data-uri" => "何かのURL?", "fb-iframe-plugin-query" => "何かのURL", "fb-xfbml-state" => "rendered"}
-          %span{:style => "vertical-align: top; width: 0px; height: 0px; overflow:hidden;"}
-            %iframe{:allow => "encrypted-media", :allowfullscreen => "true", :allowtransparency => "true", :frameborder => "0", :height => "1000px", :name => "商品id?", :scrolling => "no", :src => "facebookURL", :style => "border: none; visibility: visible; width: 0px; height: 0px;", :title => "fb: save Facebook Social Plugin", :width => "1000px"}
+        .fb-save.fb_iframe_widget{"data-uri": "何かのURL?", "fb-iframe-plugin-query": "何かのURL", "fb-xfbml-state": "rendered"}
+          %span{style: "vertical-align: top; width: 0px; height: 0px; overflow:hidden;"}
+            %iframe{allow: "encrypted-media", allowfullscreen: "true", allowtransparency: "true", frameborder: "0", height: "1000px", name: "商品id?", scrolling: "no", src: "facebookURL", style: "border: none; visibility: visible; width: 0px; height: 0px;", title: "fb: save Facebook Social Plugin", width: "1000px"}
               / document
       %ul.social-media-box
         %li
@@ -306,20 +304,20 @@
                       %span
                         X
           -num += 1
-    %aside.modal{"data-close" => "modal", "data-modal" => "report-item"}
+    %aside.modal{"data-close": "modal", "data-modal": "report-item"}
       .modal-inner.modal-banner
         .modal-body
           .modal-head.bold 確認
           "不適切な商品を報告しますか？"
         .clearfix
-          .modal-btn.modal-btn-cancel{"data-close" => "modal"} キャンセル
+          .modal-btn.modal-btn-cancel{"data-close": "modal"} キャンセル
           = link_to "URL" do
             %button.modal-btn.modal-btn-submit はい
     %nav.bread-crumbs.pos-bottom
       %ul
-        %li{:itemscope => "", :itemtype => "URL"}
+        %li{itemscope: "", itemtype: "URL"}
           = link_to "メルカリURL", itemprop: "url" do
-            %span{:itemprop => "title"} メルカリ
+            %span{itemprop: "title"} メルカリ
           %i.icon-arrow-right2
-        %li{:itemscope => "", :itemtype => "URL"}
-          %span{:itemprop => "title"} 商品名
+        %li{itemscope: "", itemtype: "URL"}
+          %span{itemprop: "title"} 商品名
