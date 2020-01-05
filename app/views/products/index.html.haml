@@ -10,8 +10,8 @@
       .pc-header-inner
         .pc-header-top
           %div
-            %a{:href => "メルカリURL"}
-              %img{:alt => "mercari", :height => "36", :src => "https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2356214421", :width => "134"}/
+            = link_to root_path do
+              = image_tag "https://web-jp-assets.mercdn.net/_next/static/images/logo-acdd90ac4f472d5a6f7a330d33ab1225.svg", size: "134x36", alt: "mercari"
           %form.pc-header-form{:action => "検索URL"}
             %input.input-default{:name => "keyword", :placeholder => "何かお探しですか？", :type => "search", :value => ""}/
             %i.icon-search
@@ -20,7 +20,7 @@
             %ul.pc-header-nav
               %li
                 %h2
-                  %a.pc-header-nav-root.list-parent{:href => "カテゴリーURL"}
+                  = link_to "カテゴリーURL", class: "pc-header-nav-root list-parent" do
                     %i.icon-list.pc-header-cat-brand-icon
                     %span カテゴリーから探す
                 /
@@ -38,15 +38,15 @@
                   </ul>  長すぎるので保留
               %li
                 %h2
-                  %a.pc-header-nav-root.list-parent{:href => "ブランドURL"}
+                  = link_to "ブランドURL", class: "pc-header-nav-root list-parent" do
                     %i.icon-tag.pc-header-cat-brand-icon
                     %span ブランドから探す
           .l-right
             %ul.pc-header-login-nav
               %li
-                %a.sp-header-btn.btn-red{:href => "新規会員登録画面URL"} 新規会員登録
+                = link_to "新規会員登録","新規会員登録URL", class: "sp-header-btn btn-red"
               %li
-                %a.sp-header-btn.header-login{:href => "ログイン画面URL"} ログイン
+                = link_to "ログイン","ログイン画面URL", class: "sp-header-btn header-login"
     / ヘッダー
     %section.product_detail.l-single-container
       %h1.product_name
@@ -70,7 +70,7 @@
               .owl-stage{:style => "left: -600px; width: 900px;"}
                 .owl-item{:style => "width: 300px;"}
                   .owl-item-inner
-                    %img.owllazy{:alt => "商品名", "data-src" => @product_image.image_url, :src => @product_image.image_url, :style => "opacity: 1;"}/
+                    = image_tag @product_image.image_url, class: "owllazy", style: "opacity: 1;"
                 / 上記５行を画像の枚数分繰り返し、画像URLをそれぞれ入れる
             .owl-nav.disabled
               .owl-prev prev
@@ -79,7 +79,7 @@
               .owl-dot
                 %span
                 .owl-dot-inner
-                  %img{:src => @product_image.image_url}/
+                  = image_tag @product_image.image_url
               / 上記6行を画像の枚数分繰り返し、画像URLをそれぞれ入れる
         .item-prige-box.text-center.visible-sp
           %span.item-price.bold ¥X,XXX
@@ -87,13 +87,13 @@
           %span.item-shipping-fee 送料込み
         %section.visible-sp
           .item-btn-float-area
-            %a.item-buy-btn{:href => "購入画面URL"} 購入画面に進む
+            = link_to "購入画面に進む", "購入画面URL", class: "item-buy-btn"
         %table.item-detail-table
           %tbody
             %tr
               %th 出品者
               %td
-                %a{:href => "ユーザーページURL"} 
+                = link_to "ユーザーページURL" do
                   = @user.nickname
                 %div
                   .item-user-ratings
@@ -116,14 +116,14 @@
             %tr
               %th カテゴリー
               %td
-                %a{:href => "カテゴリーURL"}
+                = link_to "カテゴリーURL" do
                   %div 
                     = @category.name
                 / 上記3行を必要回数繰り返す
             %tr
               %th ブランド
               %td
-                %a{:href => "ブランドURL"}
+                = link_to "ブランドURL" do
                   %div 
                   = @product.brand
             %tr
@@ -141,7 +141,7 @@
             %tr
               %th 配送元の地域
               %td
-                %a{:href => "都道府県URL"} 
+                = link_to "都道府県URL" do
                   = @product.shipping_from
             %tr
               %th 発送日の目安
@@ -154,26 +154,25 @@
         %span.item-tax (税込)
         %span.item-shipping-fee
           = @product.shipping_fee
-      %a.item-buy-btn{:href => "購入画面URL"} 購入画面に進む
-      / <a class="item-action-text" data-toggle="open-app" data-url-scheme="mercari://" data-action="item/openDetail" data-key="id=mxxxxxxxxxxx>" data-play-id="com.kouzoh.mercari" data-adjust-url="http://app.adjust.io/xio2ii?campaign=iOS&adgroup=items.buy_button1">アプリで購入</a> ※アプリ関係なので必要ないかも
+      = link_to "購入画面に進む", "購入画面URL", class: "item-buy-btn"
       .item-description.f14
         %p.item-description-inner
           = @product.product_detail
       .item-button-container.clearfix
         .item-button-left
-          %a.item-button.item-button-like{:href => "いいねURL"}
+          = link_to "いいねURL", class: "item-button item-button-like" do
             %i.icon-like-border
               / アイコン入れる？
             %span いいね！
             %span{"data-num" => "like"}
               X
               / X=いいねの数
-          %a.item-button.item-button-report.clearfix{:href => "通報フォームURL"}
+          = link_to "通報フォームURL", class: "item-button item-button-report clearfix" do
             %i.icon-flag
               / アイコン入れる？
             %span 不適切な商品の報告
         .item-button-right
-          %a{:href => "安心安全への取り組みURL", :target => "_blank"}
+          = link_to "安心安全への取り組みURL", target: "_blank" do
             %i.icon-lock
               / アイコン入れる？
             %span あんしん・あんぜんへの取り組み
@@ -182,10 +181,10 @@
         .message-content
           %ul.message-items
             %li.clearfix
-              %a.message-user{:href => "ユーザーページURL"}
+              = link_to "ユーザーページURL", class: "message-user" do
                 %figure
                   %div
-                    %img{:alt => "", :src => "画像URL"}/
+                    = image_tag root_path, alt: ""
                   %figcaption.bold
                     ユーザー名
               .message-body
@@ -232,11 +231,11 @@
               %input{:name => "__csrf_value", :type => "hidden", :value => "何か"}/
     %ul.nav-item-link-prev-next.clearfix
       %li.nav-item-link-prev
-        %a{:href => "別商品(左)URL"}
+        = link_to "別商品(左)URL" do
           %i.icon-arrow-left
           "商品名"
       %li.nav-item-link-next
-        %a{:href => "別商品(右)URL"}
+        = link_to "別商品(右)URL" do
           "商品名"
           %i.icon-arrow-right
     .item-social-media-box
@@ -247,30 +246,30 @@
               / document
       %ul.social-media-box
         %li
-          %a.share-btn{"data-window-name" => "facebook_window", :href => "facebookURL", :target => "_blank"}
+          = link_to "facebookURL", class: "share-btn", target: "_blank" do
             %i.icon-facebook
         %li
-          %a.share-btn{"data-window-name" => "twitter_window", :href => "twitterURL", :target => "_blank"}
+          = link_to "twitterURL", class: "share-btn", target: "_blank" do
             %i.icon-twitter
         %li.social-hidden-item
-          %a{:href => "lineURL", :target => "_blank"}
+          = link_to "lineURL", class: "share-btn", target: "_blank" do
             %i.icon-line
         %li
-          %a.share-btn{"data-window-name" => "pinterest_window", :href => "pinterestURL", :target => "_blank"}
+          = link_to "pinterestURL", class: "share-btn", target: "_blank" do
             %i.icon-pinterest
     .items-in-user-profile
       %section.item-box-container.clearfix.related-item-column.items-in-user-profile
         %h2.items-box-head
-          %a{:href => "URL"} 
+          = link_to "URL" do
             = @user.nickname 
             さんのその他の出品
         -num = 0
         -@product_user_other.each do |product|
           .items-box-content.clearfix
             %section.items-box
-              %a{:href => "商品ページURL"}
+              = link_to "商品ページURL" do
                 %figure.items-box-photo.__web-inspector-hide-shortcut__
-                  %img.lazyloaded{:alt => "", "data-src" => "画像URL", :src => @product_user_other_image[num].image_url}/
+                  = image_tag @product_user_other_image[num].image_url, class: "lazyloaded", alt: ""
                 .items-box-body
                   %h3.items-box-name.font-2
                     = product.name
@@ -285,16 +284,16 @@
           -num += 1
       %section.items-box-container.clearfix.related-item-column
         %h2.items-box-head
-          %a{:href => "ブランドURL"}
+          = link_to "カテゴリーURL" do
             = @category.name
             その他の商品
         -num = 0
         -@category_same.each do |category|
           .items-box-content.clearfix
             %section.items-box
-              %a{:href => "商品ページURL"}
+              = link_to "商品ページURL" do
                 %figure.items-box-photo
-                  %img.lazyloaded{:alt => "", "data-src" => "", :src => @other_product_image[num].image_url}/
+                  = image_tag @other_product_image[num].image_url, class: "lazyloaded", alt: ""
                 .items-box-body
                   %h3.items-box-name.font-2
                     = category.product.name
@@ -314,12 +313,12 @@
           "不適切な商品を報告しますか？"
         .clearfix
           .modal-btn.modal-btn-cancel{"data-close" => "modal"} キャンセル
-          %a{:href => "URL"}
+          = link_to "URL" do
             %button.modal-btn.modal-btn-submit はい
     %nav.bread-crumbs.pos-bottom
       %ul
         %li{:itemscope => "", :itemtype => "URL"}
-          %a{:href => "メルカリURL", :itemprop => "url"}
+          = link_to "メルカリURL", itemprop: "url" do
             %span{:itemprop => "title"} メルカリ
           %i.icon-arrow-right2
         %li{:itemscope => "", :itemtype => "URL"}
