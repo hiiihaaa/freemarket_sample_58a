@@ -2,7 +2,7 @@
 %html
   %head
     %meta{content: "text/html; charset=UTF-8", "http-equiv": "Content-Type"}/
-    %link{href: "products.scss", rel: "stylesheet", type: "text/scss"}/
+    %link{href: "merukari_product_detail.css", rel: "stylesheet", type: "text/css"}/
   %body
     %header.pc-header.visible-pc.with-shadow
       .pc-header-inner
@@ -155,7 +155,7 @@
       = link_to "購入画面に進む", "購入画面URL", class: "item-buy-btn"
       .item-description.f14
         %p.item-description-inner
-          = @product.description
+          = @product.product_detail
       .item-button-container.clearfix
         .item-button-left
           = link_to "いいねURL", class: "item-button item-button-like" do
