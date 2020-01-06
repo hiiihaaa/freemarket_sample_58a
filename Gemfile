@@ -83,4 +83,3 @@ gem "jquery-rails"
 gem 'font-awesome-rails'
 gem 'payjp'
 gem 'font-awesome-sass'
-
