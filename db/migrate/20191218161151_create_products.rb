@@ -13,6 +13,7 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.string     :brand
       t.string     :purchase_status
       t.integer    :category_id, foreign_key: true
+      t.integer    :user_id
       # t.references :user, foreign_key: true
       # t.references :category, foreign_key: true
       # t.timestamps
