@@ -31,7 +31,7 @@
                   </li>
                   </ul>
                   </li>
-                  </ul>  長すぎるので保留
+                  </ul>  今後実装していくが今は保留にしておきます
               %li
                 %h2
                   = link_to "ブランドURL", class: "pc-header-nav-root list-parent" do
@@ -43,7 +43,6 @@
                 = link_to "新規会員登録","新規会員登録URL", class: "sp-header-btn btn-red"
               %li
                 = link_to "ログイン","ログイン画面URL", class: "sp-header-btn header-login"
-    / ヘッダー
     %section.product_detail.l-single-container
       %h1.product_name
         = @product.name
@@ -67,7 +66,6 @@
                 .owl-item{style: "width: 300px;"}
                   .owl-item-inner
                     = image_tag @product_image.image_url, class: "owllazy", style: "opacity: 1;"
-                / 上記５行を画像の枚数分繰り返し、画像URLをそれぞれ入れる
             .owl-nav.disabled
               .owl-prev prev
               .owl-next next
@@ -76,7 +74,6 @@
                 %span
                 .owl-dot-inner
                   = image_tag @product_image.image_url
-              / 上記6行を画像の枚数分繰り返し、画像URLをそれぞれ入れる
         .item-prige-box.text-center.visible-sp
           %span.item-price.bold ¥X,XXX
           %span.item-tax (税込)
@@ -96,26 +93,20 @@
                     %i.icon-good
                     %span
                       00
-                      / 評価数
                   .item-user-ratings
                     %i.icon-normal
-                      / アイコン入れる
                     %span
                       00
-                      / 評価数
                   .item-user-ratings
                     %i.icon-bad
-                      / アイコン入れる
                     %span
                       00
-                      / 評価数
             %tr
               %th カテゴリー
               %td
                 = link_to "カテゴリーURL" do
                   %div 
                     = @category.name
-                / 上記3行を必要回数繰り返す
             %tr
               %th ブランド
               %td
@@ -158,19 +149,15 @@
         .item-button-left
           = link_to "いいねURL", class: "item-button item-button-like" do
             %i.icon-like-border
-              / アイコン入れる？
             %span いいね！
             %span{"data-num": "like"}
               X
-              / X=いいねの数
           = link_to "通報フォームURL", class: "item-button item-button-report clearfix" do
             %i.icon-flag
-              / アイコン入れる？
             %span 不適切な商品の報告
         .item-button-right
           = link_to "安心安全への取り組みURL", target: "_blank" do
             %i.icon-lock
-              / アイコン入れる？
             %span あんしん・あんぜんへの取り組み
     .item-detail-message
       .message-container
@@ -198,17 +185,8 @@
                         %i.icon-flag
                       %input{name: "redirect_url_key", type: "hidden", value: "item_detail"}/
                 %i.icon-balloon
-            / 上記42行をコメントの数だけ用意
         .message-content
           = render 'comments/comment'
-          -# %form.message-form{:action => "URL", :method => "POST"}
-          -#   %p
-          -#     相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
-          -#   %input{:name => "item_id", :type => "hidden", :value => "商品ID"}/
-          -#   %input{:name => "item_id", :type => "hidden", :value => "item_detail"}/
-          -#   %textarea.textarea-default{:name => "body", :type => "text", :value => ""}
-          -#   %button.message-submit.byn-default.btn-gray{:type => "submit"}
-          -#     %span コメントする
         %aside.modal{"data-close": "modat", "data-modal": "delete-comment"}
           .modal-inner.modal-banner
             .modal-body
@@ -239,7 +217,6 @@
         .fb-save.fb_iframe_widget{"data-uri": "何かのURL?", "fb-iframe-plugin-query": "何かのURL", "fb-xfbml-state": "rendered"}
           %span{style: "vertical-align: top; width: 0px; height: 0px; overflow:hidden;"}
             %iframe{allow: "encrypted-media", allowfullscreen: "true", allowtransparency: "true", frameborder: "0", height: "1000px", name: "商品id?", scrolling: "no", src: "facebookURL", style: "border: none; visibility: visible; width: 0px; height: 0px;", title: "fb: save Facebook Social Plugin", width: "1000px"}
-              / document
       %ul.social-media-box
         %li
           = link_to "facebookURL", class: "share-btn", target: "_blank" do
