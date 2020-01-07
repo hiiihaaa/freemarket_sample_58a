@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
 
   root 'top#index'
+  devise_for :users
+  devise_scope :user do
+    post 'sign_up', to: 'devise/registrations#create'
+  end
+ 
+  resources :users, only: [:edit, :show]
+
   resources :credit_cards, only: [:new, :show] do
     collection do
       post 'show', to: 'credit_cards#show'
@@ -9,12 +16,7 @@ Rails.application.routes.draw do
     end
   end
 
-  devise_for :users
-
-  
-  resources :products, only: [:new, :edit, :show, :create]
+  resources :products, only: [:new, :create, :edit, :show]
   get "purchase_product" => "products#purchase"
   
-  resources :users, only: [:edit, :show]
-
 end
