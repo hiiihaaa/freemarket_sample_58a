@@ -17,4 +17,14 @@ Rails.application.routes.draw do
   
   resources :users, only: [:edit, :show]
 
+  get 'products/index'
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get 'index' => 'index#index'
+  root "products#index"
+  get 'product' => 'products#index'
+
+  resources :products, only: [:new, :create, :edit, :update] do  # 仮置き
+    resources :likes, only: [:create]
+  end
+  resources :comments, only: [:index, :create]
 end
