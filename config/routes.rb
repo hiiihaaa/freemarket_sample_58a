@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
 
   root 'top#index'
-  devise_for :users
+
   devise_scope :user do
-    post 'sign_up', to: 'devise/registrations#create'
+    post 'users', to: 'devise/registrations#create'
   end
+  devise_for :users
  
   resources :users, only: [:edit, :show]
 
