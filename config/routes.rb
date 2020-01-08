@@ -1,22 +1,26 @@
 Rails.application.routes.draw do
 
   root 'top#index'
-  resources :credit_card, only: [:new, :show] do
+
+  devise_scope :user do
+    post 'users', to: 'devise/registrations#create'
+  end
+  devise_for :users
+ 
+  resources :users, only: [:edit, :show]
+
+  resources :credit_cards, only: [:new, :show] do
     collection do
-      post 'show', to: 'credit_card#show'
-      post 'pay', to: 'credit_card#pay'
-      post 'delete', to: 'credit_card#delete'
+      post 'show', to: 'credit_cards#show'
+      post 'pay', to: 'credit_cards#pay'
+      post 'delete', to: 'credit_cards#delete'
     end
   end
 
-  devise_for :users
-  root to: "credit_card#new"
-  get "credit_card" => "credit_card#new"
-  
-  resources :products, only: [:new, :edit, :show, :create]
-  
+  resources :products, only: [:index, :new, :create, :edit, :show] do
+    resources :likes, only: [:create]
+  end
   get "purchase_product" => "products#purchase"
-  
-  resources :users, only: [:edit, :show]
+  resources :comments, only: [:index, :create] 
 
 end

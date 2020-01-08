@@ -5,13 +5,13 @@ class CreditCardsController < ApplicationController
   def new
     @exp_month = ["--", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]
 
-    credit_card = CreditCard.find_by(user_id: current_user.id)
+    credit_card = CreditCard.where(user_id: current_user.id)
     redirect_to action: "show" if credit_card.exists?
   end
 
   #payjpとCreditCardデータベース作成
-  def pay 
-    Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+  def pay
+    Payjp.api_key = Rails.application.credentials.PAYJP_PRIVATE_KEY
     if params['payjp-token'].blank?
       redirect_to action: "new"
     else
@@ -32,12 +32,12 @@ class CreditCardsController < ApplicationController
     credit_card = CreditCard.find_by(user_id: current_user.id)
     if credit_card.blank?
     else
-      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+      Payjp.api_key = Rails.application.credentials.PAYJP_PRIVATE_KEY
       customer = Payjp::Customer.retrieve(credit_card.customer_id)
       customer.delete
       credit_card.delete
     end
-      redirect_to action: "new"
+      redirect_to controller: "top", action: "index"
   end
 
   def show
@@ -45,7 +45,7 @@ class CreditCardsController < ApplicationController
     if credit_card.blank?
       redirect_to action: "new"
     else
-      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+      Payjp.api_key = Rails.application.credentials.PAYJP_PRIVATE_KEY
       customer = Payjp::Customer.retrieve(credit_card.customer_id)
       @default_card_info = customer.cards.retrieve(credit_card.card_id)
     end
