@@ -3,7 +3,11 @@ class ProductsController < ApplicationController
   end
   
   def index
-    @product = Product.find(1)
+    
+  end
+
+  def show
+    @product = Product.find(params[:id])
     @user = User.find(@product.user_id)
     @product_image = ProductImage.find_by(product_id: @product.id)
     @category = Category.find_by(product_id: @product.id)
