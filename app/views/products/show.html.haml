@@ -249,6 +249,7 @@
                   %span
                     X
       -num += 1
+      -break if num== 6
   %section.items-box-container.clearfix.related-item-column
     %h2.items-box-head
       = link_to "カテゴリーURL" do
@@ -272,6 +273,7 @@
                   %span
                     X
       -num += 1
+      -break if num== 6
 %aside.modal{"data-close": "modal", "data-modal": "report-item"}
   .modal-inner.modal-banner
     .modal-body
