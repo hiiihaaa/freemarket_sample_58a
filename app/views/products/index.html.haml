@@ -246,6 +246,7 @@
                 .items-box-price.font-5 
                   ¥
                   = product.price
+                  -# = "¥#{product.price.to_s(:delimited)}"
                 .font-2
                   %i.icon-like-border
                   %span
