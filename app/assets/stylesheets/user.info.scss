@@ -37,7 +37,7 @@ header{
     height: 2px;
     background: #ccc;
     position: absolute;
-    top: 8px;
+    top: 6px;
     left: 29px;
   }
   }
@@ -141,7 +141,7 @@ input[type=checkbox] {
 }
 
 #user_birthday_1i,#user_birthday_2i,#user_birthday_3i{
-  width: 76px;
+  width: 86px;
   height: 48px;
   margin-top: 8px;
   box-sizing: content-box;
@@ -175,7 +175,9 @@ input[type=checkbox] {
     width: 343px;
     text-align: right;
     color: #0099e8;
-    font-size: 14px;}
+    font-size: 14px;
+    padding-top: 15px;
+  }
 }
 }
 
