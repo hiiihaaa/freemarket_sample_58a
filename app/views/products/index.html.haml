@@ -58,7 +58,7 @@
     .item_image
       .owl-carousel.owl-loaded.owl-drag
         .owl-stage-outer
-          .owl-stage{style: "left: -600px; width: 900px;"}
+          .owl-stage{style: "width: 900px;"}
             .owl-item{style: "width: 300px;"}
               .owl-item-inner
                 = image_tag @product_image.image_url, class: "owllazy", style: "opacity: 1;"
@@ -132,8 +132,7 @@
             = @product.shipping_date
   .item-price-box.text-center
     %span.item-price.bold
-      ¥
-      = @product.price
+      = "¥#{@product.price.to_s(:delimited)}"
     %span.item-tax (税込)
     %span.item-shipping-fee
       = @product.shipping_fee
@@ -244,9 +243,7 @@
                 = product.name
               .items-box-num
                 .items-box-price.font-5 
-                  ¥
-                  = product.price
-                  -# = "¥#{product.price.to_s(:delimited)}"
+                  = "¥#{product.price.to_s(:delimited)}"
                 .font-2
                   %i.icon-like-border
                   %span
@@ -269,8 +266,7 @@
                 = category.product.name
               .items-box-num
                 .items-box-price.font-5
-                  ¥
-                  = category.product.price
+                  = "¥#{category.product.price.to_s(:delimited)}"
                 .font-2
                   %i.icon-like-border
                   %span
