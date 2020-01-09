@@ -2,7 +2,7 @@
 %header
   = render partial: "/render_partial/user_header"
 
-= form_with(model: @users, local: true) do |form|
+= form_with(model: @user, local: true) do |form|
   .user
     .user__info 会員情報入力
     .user__input
@@ -56,16 +56,14 @@
           - if @user.errors[:lastname_kana].any?
             %p.errorsmessage 生年月日を入力してください
           %p.user__input--Ip ※ 本人情報は正しく入力してください。会員登録後修正するには多分お時間を頂く場合がございまするん。
-          .reCAPTCHA
-            %input.user__input--password{name: "password", type: "checkbox"}>
-            私はロボットではありません
+
           %p.user__input--Ip.c
             「次へ進む」のボタンを押すことにより、
             %span.policy> 利用規約
             に同意したものとみなします
           = form.submit class:"next__page",value:"次へ進む"
 
-          %p.next__page--p 本人情報の登録について&gt;
+          .next__page--p 本人情報の登録について&gt;
 
     %footer
       = render partial: "/render_partial/user_footer"
