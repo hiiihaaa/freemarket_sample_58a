@@ -231,49 +231,51 @@
       = link_to "URL" do
         = @user.nickname 
         さんのその他の出品
-    -num = 0
-    -@product_user_other.each do |product|
-      .items-box-content.clearfix
-        %section.items-box
-          = link_to "商品ページURL" do
-            %figure.items-box-photo.__web-inspector-hide-shortcut__
-              = image_tag @product_user_other_image[num].image_url, class: "lazyloaded", alt: ""
-            .items-box-body
-              %h3.items-box-name.font-2
-                = product.name
-              .items-box-num
-                .items-box-price.font-5 
-                  = "¥#{product.price.to_s(:delimited)}"
-                .font-2
-                  %i.icon-like-border
-                  %span
-                    X
-      -num += 1
-      -break if num== 6
+    .items-box-set
+      -num = 0
+      -@product_user_other.each do |product|
+        .items-box-content.clearfix
+          %section.items-box
+            = link_to "商品ページURL" do
+              %figure.items-box-photo.__web-inspector-hide-shortcut__
+                = image_tag @product_user_other_image[num].image_url, class: "lazyloaded", alt: ""
+              .items-box-body
+                %h3.items-box-name.font-2
+                  = product.name
+                .items-box-num
+                  .items-box-price.font-5 
+                    = "¥#{product.price.to_s(:delimited)}"
+                  .font-2
+                    %i.icon-like-border
+                    %span
+                      X
+        -num += 1
+        -break if num== 6
   %section.items-box-container.clearfix.related-item-column
     %h2.items-box-head
       = link_to "カテゴリーURL" do
         = @category.name
         その他の商品
-    -num = 0
-    -@category_same.each do |category|
-      .items-box-content.clearfix
-        %section.items-box
-          = link_to "商品ページURL" do
-            %figure.items-box-photo
-              = image_tag @other_product_image[num].image_url, class: "lazyloaded", alt: ""
-            .items-box-body
-              %h3.items-box-name.font-2
-                = category.product.name
-              .items-box-num
-                .items-box-price.font-5
-                  = "¥#{category.product.price.to_s(:delimited)}"
-                .font-2
-                  %i.icon-like-border
-                  %span
-                    X
-      -num += 1
-      -break if num== 6
+    .items-box-set
+      -num = 0
+      -@category_same.each do |category|
+        .items-box-content.clearfix
+          %section.items-box
+            = link_to "商品ページURL" do
+              %figure.items-box-photo
+                = image_tag @other_product_image[num].image_url, class: "lazyloaded", alt: ""
+              .items-box-body
+                %h3.items-box-name.font-2
+                  = category.product.name
+                .items-box-num
+                  .items-box-price.font-5
+                    = "¥#{category.product.price.to_s(:delimited)}"
+                  .font-2
+                    %i.icon-like-border
+                    %span
+                      X
+        -num += 1
+        -break if num== 6
 %aside.modal{"data-close": "modal", "data-modal": "report-item"}
   .modal-inner.modal-banner
     .modal-body
