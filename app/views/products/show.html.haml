@@ -236,7 +236,7 @@
       -@product_user_other.each do |product|
         .items-box-content.clearfix
           %section.items-box
-            = link_to "商品ページURL" do
+            = link_to "/products/#{product.id}" do
               %figure.items-box-photo.__web-inspector-hide-shortcut__
                 = image_tag @product_user_other_image[num].image_url, class: "lazyloaded", alt: ""
               .items-box-body
@@ -261,7 +261,7 @@
       -@category_same.each do |category|
         .items-box-content.clearfix
           %section.items-box
-            = link_to "商品ページURL" do
+            = link_to "/products/#{category.id}" do
               %figure.items-box-photo
                 = image_tag @other_product_image[num].image_url, class: "lazyloaded", alt: ""
               .items-box-body
