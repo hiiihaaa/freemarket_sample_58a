@@ -1,14 +1,22 @@
-.download-bar__box
-  .download-bar__box--left
-    .download-bar__box--left__upper
+.download-bar__aside
+  = link_to "http://app.adjust.io/xio2ii?campaign=iOS&amp;adgroup=common.footer", class: "download-bar__aside--box" do
+    = image_tag "https://web-jp-assets.mercdn.net/_next/static/images/mercari_icon-f75780e32e41e052c8aaa8b446331cd8.png", class: "download-bar__aside--box__icon"
+    .download-bar__aside--box__text
       スマホでかんたんフリマアプリ
-    .download-bar__box--left__middle
-      今すぐ無料ダウンロード
-    .download-bar__box--left__lower
-      = image_tag "https://web-jp-assets.mercdn.net/_next/static/images/mercari_icon-f75780e32e41e052c8aaa8b446331cd8.png", alt: "", class: "download-bar__box--left__lower--mercari-icon"
-      = link_to "https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8", class: "download-bar__box--left__lower--itunes", target: "_blank" do
-        = image_tag "https://web-jp-assets.mercdn.net/_next/static/images/app-store-a5c17948c6fd6d5b60b13d421cd60b35.svg", alt: "", class: "download-bar__box--left__lower--icon"
-      = link_to "https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja", class: "download-bar__box--left__lower--google", target: "_blank" do
-        = image_tag "https://web-jp-assets.mercdn.net/_next/static/images/google-play-495575abb895b405aa6336b2a4304958.svg", alt: "", class: "download-bar__box--left__lower--icon"
-  .download-bar__box--right
-    = image_tag "https://web-jp-assets.mercdn.net/_next/static/images/download_app_pc-a4418175e8be071827ac88d073f40e4a.png", alt: "", class: "download-bar__box--right__pic"
+      .download-bar__aside--box__text--lower
+        今すぐ無料ダウンロード
+.download-bar__show
+  .download-bar__show--box
+    .download-bar__show--box__left
+      .download-bar__show--box__left--upper
+        スマホでかんたんフリマアプリ
+      .download-bar__show--box__left--middle
+        今すぐ無料ダウンロード
+      .download-bar__show--box__left--lower
+        = image_tag "https://web-jp-assets.mercdn.net/_next/static/images/mercari_icon-f75780e32e41e052c8aaa8b446331cd8.png", alt: "", class: "download-bar__show--box__left--lower__mercari-icon"
+        = link_to "https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8", class: "download-bar__show--box__left--lower__link", target: "_blank" do
+          = image_tag "https://web-jp-assets.mercdn.net/_next/static/images/app-store-a5c17948c6fd6d5b60b13d421cd60b35.svg", alt: "", class: "download-bar__show--box__left--lower__link--icon"
+        = link_to "https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja", class: "download-bar__show--box__left--lower__link", target: "_blank" do
+          = image_tag "https://web-jp-assets.mercdn.net/_next/static/images/google-play-495575abb895b405aa6336b2a4304958.svg", alt: "", class: "download-bar__show--box__left--lower__link--icon"
+    %figure.download-bar__show--box__right
+      = image_tag "https://web-jp-assets.mercdn.net/_next/static/images/download_app_pc-a4418175e8be071827ac88d073f40e4a.png", alt: "", class: "download-bar__show--box__right--pic"
