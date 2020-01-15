@@ -154,6 +154,19 @@
       = link_to "安心安全への取り組みURL", target: "_blank" do
         %i.icon-lock
         %span あんしん・あんぜんへの取り組み
+-# ifで条件分岐
+.l-single-container
+  .listing-item-change-box
+    = link_to "URL", class: "btn-default btn-red" do
+      %span 商品の編集
+    %p.text-center
+      %span or
+    %form{action: "URL", method: "POST", novalidate: "novalidate"}
+      %input{name: "__csrf_value", type: "hidden", value: "何かの文字列"}
+      %button{type: "submit", class: "btn-default btn-gray"}
+        %span 出品を一旦停止する
+    %button{"data-modal": "delete-item", "data-open": "modal", class: "btn-default btn-gray"}
+      %span この商品を削除する
 .item-detail-message
   .message-container
     .message-content
