@@ -21,6 +21,7 @@ body {
   font-size: 14px;
   color: #333;
   line-height: 1;
+  font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
 }
 
 section {
@@ -298,6 +299,7 @@ h2 {
   padding: 24px 40px 40px;
   background-color: #fff;
   margin: 40px auto 0;
+  padding-bottom: 70px;
 }
 
 .l-single-container {
@@ -1057,8 +1059,8 @@ ul {
 }
 
 .items-box-content {
-  width: auto;
-  margin: 0 auto;
+  width: 33.3%;
+  margin: 0;
 }
 
 .items-box {
@@ -1221,4 +1223,9 @@ button {
 
 .bread-crumbs li:last-child {
   font-weight: 600;
+}
+
+.items-box-set {
+  display: flex;
+  flex-wrap: wrap;
 }

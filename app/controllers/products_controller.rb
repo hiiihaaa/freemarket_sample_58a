@@ -3,7 +3,11 @@ class ProductsController < ApplicationController
   end
   
   def index
-    @product = Product.find(1)
+    
+  end
+
+  def show
+    @product = Product.find(params[:id])
     @user = User.find(@product.user_id)
     @product_image = ProductImage.find_by(product_id: @product.id)
     @category = Category.find_by(product_id: @product.id)
@@ -11,6 +15,7 @@ class ProductsController < ApplicationController
     @product_user_other_image = ProductImage.where(product_id: @product_user_other)
     @category_same = Category.where(name: @category.name)
     @other_product_image = ProductImage.where(product_id: @category_same)
+    # @next_and_back = 
   end
 
   def new
