@@ -304,6 +304,8 @@ h2 {
 
 .l-single-container {
   width: 700px;
+  margin: 0 auto;
+  background: #fff;
 }
 
 .product_name {
@@ -823,6 +825,7 @@ textarea {
 }
 
 .btn-default {
+  margin: 16px 0 16px 0;
   display: block;
   width: 100%;
   line-height: 48px;
@@ -1228,4 +1231,10 @@ button {
 .items-box-set {
   display: flex;
   flex-wrap: wrap;
+}
+
+.listing-item-change-box {
+  margin: 24px 0 24px 0;
+  background: #fff;
+  padding: 8px 16px 8px 16px;
 }
