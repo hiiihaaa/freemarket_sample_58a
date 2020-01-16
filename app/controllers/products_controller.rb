@@ -1,28 +1,46 @@
 class ProductsController < ApplicationController
-  def purchase
-  end
-  
+
   def index
-    
-  end
+    @product = Product.new
+    @category = Category.new
+    @parents = Category.where(ancestry: nil)
+    @charge_method_parents = ChargeMethod.where(ancestry: nil)
+    @charge_method_children1 = ChargeMethod.find(1).children
+    @charge_method_children2 = ChargeMethod.find(2).children
+    @status = Status.all
+    @sendarea = SendArea.all
+    @period = Period.all
 
-  def show
-    @product = Product.find(params[:id])
-    @user = User.find(@product.user_id)
-    @product_image = ProductImage.find_by(product_id: @product.id)
-    @category = Category.find_by(product_id: @product.id)
-    @product_user_other = Product.where(user_id: @product.user_id)
-    @product_user_other_image = ProductImage.where(product_id: @product_user_other)
-    @category_same = Category.where(name: @category.name)
-    @other_product_image = ProductImage.where(product_id: @category_same)
-    # @next_and_back = 
   end
-
   def new
     @product = Product.new
-    @product.users << current_user
+    @product.build_product_category
+    @product.build_products_status
+    @product.build_product_area
+    @product.build_product_period
+    @product.build_product_charge_method
+    @product.build_product_size
+    @product.build_image
   end
+def create
+  @product = Product.new(user_params)
+  @product.criate
+    binding.pry
 
-  def create
-  end
+  render "index"
 end
+
+  def cate_children
+    @cate_children = Category.find(params[:parent]).children
+  end
+  def grand_children
+    @grand_children = Category.find(params[:child_id]).children
+  end
+  private
+
+def user_params
+params.require(:product).permit(:id,:name,:detail,:brand,:price,:image,:status_id,
+product_category_attributes:[:id,:categories_id],status_attributes:[:id],product_send_period_attributes:[:id],product_charge_method_attributes:[:id],product_size_attributes:[:id])
+end
+end
+

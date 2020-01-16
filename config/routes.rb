@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+<<<<<<< Updated upstream
 
   root 'top#index'
 
@@ -23,4 +24,14 @@ Rails.application.routes.draw do
   get "purchase_product" => "products#purchase"
   resources :comments, only: [:index, :create] 
 
+=======
+  resources :charge_method
+  resources :status
+  resources :products do
+    collection do
+      get "cate_children" 
+      get "grand_children" 
+    end
+  end
+>>>>>>> Stashed changes
 end
