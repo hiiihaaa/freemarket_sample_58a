@@ -1,0 +1,116 @@
+.form-group{
+  margin-top: -50px;
+  padding: 20px 0 0;
+}
+
+.en{
+  font-weight: normal;
+  // width: 7px;
+  // text-align: right;
+  // float: right;
+  font-size: 15px;
+  margin-left: 50px;
+  // margin-bottom: -10px;
+  padding-top: 0px;
+  padding-right: 7px;
+  // padding-left: 7px;
+  line-height: -250px;
+  clear: both;
+  
+
+}
+#profit.l-right{
+  font-weight: normal;
+  font-size: inherit;
+  height: 14px;
+  margin-right: 0;
+}
+
+
+.sell-content__en{
+  display: grid;
+  height: 220px;
+  width: 700px;
+  padding:0 -50 0 0;
+  grid-template: repeat(9);
+  grid-template-rows:72px 33% 33%;
+  grid-template-columns:37% 30% 33%;
+  grid-auto-rows: 80px;
+  grid-auto-columns: 80px;
+}
+#price.input {
+  border-radius: 4px;
+  padding: 10px 8px 10px;
+  border: 1px solid #ccc;
+  background: #fff;
+  line-height: 32px;
+  font-size: 14px;
+  margin-top: -35px;
+  text-align: right;
+  float: right;
+  width: 160px;
+  height: 48px;
+  
+}
+.price-1{
+  color: #888;
+  font-size: 14px;
+  font-weight: bold;
+}
+.price-2 {
+  margin: 50px 0 0;
+  border-bottom: 1px solid #ccc;
+  font-weight: bold;
+}
+
+.price-3{
+  padding: 20px 0 0;
+  border-bottom: 1px solid #ccc;
+
+}
+.price-8{
+line-height: 72px;
+font-weight: bold;
+font-size: 16px;
+
+}
+.price-9{
+  line-height: 72px;
+  font-size: 34px;
+  
+  }
+  
+
+  .l-left{
+    padding: 24px 0;
+    text-align: left;
+    margin-left: -35px;
+    
+  }
+  .price-5{
+    line-height: 64px;
+    border-bottom: 1px solid #ccc;
+  }
+  .price-6{
+    float: right;
+    line-height: 64px;
+    border-bottom: 1px solid #ccc; 
+  }
+  
+  .l-left--profit{
+    margin-top: 0px;
+    padding: 24px 0;
+
+
+  }
+  
+  .preice9{
+    height: 63px;
+    width: 400px;
+    
+  }
+  .profit{
+    height: 63px;
+    width: 400px;
+  }
+  

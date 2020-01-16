@@ -1,0 +1,14 @@
+.sell-upload-box
+  .form-group__name
+    %label
+      出品画像
+      %span.form-require 必須
+    %p 最大10枚までアップロードできます
+    %form.sell-form
+      .sell-upload-drop-box
+        = form_for @product do |f|
+          = f.hidden_field :image
+          %p= f.label "ドラッグアンドドロップ",class: "l1"
+          %br/
+          = f.label "またはクリックしてファイルをアップロード",class: "l2"
+          = f.file_field :image ,multiple: true, class: "image"
