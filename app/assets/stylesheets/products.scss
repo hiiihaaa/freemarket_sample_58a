@@ -131,6 +131,7 @@ input {
   z-index: 1001;
   background: #fff;
   height: 100px;
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
 }
 
 .pc-header-inner {
@@ -304,7 +305,6 @@ h2 {
 
 .l-single-container {
   width: 700px;
-  margin: 0 auto;
   background: #fff;
 }
 
@@ -1237,4 +1237,9 @@ button {
   margin: 24px 0 24px 0;
   background: #fff;
   padding: 8px 16px 8px 16px;
+}
+.x-single-container {
+  width: 700px;
+  margin: 0 auto;
+  background: #fff;
 }
