@@ -1,6 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
+<<<<<<< Updated upstream
     actioncable (5.2.4.1)
       actionpack (= 5.2.4.1)
       nio4r (~> 2.0)
@@ -20,10 +21,32 @@ GEM
       rails-html-sanitizer (~> 1.0, >= 1.0.2)
     actionview (5.2.4.1)
       activesupport (= 5.2.4.1)
+=======
+    actioncable (5.2.4)
+      actionpack (= 5.2.4)
+      nio4r (~> 2.0)
+      websocket-driver (>= 0.6.1)
+    actionmailer (5.2.4)
+      actionpack (= 5.2.4)
+      actionview (= 5.2.4)
+      activejob (= 5.2.4)
+      mail (~> 2.5, >= 2.5.4)
+      rails-dom-testing (~> 2.0)
+    actionpack (5.2.4)
+      actionview (= 5.2.4)
+      activesupport (= 5.2.4)
+      rack (~> 2.0)
+      rack-test (>= 0.6.3)
+      rails-dom-testing (~> 2.0)
+      rails-html-sanitizer (~> 1.0, >= 1.0.2)
+    actionview (5.2.4)
+      activesupport (= 5.2.4)
+>>>>>>> Stashed changes
       builder (~> 3.1)
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.0, >= 1.0.3)
+<<<<<<< Updated upstream
     activejob (5.2.4.1)
       activesupport (= 5.2.4.1)
       globalid (>= 0.3.6)
@@ -38,6 +61,22 @@ GEM
       activerecord (= 5.2.4.1)
       marcel (~> 0.3.1)
     activesupport (5.2.4.1)
+=======
+    activejob (5.2.4)
+      activesupport (= 5.2.4)
+      globalid (>= 0.3.6)
+    activemodel (5.2.4)
+      activesupport (= 5.2.4)
+    activerecord (5.2.4)
+      activemodel (= 5.2.4)
+      activesupport (= 5.2.4)
+      arel (>= 9.0)
+    activestorage (5.2.4)
+      actionpack (= 5.2.4)
+      activerecord (= 5.2.4)
+      marcel (~> 0.3.1)
+    activesupport (5.2.4)
+>>>>>>> Stashed changes
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 0.7, < 2)
       minitest (~> 5.1)
@@ -46,6 +85,11 @@ GEM
       public_suffix (>= 2.0.2, < 5.0)
     airbrussh (1.4.0)
       sshkit (>= 1.6.1, != 1.7.0)
+<<<<<<< Updated upstream
+=======
+    ancestry (3.0.7)
+      activerecord (>= 3.2.0)
+>>>>>>> Stashed changes
     archive-zip (0.12.0)
       io-like (~> 0.3.0)
     arel (9.0.0)
@@ -70,7 +114,11 @@ GEM
       sshkit (~> 1.3)
     capistrano3-unicorn (0.2.1)
       capistrano (~> 3.1, >= 3.1.0)
+<<<<<<< Updated upstream
     capybara (3.30.0)
+=======
+    capybara (3.29.0)
+>>>>>>> Stashed changes
       addressable
       mini_mime (>= 0.1.3)
       nokogiri (~> 1.8)
@@ -85,6 +133,10 @@ GEM
       image_processing (~> 1.1)
       mimemagic (>= 0.3.0)
       mini_mime (>= 0.1.3)
+<<<<<<< Updated upstream
+=======
+    childprocess (3.0.0)
+>>>>>>> Stashed changes
     chromedriver-helper (2.1.1)
       archive-zip (~> 0.10)
       nokogiri (~> 1.8)
@@ -104,25 +156,39 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+<<<<<<< Updated upstream
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
+=======
+>>>>>>> Stashed changes
     erb2haml (0.1.5)
       html2haml
     erubi (1.9.0)
     erubis (2.7.0)
+<<<<<<< Updated upstream
     excon (0.71.1)
     execjs (2.7.0)
     faraday (1.0.0)
       multipart-post (>= 1.2, < 3)
+=======
+    excon (0.70.0)
+    execjs (2.7.0)
+>>>>>>> Stashed changes
     ffi (1.11.3)
     fog-aws (3.5.2)
       fog-core (~> 2.1)
       fog-json (~> 1.1)
       fog-xml (~> 0.1)
       ipaddress (~> 0.8)
+<<<<<<< Updated upstream
     fog-core (2.2.0)
       builder
       excon (~> 0.71)
+=======
+    fog-core (2.1.2)
+      builder
+      excon (~> 0.58)
+>>>>>>> Stashed changes
       formatador (~> 0.2)
       mime-types
     fog-json (1.2.0)
@@ -133,8 +199,11 @@ GEM
       nokogiri (>= 1.5.11, < 2.0.0)
     font-awesome-rails (4.7.0.5)
       railties (>= 3.2, < 6.1)
+<<<<<<< Updated upstream
     font-awesome-sass (5.11.2)
       sassc (>= 1.11)
+=======
+>>>>>>> Stashed changes
     formatador (0.2.5)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
@@ -152,12 +221,18 @@ GEM
       haml (>= 4.0, < 6)
       nokogiri (>= 1.6.0)
       ruby_parser (~> 3.5)
+<<<<<<< Updated upstream
     http-accept (1.7.0)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
     i18n (1.7.0)
       concurrent-ruby (~> 1.0)
     image_processing (1.10.0)
+=======
+    i18n (1.7.0)
+      concurrent-ruby (~> 1.0)
+    image_processing (1.9.3)
+>>>>>>> Stashed changes
       mini_magick (>= 4.9.5, < 5)
       ruby-vips (>= 2.0.13, < 3)
     io-like (0.3.0)
@@ -168,7 +243,10 @@ GEM
       rails-dom-testing (>= 1, < 3)
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
+<<<<<<< Updated upstream
     jwt (2.2.1)
+=======
+>>>>>>> Stashed changes
     kgio (2.11.2)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
@@ -182,7 +260,11 @@ GEM
     marcel (0.3.3)
       mimemagic (~> 0.3.2)
     method_source (0.9.2)
+<<<<<<< Updated upstream
     mime-types (3.3.1)
+=======
+    mime-types (3.3)
+>>>>>>> Stashed changes
       mime-types-data (~> 3.2015)
     mime-types-data (3.2019.1009)
     mimemagic (0.3.3)
@@ -192,18 +274,27 @@ GEM
     minitest (5.13.0)
     msgpack (1.3.1)
     multi_json (1.14.1)
+<<<<<<< Updated upstream
     multipart-post (2.1.1)
+=======
+>>>>>>> Stashed changes
     mysql2 (0.5.3)
     net-scp (2.0.0)
       net-ssh (>= 2.6.5, < 6.0.0)
     net-ssh (5.2.0)
+<<<<<<< Updated upstream
     netrc (0.11.0)
+=======
+>>>>>>> Stashed changes
     nio4r (2.5.2)
     nokogiri (1.10.7)
       mini_portile2 (~> 2.4.0)
     orm_adapter (0.5.0)
+<<<<<<< Updated upstream
     payjp (0.0.7)
       rest-client (~> 2.0)
+=======
+>>>>>>> Stashed changes
     pry (0.12.2)
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
@@ -212,6 +303,7 @@ GEM
       pry (~> 0.10)
     pry-rails (0.3.9)
       pry (>= 0.10.4)
+<<<<<<< Updated upstream
     public_suffix (4.0.2)
     puma (3.12.2)
     rack (2.0.8)
@@ -229,15 +321,40 @@ GEM
       activesupport (= 5.2.4.1)
       bundler (>= 1.3.0)
       railties (= 5.2.4.1)
+=======
+    public_suffix (4.0.1)
+    puma (3.12.2)
+    rack (2.0.7)
+    rack-test (1.1.0)
+      rack (>= 1.0, < 3)
+    rails (5.2.4)
+      actioncable (= 5.2.4)
+      actionmailer (= 5.2.4)
+      actionpack (= 5.2.4)
+      actionview (= 5.2.4)
+      activejob (= 5.2.4)
+      activemodel (= 5.2.4)
+      activerecord (= 5.2.4)
+      activestorage (= 5.2.4)
+      activesupport (= 5.2.4)
+      bundler (>= 1.3.0)
+      railties (= 5.2.4)
+>>>>>>> Stashed changes
       sprockets-rails (>= 2.0.0)
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
     rails-html-sanitizer (1.3.0)
       loofah (~> 2.3)
+<<<<<<< Updated upstream
     railties (5.2.4.1)
       actionpack (= 5.2.4.1)
       activesupport (= 5.2.4.1)
+=======
+    railties (5.2.4)
+      actionpack (= 5.2.4)
+      activesupport (= 5.2.4)
+>>>>>>> Stashed changes
       method_source
       rake (>= 0.8.7)
       thor (>= 0.19.0, < 2.0)
@@ -250,16 +367,23 @@ GEM
     responders (3.0.0)
       actionpack (>= 5.0)
       railties (>= 5.0)
+<<<<<<< Updated upstream
     rest-client (2.1.0)
       http-accept (>= 1.7.0, < 2.0)
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
+=======
+>>>>>>> Stashed changes
     ruby-vips (2.0.16)
       ffi (~> 1.9)
     ruby_dep (1.5.0)
     ruby_parser (3.14.1)
       sexp_processor (~> 4.9)
+<<<<<<< Updated upstream
+=======
+    rubyzip (2.0.0)
+>>>>>>> Stashed changes
     sass (3.7.4)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
@@ -271,9 +395,15 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
+<<<<<<< Updated upstream
     sassc (2.2.1)
       ffi (~> 1.9)
     selenium-webdriver (3.142.7)
+=======
+    selenium-webdriver (3.142.6)
+      childprocess (>= 0.5, < 4.0)
+      rubyzip (>= 1.2.2)
+>>>>>>> Stashed changes
     sexp_processor (4.13.0)
     spring (2.1.0)
     spring-watcher-listen (2.0.1)
@@ -290,6 +420,7 @@ GEM
       net-scp (>= 1.1.2)
       net-ssh (>= 2.8.0)
     temple (0.8.2)
+<<<<<<< Updated upstream
     thor (1.0.1)
     thread_safe (0.3.6)
     tilt (2.0.10)
@@ -307,6 +438,15 @@ GEM
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.6)
+=======
+    thor (0.20.3)
+    thread_safe (0.3.6)
+    tilt (2.0.10)
+    tzinfo (1.2.5)
+      thread_safe (~> 0.1)
+    uglifier (4.2.0)
+      execjs (>= 0.3.0, < 3)
+>>>>>>> Stashed changes
     unicorn (5.4.1)
       kgio (~> 2.6)
       raindrops (~> 0.7)
@@ -327,6 +467,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  ancestry
   bootsnap (>= 1.1.0)
   byebug
   capistrano
@@ -342,13 +483,21 @@ DEPENDENCIES
   erb2haml
   fog-aws
   font-awesome-rails
+<<<<<<< Updated upstream
   font-awesome-sass
+=======
+>>>>>>> Stashed changes
   haml-rails
   jbuilder (~> 2.5)
   jquery-rails
   listen (>= 3.0.5, < 3.2)
+<<<<<<< Updated upstream
   mysql2 (>= 0.3.18, < 0.6.0)
   payjp
+=======
+  mini_magick
+  mysql2 (>= 0.3.18, < 0.6.0)
+>>>>>>> Stashed changes
   pry-byebug
   pry-rails
   puma (~> 3.11)
@@ -357,8 +506,11 @@ DEPENDENCIES
   selenium-webdriver
   spring
   spring-watcher-listen (~> 2.0.0)
+<<<<<<< Updated upstream
   turbolinks (~> 5)
   twilio-ruby (~> 5.31.1)
+=======
+>>>>>>> Stashed changes
   tzinfo-data
   uglifier (>= 1.3.0)
   unicorn (= 5.4.1)
