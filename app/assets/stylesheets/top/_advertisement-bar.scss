@@ -1,3 +1,4 @@
+// 後日修正のためのメモ書き
 // .advertisement_bar {
 //   position: relative;
 //   &__box {
@@ -91,14 +92,12 @@
 
 .slider {
   margin: 100px auto;
-  // width: 80%;
 }
 
 .slider.slick-initialized.slick-slider.slick-dotted {
   margin-top: 1px;
   margin-bottom: 1px;
   margin: 0 auto;
-  // height: 170px;
   left: 50%;
   margin-left: -50vw;
   position: relative;
@@ -107,10 +106,6 @@
   overflow: hidden;
 }
 
-// .slider li {
-//   height: 290px;
-//   width: 3099px;
-// }
 .slider img {
   height: auto;
   width: 100%;
@@ -122,7 +117,7 @@
 }
 
 
-// these will be set up later
+// 後日修正のためのメモ書き
 // .slider-frame {
 //   box-sizing: border-box;
 //   display: block;
