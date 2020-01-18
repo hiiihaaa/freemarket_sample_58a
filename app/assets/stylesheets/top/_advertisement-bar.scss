@@ -1,0 +1,228 @@
+// 後日修正のためのメモ書き
+// .advertisement_bar {
+//   position: relative;
+//   &__box {
+//     height: 170px;
+//     left: 50%;
+//     margin-left: -50vw;
+//     position: relative;
+//     top: 0px;
+//     width: 100vw;
+//     overflow: hidden;
+//     &--link {
+//       position: relative;
+//       background-size: cover;
+//       height: 170px;
+//       // background-image: url(https://web-jp-assets.mercdn.net/_next/static/images/top-banner-kaushika-8f6ea67….jpg);
+//       /* background-image: url(test); */
+//       background-position: center center;
+//     }
+//     &--details {
+//       margin-top: -170px;
+//       box-sizing: border-box;
+//       display: block;
+//       height: auto;
+//       position: relative;
+//       visibility: inherit;
+//       width: 100%;
+//       &__specific {
+//         position: relative;
+//         background-size: cover;
+//         height: 170px;
+//         background-image: url(https://web-jp-assets.mercdn.net/_next/static/images/top-banner-main-892151c….jpg);
+//         background-position: center center;
+//         &--pic_element {
+//           -webkit-box-align: start;
+//           align-items: start;
+//           display: flex;
+//           height: 100%;
+//           position: relative;
+//           margin: 0px auto;
+//           &__picture {
+//             position: absolute;
+//             top: 0px;
+//             right: 0px;
+//             height: 170px;
+//             vertical-align: middle;
+//           }
+//         }
+//         &__font_area {
+//           height: 100%;
+//           position: relative;
+//           width: 100%;
+//           padding: 20px 40px;
+//           &--upper {
+//             font-size: 24px;
+//             font-weight: 600;
+//             line-height: 1.4;
+//             margin-bottom: 16px;
+//             white-space: pre-wrap;
+//           }
+//           &--middle {
+//             display: none;
+//             font-size: 16px;
+//             line-height: 1.77777;
+//             margin-bottom: 24px;
+//           }
+//           &--lower {
+//             background-color: rgba(255, 255, 255, 0.4);
+//             bottom: 0px;
+//             left: 0px;
+//             position: absolute;
+//             text-align: center;
+//             width: 100%;
+//             padding: 5px;
+//             &__icons {
+//               display: inline-block;
+//               height: 32px;
+//               width: 110px;
+//               margin-left: 20px;
+//               vertical-align: middle;
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
+
+.advertisement_bar {
+  position: relative;
+}
+
+.slider {
+  margin: 100px auto;
+}
+
+.slider.slick-initialized.slick-slider.slick-dotted {
+  margin-top: 1px;
+  margin-bottom: 1px;
+  margin: 0 auto;
+  left: 50%;
+  margin-left: -50vw;
+  position: relative;
+  top: 0px;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.slider img {
+  height: auto;
+  width: 100%;
+}
+/*slick setting*/
+.slick-prev:before,
+.slick-next:before {
+  color: #000;
+}
+
+
+// 後日修正のためのメモ書き
+// .slider-frame {
+//   box-sizing: border-box;
+//   display: block;
+//   height: 100%;
+//   margin: 0px;
+//   -moz-box-sizing: border-box;
+//   -ms-transform: translate(0, 0);
+//   overflow: hidden;
+//   padding: 0;
+//   position: relative;
+//   touch-action: pinch-zoom pan-y;
+//   transform: translate3d(0, 0, 0);
+//   -webkit-transform: translate3d(0, 0, 0);
+// }
+
+// .slider-list {
+//   transform: translate3d(-2066px, 0px, 0px);
+//   position: relative;
+//   display: block;
+//   margin: 0px;
+//   padding: 0px;
+//   height: 290px;
+//   width: 3099px;
+//   cursor: pointer;
+//   box-sizing: border-box;
+//   touch-action: pan-y pinch-zoom;
+// }
+
+// .slider-slide {
+//   box-sizing: border-box;
+//   display: inline-block;
+//   height: auto;
+//   left: 3099px;
+//   list-style-type: none;
+//   margin: auto 0px;
+//   position: absolute;
+//   top: 0px;
+//   transform: scale(1);
+//   transition: transform 0.4s linear 0s;
+//   vertical-align: top;
+//   width: 1033px;
+// }
+
+// .slider-slide.camp {
+//   left: 1033px;
+// }
+
+// .slider-slide.slide-visible {
+//   left: 2066px;
+// }
+
+// .slider-control-centerleft {
+//   position:absolute;
+//   top: 50%;
+//   left: 0;
+//   transform: translateY(-50%);
+//   -webkit-transform: translateY(-50%);
+//   -ms-transform: translateY(-50%);
+// }
+
+// .slider-control-centerright {
+//   position: absolute;
+//   top: 50%;
+//   right: 0;
+//   transform: translateY(-50%);
+//   -webkit-transform: translateY(-50%);
+//   -ms-transform: translateY(-50%);
+// }
+
+// .slider-control-bottomcenter {
+//   position: absolute;
+//   bottom: 0;
+//   left: 50%;
+//   transform: translateX(-50%);
+//   -webkit-transform: translateX(-50%);
+//   -ms-transform: translateX(-50%);
+// }
+
+// .content__main--advertisement_bar__box--details--arrow {
+//   background-color: transparent;
+//   cursor: pointer;
+//   height: 46px;
+//   width: 31px;
+//   -webkit-appearance: none;
+//   background-image: url(https://web-jp-assets.mercdn.net/_next/static/images/carousel-prev-af7ca88….png);
+//   border-width: initial;
+//   border-style: none;
+//   border-color: initial;
+//   border-image: initial;
+//   padding: 0px;
+// }
+
+// .left {
+//   margin-left: 60px;
+// }
+
+// .right {
+//   margin-right: 60px;
+// }
+
+// .content__main--advertisement_bar__sample_view {
+//   box-sizing: border-box;
+//   display: block;
+//   height: auto;
+//   position: relative;
+//   visibility: inherit;
+//   width: 100%;
+// }
