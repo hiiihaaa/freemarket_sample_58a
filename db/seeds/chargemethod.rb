@@ -4,3 +4,4 @@ mothod1.children.create([{layer:"未定"},{layer:"らくらくメルカリ便"},
 mothod2.children.create([{layer:"未定"},{layer:"クロネコヤマト"},{layer:"ゆうパック"},{layer:"ゆうメール"}])
 
 
+

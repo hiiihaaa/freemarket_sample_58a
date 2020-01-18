@@ -81,13 +81,11 @@ gem 'erb2haml'
 gem 'devise'
 gem "jquery-rails"
 gem 'font-awesome-rails'
-<<<<<<< Updated upstream
 gem 'payjp'
 gem 'font-awesome-sass'
 gem 'pry-rails'
 gem 'twilio-ruby', '~> 5.31.1'
-=======
 gem 'ancestry'
 gem 'carrierwave'
 gem 'mini_magick'
->>>>>>> Stashed changes
+gem 'active_hash'
