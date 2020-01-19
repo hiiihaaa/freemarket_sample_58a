@@ -68,7 +68,7 @@
             .sell__content.clearfix
               .price__1
                 配送について
-                %a.form-question{href: "/jp/help_center/article/64/", target: "_blank"} ?
+                =link_to "?" ,"/jp/help_center/article/64/" ,{class:"form-question"}
               #js.form__group--send--JS
                 .sell__form--box
                   #send.form__group--category
@@ -109,7 +109,7 @@
               .sell__content--en
                 .price__1
                   販売価格(300〜9,999,999)
-                  %a.form-question{href: "/jp/help_center/article/64/", target: "_blank"} ?
+                  =link_to "?" ,"/jp/help_center/article/64/" ,{class:"form-question"}
                 .price__2
                   .form-group
                     価格
@@ -131,17 +131,17 @@
             .sell__content.clearfix
               .bottom
                 %p
-                  %a{href: "/jp/help_center/getting_started/prohibited_items/", target:"_blank"}> 禁止されている出品
+                  =link_to "禁止されている出品" ,"/jp/help_center/getting_started/prohibited_conduct/"
                   、
-                  %a{href: "/jp/help_center/getting_started/prohibited_conduct/", target:"_blank"}> 行為
+                  =link_to "行為" ,"/jp/help_center/getting_started/prohibited_conduct/"
                   を必ずご確認ください。
                 %p
                   またブランド品でシリアルナンバー等がある場合はご記載ください。
-                  %a{href: "/jp/help_center/getting_started/counterfeit_goods/", target: "_blank"}> 偽ブランドの販売
+                  =link_to "偽ブランドの販売" ,"/jp/help_center/getting_started/counterfeit_goods/"
                   は犯罪であり処罰される可能性があります。
                 %p
                   また、出品をもちまして
-                  %a{href:"/jp/seller_terms/"}> 加盟店規約
+                  =link_to "加盟店規約" ,"/jp/seller_terms/"
                   に同意したことになります。
               = f.submit "出品する" ,class:"btn-default btn-red",type: 'button', onclick: 'submit();'
               %a.btn-default.btn-gray{href: "../"} もどる
