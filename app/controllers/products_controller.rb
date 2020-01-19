@@ -18,6 +18,11 @@ class ProductsController < ApplicationController
     # @next_and_back = 
   end
 
+  def destroy
+    product = Product.find(params[:id])
+    product.destroy if product.user_id == current_user.id
+  end
+
   def new
     @product = Product.new
     @product.users << current_user
