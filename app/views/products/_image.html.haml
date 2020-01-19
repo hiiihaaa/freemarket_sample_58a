@@ -8,7 +8,7 @@
       .sell__upload--drop--box
         = form_for @product do |f|
           = f.hidden_field :image
-          %p= f.label "ドラッグアンドドロップ",class: "l1"
+          = f.label "ドラッグアンドドロップ",class: "l1"
           %br/
           = f.label "またはクリックしてファイルをアップロード",class: "l2"
           = f.file_field :image ,multiple: true, class: "image"

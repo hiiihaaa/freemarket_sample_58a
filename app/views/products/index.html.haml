@@ -1,184 +1,175 @@
-!!!
-%html{lang: "ja"}
-  %head
-    %meta{content: "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %meta{charset: "utf-8"}/
-    %title メルカリ
-    %meta{content: "商品出品ページ", name: "description"}/
-    %link{href: "products_sell.scss", rel: "stylesheet", type: "text/scss"}/
-    %link{href: "app/assets/images/favicon.ico", rel: "icon", sizes: "20x20"}/
-    %script{src: "https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"}
-  %body
-    .container
-      %header.header
-        %a{href: "https://www.mercari.com/jp/"}
-          %img{alt: "mercari", src: "https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2356214421"}/
-      %main.main
-        .sell__container
-          = form_for @product, {href: "index/index"} do |f|
-            %section.sell__container--inner
-              .sell__content--lhead
-                %h2 商品の情報を入力
-              .sell__content
-                .sell__upload--box
-                  .form__group--name
-                    %label
-                      出品画像
-                      %span.form__require 必須
-                    %p 最大10枚までアップロードできます
-                    .sell__form
-                      .sell__upload--drop--box
-                        %p
-                          %label.l1> ドラッグアンドドロップ
-                          \&gt;
-                        %br/
-                        = succeed ">" do
-                          %label.l2 またはクリックしてファイルをアップロード
-                        %input.image{multiiple: "ture", type: "file"}/
-              .sell__content
+%body
+  .container
+    %header.header
+      .mercari_icon
+        = link_to root_path do
+          = image_tag "https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2356214421", alt: "mercari"
+    %main.main
+      .sell__container
+        = form_for @product do |f|
+          %section.sell__container--inner
+            .sell__content--lhead
+              %h2 商品の情報を入力
+            .sell__content
+              .sell__upload--box
                 .form__group--name
                   %label
-                    商品名
+                    出品画像
                     %span.form__require 必須
-                  %div
-                    = f.text_field :name, class: "input__name",placeholder:"商品名（必須 40文字まで)" ,maxlength:"40"
-                .sell.form__group--text
-                  %label
-                    商品の説明
-                    %span.form__require 必須
-                  = f.text_area :description, class: "textarea__default",placeholder:"商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。" ,maxlength:"1000",rows: "5"
-              .sell__content.clearfix
-                .price__1 商品の詳細
-                .sell__form--box
-                  %label
-                    カテゴリー
-                    %span.form__require 必須
-                    = f.collection_select :category_id, Category.where(ancestry: nil) ,:id,:layer ,{prompt: "---"} ,{class: "collection_select ,parent" ,id: "c_parents",action: ""}
-                    %select#kodomo.collection_select{class: "child"}
-                      %option ---
-                    %select#mago.collection_select{class: "gr_child"}
-                      %option ---
+                  %p 最大10枚までアップロードできます
+                  .sell__form
+                    .sell__upload--drop--box
+                      %p
+                        %label.l1> ドラッグアンドドロップ
+                        \&gt;
+                      %br/
+                      = succeed ">" do
+                        %label.l2 またはクリックしてファイルをアップロード
+                      %input.image{multiiple: "ture", type: "file"}/
+            .sell__content
+              .form__group--name
+                %label
+                  商品名
+                  %span.form__require 必須
                 %div
-                  .sell__form--box.form__group--size#size
+                  = f.text_field :name, class: "input__name",placeholder:"商品名（必須 40文字まで)" ,maxlength:"40"
+              .sell.form__group--text
+                %label
+                  商品の説明
+                  %span.form__require 必須
+                = f.text_area :description, class: "textarea__default",placeholder:"商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。" ,maxlength:"1000",rows: "5"
+            .sell__content.clearfix
+              .price__1 商品の詳細
+              .sell__form--box
+                %label
+                  カテゴリー
+                  %span.form__require 必須
+                  = f.collection_select :category_id, Category.where(ancestry: nil) ,:id,:layer ,{prompt: "---"} ,{class: "collection_select ,parent" ,id: "c_parents",action: ""}
+                  %select#child_js.collection_select{class: "child"}
+                    %option ---
+                  %select#grandchild_js.collection_select{class: "gr_child"}
+                    %option ---
+              %div
+                .sell__form--box.form__group--size#size
+                  %label
+                    サイズ
+                    %span.form__require 必須
+                  = f.collection_select :size_id, Size.all, :id, :size,{prompt:"---"}, {class:"collection_select"}
+                .sell__form--box.form__group--brand#brands
+                  %label
+                    ブランド
+                    %span.form__require 任意
+                  = f.text_field :brand, class: "input__name",placeholder:"例）シャネル"
+                .sell__form--box.form__group--status
+                  %label
+                    商品の状態
+                    %span.form__require 必須
+                  = f.collection_select :status_id, Status.all, :id, :status,{prompt:"---"}, {class:"collection_select"}
+            .sell__content.clearfix
+              .price__1
+                配送について
+                %a.form-question{href: "/jp/help_center/article/64/", target: "_blank"} ?
+              #js.form__group--send--JS
+                .sell__form--box
+                  #send.form__group--category
                     %label
-                      サイズ
+                      配送料の負担
                       %span.form__require 必須
-                    = f.collection_select :size_id, Size.all, :id, :size,{prompt:"---"}, {class:"collection_select"}
-                  .sell__form--box.form__group--brand#brands
+                    = f.collection_select :bearsize_id, ChargeMethod.where(ancestry: nil) ,:id ,:layer ,{prompt:"---"}, {class:"collection_select ,parent_11" ,id: "parent2"}
+              #copyjs1.form__group--send--JS
+                .sell__form--box
+                  #copysend.form__group--category
                     %label
-                      ブランド
-                      %span.form__require 任意
-                    = f.text_field :brand, class: "input__name",placeholder:"例）シャネル"
-                  .sell__form--box.form__group--status
-                    %label
-                      商品の状態
+                      配送料の方法
                       %span.form__require 必須
-                    = f.collection_select :status_id, Status.all, :id, :status,{prompt:"---"}, {class:"collection_select"}
-              .sell__content.clearfix
+                    = f.collection_select :sendmethod_id, ChargeMethod.find(1).children ,:id ,:layer ,{prompt:"---"}, {class:"collection_select ,children_22" ,id: "child1"}
+              #copyjs2.form__group--send--JS
+                .sell__form--box
+                  #copysend.form__group--category
+                    %label
+                      配送料の方法
+                      %span.form__require 必須
+                    = f.collection_select :sendmethod_id, ChargeMethod.find(2).children ,:id ,:layer ,{prompt:"---"}, {class:"collection_select ,children_22" ,id: "child2"}
+              #beforecopy.form__group--send--2
+                .sell__form--box
+                  .form__group--category
+                    %label
+                      発送元の地域
+                      %span.form__require 必須
+                    = f.collection_select :address_id, Address.all, :id, :name,{prompt:"---"}, {class:"collection_select"}
+                .form__group--send--2
+                  .sell__form--box
+                    .form-group__category
+                      %label
+                        発送までの日数
+                        %span.form__require 必須
+                      %div
+                        = f.collection_select :period_id, Period.all,:id ,:period ,{prompt:"---"},{class:"collection_select"}
+            .sell__content
+              .sell__content--en
                 .price__1
-                  配送について
+                  販売価格(300〜9,999,999)
                   %a.form-question{href: "/jp/help_center/article/64/", target: "_blank"} ?
-                #js.form__group--send--JS
-                  .sell__form--box
-                    #send.form__group--category
-                      %label
-                        配送料の負担
-                        %span.form__require 必須
-                      = f.collection_select :bearsize_id, ChargeMethod.where(ancestry: nil) ,:id ,:layer ,{prompt:"---"}, {class:"collection_select ,parent_11" ,id: "parent2"}
-                #copyjs1.form__group--send--JS
-                  .sell__form--box
-                    #copysend.form__group--category
-                      %label
-                        配送料の方法
-                        %span.form__require 必須
-                      = f.collection_select :sendmethod_id, ChargeMethod.find(1).children ,:id ,:layer ,{prompt:"---"}, {class:"collection_select ,children_22" ,id: "child1"}
-                #copyjs2.form__group--send--JS
-                  .sell__form--box
-                    #copysend.form__group--category
-                      %label
-                        配送料の方法
-                        %span.form__require 必須
-                      = f.collection_select :sendmethod_id, ChargeMethod.find(2).children ,:id ,:layer ,{prompt:"---"}, {class:"collection_select ,children_22" ,id: "child2"}
-                #beforecopy.form__group--send--2
-                  .sell__form--box
-                    .form__group--category
-                      %label
-                        発送元の地域
-                        %span.form__require 必須
-                      = f.collection_select :address_id, Address.all, :id, :name,{prompt:"---"}, {class:"collection_select"}
-                  .form__group--send--2
-                    .sell__form--box
-                      .form-group__category
-                        %label
-                          発送までの日数
-                          %span.form__require 必須
-                        %div
-                          = f.collection_select :period_id, Period.all,:id ,:period ,{prompt:"---"},{class:"collection_select"}
-              .sell__content
-                .sell__content--en
-                  .price__1
-                    販売価格(300〜9,999,999)
-                    %a.form-question{href: "/jp/help_center/article/64/", target: "_blank"} ?
-                  .price__2
-                    .form-group
-                      価格
-                      %span.form__require 必須
-                  .price__3
-                    %span.en ¥
-                    %div
-                      = f.text_field :price, id: "price", class: "input",placeholder:"例）300  ",maxlength:"40"
-                  .price__4
-                  .price__5
-                    .l-left__10 販売手数料 (10%)
-                  .price__6
-                    %span#per.l__right
-                  .price__7
-                  .price__8
-                    %span.l-left--profit 販売利益
-                  .price__9
-                    #profit.l__right
-              .sell__content.clearfix
-                .bottom
-                  %p
-                    %a{href: "/jp/help_center/getting_started/prohibited_items/", target:"_blank"}> 禁止されている出品
-                    、
-                    %a{href: "/jp/help_center/getting_started/prohibited_conduct/", target:"_blank"}> 行為
-                    を必ずご確認ください。
-                  %p
-                    またブランド品でシリアルナンバー等がある場合はご記載ください。
-                    %a{href: "/jp/help_center/getting_started/counterfeit_goods/", target: "_blank"}> 偽ブランドの販売
-                    は犯罪であり処罰される可能性があります。
-                  %p
-                    また、出品をもちまして
-                    %a{href:"/jp/seller_terms/"}> 加盟店規約
-                    に同意したことになります。
-                = f.submit "出品する" ,class:"btn-default btn-red",type: 'button', onclick: 'submit();'
-                %a.btn-default.btn-gray{href: "../"} もどる
-  = render partial: "footer"
-  :javascript
-    'use strict';
-    const parent2 = document.getElementById("parent2");
-    const copyjs1 = document.getElementById("copyjs1");
-    const copyjs2 = document.getElementById("copyjs2");
-    const brand = document.getElementById("brand");
-    const mago = document.getElementById("mago");
-    const size = document.getElementById("size");
-    
-    parent2.addEventListener("change", function () {
-    if (parent2.value == 1){
-      copyjs1.style.display ="block";
-      copyjs2.style.display ="none";
-    
-    }else if(parent2.value == 2){
-      copyjs2.style.display ="block";
-      copyjs1.style.display ="none";
-    }else if(parent2.value == ""){
-      copyjs1.style.display ="none";
-      copyjs2.style.display ="none";
-    }
-    });
-    const input = document.getElementById("price");
-    input.addEventListener("change",function () {
-      document.getElementById("per").innerHTML= "¥" +Math.floor(input.value * 0.1).toLocaleString();
-      document.getElementById("profit").innerHTML= "¥" +(input.value - Math.floor(input.value * 0.1)).toLocaleString();
-    });
+                .price__2
+                  .form-group
+                    価格
+                    %span.form__require 必須
+                .price__3
+                  %span.en ¥
+                  %div
+                    = f.text_field :price, id: "price", class: "input",placeholder:"例）300  ",maxlength:"40"
+                .price__4
+                .price__5
+                  .l-left__10 販売手数料 (10%)
+                .price__6
+                  %span#per.l__right
+                .price__7
+                .price__8
+                  %span.l-left--profit 販売利益
+                .price__9
+                  #profit.l__right
+            .sell__content.clearfix
+              .bottom
+                %p
+                  %a{href: "/jp/help_center/getting_started/prohibited_items/", target:"_blank"}> 禁止されている出品
+                  、
+                  %a{href: "/jp/help_center/getting_started/prohibited_conduct/", target:"_blank"}> 行為
+                  を必ずご確認ください。
+                %p
+                  またブランド品でシリアルナンバー等がある場合はご記載ください。
+                  %a{href: "/jp/help_center/getting_started/counterfeit_goods/", target: "_blank"}> 偽ブランドの販売
+                  は犯罪であり処罰される可能性があります。
+                %p
+                  また、出品をもちまして
+                  %a{href:"/jp/seller_terms/"}> 加盟店規約
+                  に同意したことになります。
+              = f.submit "出品する" ,class:"btn-default btn-red",type: 'button', onclick: 'submit();'
+              %a.btn-default.btn-gray{href: "../"} もどる
+= render partial: "footer"
+:javascript
+  'use strict';
+  const parent2 = document.getElementById("parent2");
+  const copyjs1 = document.getElementById("copyjs1");
+  const copyjs2 = document.getElementById("copyjs2");
+  const brand = document.getElementById("brand");
+  const grandchild_js = document.getElementById("grandchild_js");
+  const size = document.getElementById("size");
+  
+  parent2.addEventListener("change", function () {
+  if (parent2.value == 1){
+    copyjs1.style.display ="block";
+    copyjs2.style.display ="none";
+  
+  }else if(parent2.value == 2){
+    copyjs2.style.display ="block";
+    copyjs1.style.display ="none";
+  }else if(parent2.value == ""){
+    copyjs1.style.display ="none";
+    copyjs2.style.display ="none";
+  }
+  });
+  const input = document.getElementById("price");
+  input.addEventListener("change",function () {
+    document.getElementById("per").innerHTML= "¥" +Math.floor(input.value * 0.1).toLocaleString();
+    document.getElementById("profit").innerHTML= "¥" +(input.value - Math.floor(input.value * 0.1)).toLocaleString();
+  });
