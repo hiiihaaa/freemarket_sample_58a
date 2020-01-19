@@ -27,13 +27,13 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|nickname|varchar(45)|null: false|
-|email|varchar(45)|null: false|
-|password|varchar(45)|null: false|
-|family_name|varchar(45)|null: false|
-|first_name|varchar(45)|null: false|
-|family_furigana|varchar(45)|null: false|
-|first_furigana|varchar(45)|null: false|
+|nickname|string|null: false|
+|email|string|null: false|
+|password|string|null: false|
+|family_name|string|null: false|
+|first_name|string|null: false|
+|family_furigana|string|null: false|
+|first_furigana|string|null: false|
 |birth_year|integer|null: false|
 |customer_id|integer|null: false, foreign_key: true|
 
@@ -53,10 +53,10 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |post_number|integer|null: false|
-|prefecture|varchar(45)|null: false|
-|city|varchar(45)|null: false|
-|block|varchar(45)|null: false|
-|building|varchar(45)|null: false|
+|prefecture|string|null: false|
+|city|string|null: false|
+|block|string|null: false|
+|building|string|null: false|
 |user_id|integer|null: false, foreign_key: true|
 
 ### Association
@@ -67,15 +67,15 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|family_name|varchar(45)|null: false|
-|first_name|varchar(45)|null: false|
-|family_furigana|varchar(45)|null: false|
-|first_furigana|varchar(45)|null: false|
+|family_name|string|null: false|
+|first_name|string|null: false|
+|family_furigana|string|null: false|
+|first_furigana|string|null: false|
 |postal_code|integer|null: false|
-|prefecture|varchar(45)|null: false|
-|city|varchar(45)|null: false|
-|block|varchar(45)|null: false|
-|building|varchar(45)|null: false|
+|prefecture|string|null: false|
+|city|string|null: false|
+|block|string|null: false|
+|building|string|null: false|
 |phone_number|integer|null: false|
 |user_id|integer|null: false, foreign_key: true|
 
@@ -88,7 +88,7 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |token_id|integer|null: false|
-|credit_cardscol|varchar(45)|null: false|
+|credit_cardscol|string|null: false|
 |user_id|integer|null: false, foreign_key: true|
 
 ### Association
@@ -99,12 +99,12 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|bank_name|varchar(45)|null: false|
-|account_type|varchar(45)|null: false|
+|bank_name|string|null: false|
+|account_type|string|null: false|
 |branch_code|integer|null: false|
 |account_number|integer|null: false|
-|family_name|varchar(45)|null: false|
-|first_name|varchar(45)|null: false|
+|family_name|string|null: false|
+|first_name|string|null: false|
 |user_id|integer|null: false, foreign_key: true|
 
 ### Association
@@ -115,7 +115,7 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|telephone|varchar(45)|null: false|
+|telephone|string|null: false|
 |user_id|integer|null: false, foreign_key: true|
 
 ### Association
@@ -126,16 +126,16 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|name|varchar(45)|null: false|
-|size|varchar(45)|null: false|
+|name|string|null: false|
+|size|string|null: false|
 |status|integer|null: false|
 |shipping_fee|integer|null: false|
-|shipping_method|varchar(45)|null: false|
-|shipping_form|varchar(45)|null: false|
-|shipping_data|varchar(45)|null: false|
+|shipping_method|string|null: false|
+|shipping_form|string|null: false|
+|shipping_data|string|null: false|
 |price|integer|null: false|
-|brand|varchar(45)|null: false|
-|current_status|varchar(45)|null: false|
+|brand|string|null: false|
+|current_status|string|null: false|
 |user_id|integer|null: false, foreign_key: true|
 
 ### Association
@@ -150,7 +150,7 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|text|varchar(45)|null: false|
+|text|string|null: false|
 |user_id|integer|null: false|
 |products_id|integer|null: false|
 
@@ -174,8 +174,8 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|name|varchar(45)|null: false|
-|ancestry|varchar(45)|null: false|
+|name|string|null: false|
+|ancestry|string|null: false|
 |products_id|integer|null: false|
 
 ### Association
@@ -201,8 +201,8 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|type|varchar(45)|null: false|
-|text|varchar(45)|null: false|
+|type|string|null: false|
+|text|string|null: false|
 |user_id|integer|null: false|
 |purchase_id|integer|null: false|
 
