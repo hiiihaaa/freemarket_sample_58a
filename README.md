@@ -175,12 +175,12 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |name|varchar(45)|null: false|
-|big_id|integer|null: false|
-|middle_id|integer|null: false|
+|ancestry|varchar(45)|null: false|
 |products_id|integer|null: false|
 
 ### Association
 - belongs_to :product
+- has_ancestry
 
 
 ## purchasesテーブル
