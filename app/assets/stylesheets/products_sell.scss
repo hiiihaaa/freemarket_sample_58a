@@ -1,5 +1,4 @@
 @import "scaffolding/hedder";
-@import "scaffolding/top";
 @import "scaffolding/image";
 @import "scaffolding/send";
 @import "scaffolding/price";
@@ -9,37 +8,59 @@ html {
   margin: 0;
   padding: 0;
 }
+.sell{
+&__container--inner {
+  color: #333;
+  display: grid;
+  grid-template: repeat(7);
+  width: 780px;
+  margin:  auto;
+  background: #fff;
+  font-size: 16px;
+}
 
-  .sell-container-inner {
-    color: #333;
-    display: grid;
-    grid-template: repeat(7);
-    width: 780px;
-    margin:  auto;
-    background: #fff;
-    font-size: 16px;
-  }
-
-.sell-content{
+&__content{
   border-bottom: 1px solid #eee;
   padding:40px;
-}
+  &--lhead {
+    padding: 38px 16px 40px;
+    font-size: 24px;
+    text-align: center;
+    font-weight: bold;
+    border-bottom: 1px solid #eee;
+
+  }
+  &--en{
+    display: grid;
+    height: 220px;
+    width: 700px;
+    padding:0 -50 0 0;
+    grid-template: repeat(9);
+    grid-template-rows:72px 33% 33%;
+    grid-template-columns:37% 30% 33%;
+    grid-auto-rows: 80px;
+    grid-auto-columns: 80px;
+  }
   
-
-
-.form-group__name{
-  font-weight: bold;
 }
-.form-group__text{
+} 
+
+.form__group{
+&--name{
+  font-weight: bold;
+  font-size: 14px;
+}
+&--text{
   margin-top: 30px;
   font-weight: bold;
 }
-.form-group__status{
+&--status{
   font-weight: bold;
 }
 
+}
 
-.input-name{
+.input__name{
   width: 100%;
   height: 48px;
   padding-left: 16px;
@@ -53,24 +74,7 @@ html {
 
 
 
-.visible-pc {
-  position: absolute;
-  top: 40%;
-  left: 16px;
-  right: 16px;
-  text-align: center;
-  font-size: 14px;
-  line-height: 1.5;
-  transform: translate(0, -50%);
-  pointer-events: none;
-  white-space: pre-wrap;
-  word-wrap: break-word;
-  overflow: auto;
-
-}
-
-
-.form-require, .form-arbitrary, .message-is-seller, .news-private {
+.form__require, .form-arbitrary, .message-is-seller, .news-private {
   margin: 0 0 0 8px;
   padding: 2px 4px;
   border-radius: 2px;
@@ -82,7 +86,7 @@ html {
 }
 
 
-.textarea-default {
+.textarea__default {
   display: block;
   padding: 10px;
   margin-top: 10px;
@@ -93,16 +97,6 @@ html {
     
 
 } 
-.select-default {
-  z-index: 2;
-  height: 56px;
-  border-radius: 4px;
-  background: 0;
-  line-height: 1.5;
-  cursor: pointer;
-  width: 400px;
-  margin-top: 8px;
- }
 
 p {
   line-height: 1.5em;
@@ -115,16 +109,23 @@ p {
   background: #aaa;
   border: 1px solid #aaa;
   color: #fff;
-    line-height: 48px;
-    font-size: 14px;
-    cursor: pointer;
-    text-align: center;
-    width: 45%;
-    margin: 16px 0 0 200px;
-
+  line-height: 48px;
+  font-size: 14px;
+  cursor: pointer;
+  text-align: center;
+  width: 45%;
+  margin: 16px 0 0 200px;
 }
 
-.footer-container1{
+.footer{
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  text-align: center;
+  margin: 0 auto;
+  
+  &__container1{
   display: flex;
   flex-flow: wrap;
   width: 400px;
@@ -132,15 +133,6 @@ p {
   margin-top: 0;
   justify-content: center;
   }
-
-footer{
-right: 0;
-bottom: 0;
-left: 0;
-z-index: 1;
-text-align: center;
-margin: 0 auto;
-
 }
 a.link{
   color: #333;
@@ -150,12 +142,13 @@ a.link{
   
   
 }
-.box-1{
+.box{
+&__1{
   padding-top: 40px;
   width: 120x;
   font-size: 12px;
 }
-.box-2{
+&__2{
   padding-top: 40px;
   width: 96x;
   height: 12px;
@@ -164,28 +157,29 @@ a.link{
 
 
 }
-.box-3{
+&__3{
   padding-top: 40px;
   width: 132x;
   height: 12px;
   line-height: 1px;
   font-size: 12px;
 }
-.box-4{
+&__4{
   width: 100%;
   height: 65px;
   padding-bottom: 8px;
 
   }
+}
 small{
   width: 100%;
 }
 .bottom{
   display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
   line-height: 1.5;
   font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
 }

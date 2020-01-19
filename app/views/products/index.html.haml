@@ -12,22 +12,22 @@
     .container
       %header.header
         %a{href: "https://www.mercari.com/jp/"}
-          %img{alt: "mercari", src "https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2356214421"}/
+          %img{alt: "mercari", src: "https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2356214421"}/
       %main.main
-        .sell-container
-          = form_for @product do |f|
-            %section.sell-container-inner
-              .sell-content.l-head
+        .sell__container
+          = form_for @product, {href: "index/index"} do |f|
+            %section.sell__container--inner
+              .sell__content--lhead
                 %h2 商品の情報を入力
-              .sell-content
-                .sell-upload-box
-                  .form-group__name
+              .sell__content
+                .sell__upload--box
+                  .form__group--name
                     %label
                       出品画像
-                      %span.form-require 必須
+                      %span.form__require 必須
                     %p 最大10枚までアップロードできます
-                    .sell-form
-                      .sell-upload-drop-box
+                    .sell__form
+                      .sell__upload--drop--box
                         %p
                           %label.l1> ドラッグアンドドロップ
                           \&gt;
@@ -35,116 +35,109 @@
                         = succeed ">" do
                           %label.l2 またはクリックしてファイルをアップロード
                         %input.image{multiiple: "ture", type: "file"}/
-              .sell-content
-                .form-group__name
+              .sell__content
+                .form__group--name
                   %label
                     商品名
-                    %span.form-require 必須
+                    %span.form__require 必須
                   %div
-                    = f.text_field :name, class: "input-name",placeholder:"商品名（必須 40文字まで)" ,maxlength:"40"
-                .form-group__text
+                    = f.text_field :name, class: "input__name",placeholder:"商品名（必須 40文字まで)" ,maxlength:"40"
+                .sell.form__group--text
                   %label
                     商品の説明
-                    %span.form-require 必須
-                  = f.text_area :description, class: "textarea-default",placeholder:"商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。" ,maxlength:"1000",rows: "5"
-              .sell-content.clearfix
-                .price-1 商品の詳細
-                .sell-form-box
+                    %span.form__require 必須
+                  = f.text_area :description, class: "textarea__default",placeholder:"商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。" ,maxlength:"1000",rows: "5"
+              .sell__content.clearfix
+                .price__1 商品の詳細
+                .sell__form--box
                   %label
                     カテゴリー
-                    %span.form-require 必須
-                  = f.fields_for :product_categories do |n|
-                    = n.collection_select :categories_id, Category.where(ancestry: nil) ,:id,:layer ,{prompt: "---"} ,{class: "collection_select ,parent" ,id: "c_parents"}
-                    %select#kodomo.collection_select{class: ",child"}
+                    %span.form__require 必須
+                    = f.collection_select :category_id, Category.where(ancestry: nil) ,:id,:layer ,{prompt: "---"} ,{class: "collection_select ,parent" ,id: "c_parents",action: ""}
+                    %select#kodomo.collection_select{class: "child"}
                       %option ---
                     %select#mago.collection_select{class: "gr_child"}
                       %option ---
                 %div
-                  .sell-form-box.form-group__size#size
+                  .sell__form--box.form__group--size#size
                     %label
                       サイズ
-                      %span.form-require 必須
-                    = f.fields_for :products do |n|
-                      = n.collection_select :id, Size.all, :id, :size,{prompt:"---"}, {class:"collection_select"}
-                  .sell-form-box.form-group__brand#brands
+                      %span.form__require 必須
+                    = f.collection_select :size_id, Size.all, :id, :size,{prompt:"---"}, {class:"collection_select"}
+                  .sell__form--box.form__group--brand#brands
                     %label
                       ブランド
-                      %span.form-require 任意
-                    = f.text_field :brand, class: "input-name",placeholder:"例）シャネル"
-                  .sell-form-box.form-group__status
+                      %span.form__require 任意
+                    = f.text_field :brand, class: "input__name",placeholder:"例）シャネル"
+                  .sell__form--box.form__group--status
                     %label
                       商品の状態
-                      %span.form-require 必須
-                    = f.fields_for :products_statuses do |n|
-                      = n.collection_select :status_id, Status.all, :id, :status,{prompt:"---"}, {class:"collection_select"}
-              .sell-content.clearfix
-                .price-1
+                      %span.form__require 必須
+                    = f.collection_select :status_id, Status.all, :id, :status,{prompt:"---"}, {class:"collection_select"}
+              .sell__content.clearfix
+                .price__1
                   配送について
                   %a.form-question{href: "/jp/help_center/article/64/", target: "_blank"} ?
-                #js.form-group__send__JS
-                  .sell-form-box
-                    #send.form-group__category
+                #js.form__group--send--JS
+                  .sell__form--box
+                    #send.form__group--category
                       %label
                         配送料の負担
-                        %span.form-require 必須
-                      = f.fields_for :prduct_charge_methods do |n|
-                        = n.collection_select :method_id, ChargeMethod.where(ancestry: nil) ,:id ,:layer ,{prompt:"---"}, {class:"collection_select ,parent_11" ,id: "parent2"}
-                #copyjs1.form-group__send__JS
-                  .sell-form-box
-                    #copysend.form-group__category
+                        %span.form__require 必須
+                      = f.collection_select :bearsize_id, ChargeMethod.where(ancestry: nil) ,:id ,:layer ,{prompt:"---"}, {class:"collection_select ,parent_11" ,id: "parent2"}
+                #copyjs1.form__group--send--JS
+                  .sell__form--box
+                    #copysend.form__group--category
                       %label
                         配送料の方法
-                        %span.form-require 必須
-                      = f.fields_for :prduct_charge_methods do |n|
-                        = n.collection_select :method_id_2, ChargeMethod.find(1).children ,:id ,:layer ,{prompt:"---"}, {class:"collection_select ,children_11" ,id: "child1"}
-                #copyjs2.form-group__send__JS
-                  .sell-form-box
-                    #copysend.form-group__category
+                        %span.form__require 必須
+                      = f.collection_select :sendmethod_id, ChargeMethod.find(1).children ,:id ,:layer ,{prompt:"---"}, {class:"collection_select ,children_22" ,id: "child1"}
+                #copyjs2.form__group--send--JS
+                  .sell__form--box
+                    #copysend.form__group--category
                       %label
                         配送料の方法
-                        %span.form-require 必須
-                      = f.fields_for :prduct_charge_methods do |n|
-                        = n.collection_select :method_id_3, ChargeMethod.find(2).children ,:id ,:layer ,{prompt:"---"}, {class:"collection_select ,children_22" ,id: "child2"}
-                #beforecopy.form-group__send__2
-                  .sell-form-box
-                    .form-group__category
+                        %span.form__require 必須
+                      = f.collection_select :sendmethod_id, ChargeMethod.find(2).children ,:id ,:layer ,{prompt:"---"}, {class:"collection_select ,children_22" ,id: "child2"}
+                #beforecopy.form__group--send--2
+                  .sell__form--box
+                    .form__group--category
                       %label
                         発送元の地域
-                        %span.form-require 必須
-                      = f.fields_for :send_areas do |n|
-                        = n.collection_select :address_id, Address.all, :id, :name,{prompt:"---"}, {class:"collection_select"}
-                  .form-group__send__2
-                    .sell-form-box
-                      .orm-group__category
+                        %span.form__require 必須
+                      = f.collection_select :address_id, Address.all, :id, :name,{prompt:"---"}, {class:"collection_select"}
+                  .form__group--send--2
+                    .sell__form--box
+                      .form-group__category
                         %label
                           発送までの日数
-                          %span.form-require 必須
-                        = f.fields_for :product_periods do |n|
-                          = n.collection_select :send_periods_id, Period.all,:id ,:period ,{prompt:"---"},{class:"collection_select"}
-              .sell-content
-                .sell-content__en
-                  .price-1
+                          %span.form__require 必須
+                        %div
+                          = f.collection_select :period_id, Period.all,:id ,:period ,{prompt:"---"},{class:"collection_select"}
+              .sell__content
+                .sell__content--en
+                  .price__1
                     販売価格(300〜9,999,999)
                     %a.form-question{href: "/jp/help_center/article/64/", target: "_blank"} ?
-                  .price-2
+                  .price__2
                     .form-group
                       価格
-                      %span.form-require 必須
-                  .price-3
+                      %span.form__require 必須
+                  .price__3
                     %span.en ¥
                     %div
-                      = f.text_field :price,id: "price", class: "input",placeholder:"例）300  ",maxlength:"40"
-                  .price-4
-                  .price-5
+                      = f.text_field :price, id: "price", class: "input",placeholder:"例）300  ",maxlength:"40"
+                  .price__4
+                  .price__5
                     .l-left__10 販売手数料 (10%)
-                  .price-6
-                    %span#per.l-right -
-                  .price-7
-                  .price-8
+                  .price__6
+                    %span#per.l__right
+                  .price__7
+                  .price__8
                     %span.l-left--profit 販売利益
-                  .price-9
-                    #profit.l-right -
-              .sell-content.clearfix
+                  .price__9
+                    #profit.l__right
+              .sell__content.clearfix
                 .bottom
                   %p
                     %a{href: "/jp/help_center/getting_started/prohibited_items/", target:"_blank"}> 禁止されている出品
@@ -170,9 +163,6 @@
     const brand = document.getElementById("brand");
     const mago = document.getElementById("mago");
     const size = document.getElementById("size");
-    mago.addEventListener("change",function () {
-     
-    });
     
     parent2.addEventListener("change", function () {
     if (parent2.value == 1){
@@ -181,7 +171,7 @@
     
     }else if(parent2.value == 2){
       copyjs2.style.display ="block";
-        copyjs1.style.display ="none";
+      copyjs1.style.display ="none";
     }else if(parent2.value == ""){
       copyjs1.style.display ="none";
       copyjs2.style.display ="none";

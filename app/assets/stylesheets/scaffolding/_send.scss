@@ -5,6 +5,11 @@
   display: none;
 }
 
-.form-group__brand ,.form-group__size{
+.form__group{
+&--brand {
   display: none;
+}
+&--size{
+  display: none;
+}
 }

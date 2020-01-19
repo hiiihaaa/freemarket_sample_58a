@@ -1,9 +1,7 @@
 class ProductsController < ApplicationController
-
   before_action :beforenew
   before_action :charge_method_children1, only: [:new, :create]
   before_action :charge_method_children2, only: [:new, :create]
-
   def index
     @product = Product.new
     @category = Category.new
@@ -28,8 +26,14 @@ class ProductsController < ApplicationController
 def create
   @product = Product.new(user_params)
   @product.save
-  render "index"
+  redirect_to root_path
 end
+def update
+  @product = Product.new(user_params)
+  @product.save
+  redirect_to root_path
+end
+
   def beforenew
     @charge_method_parents = ChargeMethod.where(ancestry: nil)
   end
@@ -47,12 +51,9 @@ end
     @charge_method_children2 = ChargeMethod.find(2).children
   end
 
-
-  private
-
+private
 def user_params
-params.require(:product).permit(:id,:name,:description,:brand,:price,:status_id,:size,:brand,
-product_category_attributes:[:categories_id],products_status_attributes:[:status_id],product_send_period_attributes:[:id],product_charge_method_attributes:[:method_id,:method_id_2],)
+  params.require(:product).permit(:id,:name,:description,:brand,:price,:status_id,:size,:category_id,:size_id,:status_id,:bearsize_id,:sendmethod_id,:address_id,:period_id)
 end
 end
 
