@@ -139,7 +139,7 @@ Things you may want to cover:
 |user_id|integer|null: false, foreign_key: true|
 
 ### Association
-- has_many :categories
+- belongs_to :category, dependent: :destroy
 - has_many :likes
 - has_many :comments
 - belongs_to :user, dependent: :destroy
@@ -176,10 +176,9 @@ Things you may want to cover:
 |------|----|-------|
 |name|string|null: false|
 |ancestry|string|null: false|
-|products_id|integer|null: false|
 
 ### Association
-- belongs_to :product, dependent: :destroy
+- has_many :products, dependent: :destroy
 - has_ancestry
 
 
