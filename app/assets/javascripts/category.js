@@ -19,7 +19,7 @@
       })
 
       .done(function(child){ 
-        child_js.style.display ="block";
+        child_js.style.display = "block";
         child.forEach(function(child){
         var child_html = "";
         var child_html = ($("<option>").val($(child).attr('id')).text($(child).attr('layer')));

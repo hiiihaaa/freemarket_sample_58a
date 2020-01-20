@@ -1,2 +1,0 @@
-class PrductChargeMethod < ApplicationRecord
-end
