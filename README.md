@@ -38,14 +38,14 @@ Things you may want to cover:
 |customer_id|integer|null: false, foreign_key: true|
 
 ### Association
-- has_many :products
-- has_one :credit_card
-- has_many :likes
-- has_many :comments
-- has_many :message_after_buyings
-- has_one :phone_number_authorizations
-- has_one :delivery_address
-- has_many :user_identifications
+- has_many :products, dependent: :destroy
+- has_one :credit_card, dependent: :destroy
+- has_many :likes, dependent: :destroy
+- has_many :comments, dependent: :destroy
+- has_many :message_after_buyings, dependent: :destroy
+- has_one :phone_number_authorizations, dependent: :destroy
+- has_one :delivery_address, dependent: :destroy
+- has_many :user_identifications, dependent: :destroy
 
 
 ## User_idenficationsテーブル
@@ -60,7 +60,7 @@ Things you may want to cover:
 |user_id|integer|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :user, dependent: :destroy
+- belongs_to :user
 
 
 ## delivery_addressテーブル
@@ -80,7 +80,7 @@ Things you may want to cover:
 |user_id|integer|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :user, dependent: :destroy
+- belongs_to :user
 
 
 ## credit_cardsテーブル
@@ -92,7 +92,7 @@ Things you may want to cover:
 |user_id|integer|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :user, dependent: :destroy
+- belongs_to :user
 
 
 ## banks_accountsテーブル
@@ -108,7 +108,7 @@ Things you may want to cover:
 |user_id|integer|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :user, dependent: :destroy
+- belongs_to :user
 
 
 ## phone_number_authorizationsテーブル
@@ -119,7 +119,7 @@ Things you may want to cover:
 |user_id|integer|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :user, dependent: :destroy
+- belongs_to :user
 
 
 ## productsテーブル
@@ -137,12 +137,13 @@ Things you may want to cover:
 |brand|string|null: false|
 |current_status|string|null: false|
 |user_id|integer|null: false, foreign_key: true|
+|category_id|integer|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :category, dependent: :destroy
-- has_many :likes
-- has_many :comments
-- belongs_to :user, dependent: :destroy
+- belongs_to :category
+- has_many :likes, dependent: :destroy
+- has_many :comments, dependent: :destroy
+- belongs_to :user
 - belongs_to :purchase
 
 
@@ -151,23 +152,23 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |text|string|null: false|
-|user_id|integer|null: false|
-|products_id|integer|null: false|
+|user_id|integer|null: false, foreign_key: true|
+|product_id|integer|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :product, dependent: :destroy
+- belongs_to :product
 
 
 ## likesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false|
-|products_id|integer|null: false|
+|user_id|integer|null: false, foreign_key: true|
+|product_id|integer|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :user, dependent: :destroy
-- belongs_to :product, dependent: :destroy
+- belongs_to :user
+- belongs_to :product
 
 
 ## categoriesテーブル
@@ -187,13 +188,13 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |evaluation|integer|null: false|
-|user_id|integer|null: false|
-|products_id|integer|null: false|
+|user_id|integer|null: false, foreign_key: true|
+|product_id|integer|null: false, foreign_key: true|
 
 ### Association
 - has_many :message_after_buyings
-- belongs_to :user, dependent: :destroy
-- belongs_to :product, dependent: :destroy
+- belongs_to :user
+- belongs_to :product
 
 
 ## message_after_buyingsテーブル
@@ -202,8 +203,8 @@ Things you may want to cover:
 |------|----|-------|
 |type|string|null: false|
 |text|string|null: false|
-|user_id|integer|null: false|
-|purchase_id|integer|null: false|
+|user_id|integer|null: false, foreign_key: true|
+|purchase_id|integer|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :user, dependent: :destroy
+- belongs_to :user
