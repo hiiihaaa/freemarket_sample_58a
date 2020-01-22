@@ -1,0 +1,202 @@
+%main.mypage-container
+  .mypage-content
+    %section.mypage-user-icon
+      = link_to users_path do
+        %figure
+          = image_tag "https://static.mercdn.net/thumb/members/103058894.jpg?1538909507", size: "60x60"
+        %h2.mypage-user-icon__name.bold
+          = "nickname"
+        .mypage-user-icon__number
+          .mypage-user-icon__number--rate
+            評価
+            %span.bold
+              0
+          .mypage-user-icon__number--display
+            出品数
+            %span.bold
+              15
+    %section.mypage-content__tab-container-notification
+      %ul.mypage-content__tabs
+        %li.mypage-content__tabs--active
+          %h3.mypage-content__tabs__head
+            = link_to users_path do
+              お知らせ
+        %li.mypage-content__tabs--non-active
+          %h3
+            = link_to users_path, class: "mypage-content__tabs__head" do
+              やることリスト
+      .mypage-content__tab-content
+        %ul.mypage-content__tab-content__item-list
+          %li
+            = link_to users_path, class: "mypage-content__tab-content__item-list__link" do
+              %figure
+                = image_tag("https://static.mercdn.net/images/mercari_profile.png", size: "48x48")
+              .mypage-content__tab-content__item-list__body
+                .mypage-content__tab-content__item-list__body--text
+                  時間が足りないよやること多すぎだよ眠いよ寝よう
+                %time
+                  = icon "far", "clock"
+                  %span 1日前
+              = icon "fas", "angle-right", class: "mypage-content__tab-content__item-list__icon"
+          %li
+            = link_to users_path, class: "mypage-content__tab-content__item-list__link" do
+              %figure
+                = image_tag("https://static.mercdn.net/thumb/photos/m52914734455_1.jpg?1557221827", size: "48x48")
+              .mypage-content__tab-content__item-list__body
+                .mypage-content__tab-content__item-list__body--text
+                  いいね！したシャツにコメントがつきました。
+                %time
+                  = icon "far", "clock"
+                  %span 5時間前
+              = icon "fas", "angle-right", class: "mypage-content__tab-content__item-list__icon"
+          %li
+            = link_to users_path, class: "mypage-content__tab-content__item-list__link" do
+              %figure
+                = image_tag("https://static.mercdn.net/images/mercari_profile.png", size: "48x48")
+              .mypage-content__tab-content__item-list__body
+                .mypage-content__tab-content__item-list__body--text
+                  「メルペイスマート払い」なら今だけ最大3％還元！詳しくはこちら
+                %time
+                  = icon "far", "clock"
+                  %span 5週間前
+              = icon "fas", "angle-right", class: "mypage-content__tab-content__item-list__icon"
+          %li
+            = link_to users_path, class: "mypage-content__tab-content__item-list__link" do
+              %figure
+                = image_tag("https://static.mercdn.net/images/mercari_profile.png", size: "48x48")
+              .mypage-content__tab-content__item-list__body
+                .mypage-content__tab-content__item-list__body--text
+                  最大P3000もらえる！買うしかないキャンペーン開催中！！
+                %time
+                  = icon "far", "clock"
+                  %span 4時間前
+              = icon "fas", "angle-right", class: "mypage-content__tab-content__item-list__icon"
+          %li
+            = link_to users_path, class: "mypage-content__tab-content__item-list__link" do
+              %figure
+                = image_tag("https://static.mercdn.net/thumb/photos/m97045633952_1.jpg?1568523458", size: "48x48")
+              .mypage-content__tab-content__item-list__body
+                .mypage-content__tab-content__item-list__body--text
+                  「サッカー用コーン」を購入しました。取引が完了しました。
+                %time
+                  = icon "far", "clock"
+                  %span 1分前
+              = icon "fas", "angle-right", class: "mypage-content__tab-content__item-list__icon"
+          %li.mypage-content__tab-content__item-list__index
+            = link_to users_path do
+              一覧を見る
+    %section.mypage-content__tab-container
+      %h2.mypage-content__head.bold 購入した商品
+      %ul.mypage-content__tabs
+        %li.mypage-content__tabs--active
+          %h3.mypage-content__tabs__head
+            = link_to users_path do
+              取引中
+        %li.mypage-content__tabs--non-active
+          %h3.mypage-content__tabs__head
+            = link_to users_path do
+              過去の取引
+      .mypage-content__tab-content
+        %ul.mypage-content__tab-content-active
+          %li.mypage-content__tab-content__not-found.bold
+            取引中の商品がありません
+
+  .mypage-side
+    %nav.mypage-side-nav
+      %ul.mypage-side-nav__list
+        %li
+          = link_to users_path, class: "mypage-side-nav__list__item active" do
+            マイページ
+            = icon "fas", "angle-right" , class: "mypage-side-nav__list__icon"
+        %li
+          = link_to users_path, class: "mypage-side-nav__list__item" do
+            お知らせ
+            = icon "fas", "angle-right" , class: "mypage-side-nav__list__icon"
+        %li
+          = link_to users_path, class: "mypage-side-nav__list__item" do
+            やることリスト
+            = icon "fas", "angle-right" , class: "mypage-side-nav__list__icon"
+        %li
+          = link_to users_path, class: "mypage-side-nav__list__item" do
+            いいね！一覧
+            = icon "fas", "angle-right" , class: "mypage-side-nav__list__icon"
+        %li
+          = link_to users_path, class: "mypage-side-nav__list__item" do
+            出品する
+            = icon "fas", "angle-right" , class: "mypage-side-nav__list__icon"
+        %li
+          = link_to users_path, class: "mypage-side-nav__list__item" do
+            出品した商品 - 出品中
+            = icon "fas", "angle-right" , class: "mypage-side-nav__list__icon"
+        %li
+          = link_to users_path, class: "mypage-side-nav__list__item" do
+            出品した商品 - 取引中
+            = icon "fas", "angle-right" , class: "mypage-side-nav__list__icon"
+        %li
+          = link_to users_path, class: "mypage-side-nav__list__item" do
+            出品した商品 - 売却済み
+            = icon "fas", "angle-right" , class: "mypage-side-nav__list__icon"
+        %li
+          = link_to users_path, class: "mypage-side-nav__list__item" do
+            購入した商品 - 取引中
+            = icon "fas", "angle-right" , class: "mypage-side-nav__list__icon"
+        %li
+          = link_to users_path, class: "mypage-side-nav__list__item" do
+            購入した商品 - 過去の取引
+            = icon "fas", "angle-right" , class: "mypage-side-nav__list__icon"
+        %li
+          = link_to users_path, class: "mypage-side-nav__list__item" do
+            ニュース一覧
+            = icon "fas", "angle-right" , class: "mypage-side-nav__list__icon"
+        %li
+          = link_to users_path, class: "mypage-side-nav__list__item" do
+            評価一覧
+            = icon "fas", "angle-right" , class: "mypage-side-nav__list__icon"
+        %li
+          = link_to users_path, class: "mypage-side-nav__list__item" do
+            ガイド
+            = icon "fas", "angle-right" , class: "mypage-side-nav__list__icon"
+        %li
+          = link_to users_path, class: "mypage-side-nav__list__item" do
+            お問い合わせ
+            = icon "fas", "angle-right" , class: "mypage-side-nav__list__icon"
+      %h3.mypage-side-nav__head メルペイ
+      %ul.mypage-side-nav__list.margin
+        %li
+          = link_to users_path, class: "mypage-side-nav__list__item" do
+            売上・振込申請
+            = icon "fas", "angle-right" , class: "mypage-side-nav__list__icon"
+        %li
+          = link_to users_path, class: "mypage-side-nav__list__item" do
+            ポイント
+            = icon "fas", "angle-right" , class: "mypage-side-nav__list__icon"
+      %h3.mypage-side-nav__head 設定
+      %ul.mypage-side-nav__list.margin
+        %li
+          = link_to users_path, class: "mypage-side-nav__list__item" do
+            プロフィール
+            = icon "fas", "angle-right" , class: "mypage-side-nav__list__icon"
+        %li
+          = link_to users_path, class: "mypage-side-nav__list__item" do
+            発送元・お届け先住所変更
+            = icon "fas", "angle-right" , class: "mypage-side-nav__list__icon"
+        %li
+          = link_to users_path, controller: "payments", method: :get, action: "index", class: "mypage-side-nav__list__item" do
+            支払い方法
+            = icon "fas", "angle-right" , class: "mypage-side-nav__list__icon"
+        %li
+          = link_to users_path, class: "mypage-side-nav__list__item" do
+            メール/パスワード
+            = icon "fas", "angle-right" , class: "mypage-side-nav__list__icon"
+        %li
+          = link_to users_path, class: "mypage-side-nav__list__item" do
+            本人情報
+            = icon "fas", "angle-right" , class: "mypage-side-nav__list__icon"
+        %li
+          = link_to users_path, class: "mypage-side-nav__list__item" do
+            電話番号の確認
+            = icon "fas", "angle-right" , class: "mypage-side-nav__list__icon"
+        %li
+          = link_to users_path, method: :delete, action: "destroy", class: "mypage-side-nav__list__item" do
+            ログアウト
+            = icon "fas", "angle-right" , class: "mypage-side-nav__list__icon"
