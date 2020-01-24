@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2019_12_30_042408) do
+=======
+ActiveRecord::Schema.define(version: 2020_01_19_055550) do
+
+  create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "prefecture_id"
+    t.string "city"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+>>>>>>> parent of f97cbbc... コンフリクト解消
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "product_id"
@@ -82,6 +93,7 @@ ActiveRecord::Schema.define(version: 2019_12_30_042408) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
+<<<<<<< HEAD
   create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "product_id"
@@ -99,6 +111,10 @@ ActiveRecord::Schema.define(version: 2019_12_30_042408) do
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.string "size"
+=======
+  create_table "statuses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "status_id"
+>>>>>>> parent of f97cbbc... コンフリクト解消
     t.string "status"
     t.string "shipping_fee"
     t.string "shipping_method"
