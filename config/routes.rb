@@ -17,7 +17,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :products, only: [:index, :new, :create, :edit, :show] do
+  resources :products, only: [:index, :new, :create, :edit, :destroy, :show] do
     resources :likes, only: [:create]
   end
   get "purchase_product" => "products#purchase"

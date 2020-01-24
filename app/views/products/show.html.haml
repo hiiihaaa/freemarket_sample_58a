@@ -36,9 +36,9 @@
       .l-right
         %ul.pc-header-login-nav
           %li
-            = link_to "新規会員登録","新規会員登録URL", class: "sp-header-btn btn-red"
+            = link_to "新規会員登録",new_user_registration_path, class: "sp-header-btn btn-red"
           %li
-            = link_to "ログイン","ログイン画面URL", class: "sp-header-btn header-login"
+            = link_to "ログイン",user_session_path, class: "sp-header-btn header-login"
 %section.product_detail.l-single-container
   %h1.product_name
     = @product.name
@@ -154,6 +154,20 @@
       = link_to "安心安全への取り組みURL", target: "_blank" do
         %i.icon-lock
         %span あんしん・あんぜんへの取り組み
+-if user_signed_in? && current_user.id == @user.id
+  .x-single-container
+    .listing-item-change-box
+      = link_to "URL", class: "btn-default btn-red" do
+        %span 商品の編集
+      %p.text-center
+        %span or
+      %form{action: "URL", method: "POST", novalidate: "novalidate"}
+        %input{name: "__csrf_value", type: "hidden", value: "何かの文字列"}
+        %button{type: "submit", class: "btn-default btn-gray"}
+          %span 出品を一旦停止する
+      %button{"data-modal": "delete-item", "data-open": "modal", class: "btn-default btn-gray"}
+        = link_to 'この商品を削除する', "/products/#{@product.id}", class: "white-link", method: :delete
+-else
 .item-detail-message
   .message-container
     .message-content
