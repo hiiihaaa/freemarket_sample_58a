@@ -16,7 +16,6 @@ class ProductsController < ApplicationController
     @product_user_other_image = ProductImage.where(product_id: @product_user_other)
     @category_same = Category.where.not(product_id: @product.id).where(name: @category.name)
     @other_product_image = ProductImage.where(product_id: @category_same)
-    # @next_and_back = 
   end
 
   def destroy
