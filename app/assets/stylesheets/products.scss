@@ -249,7 +249,7 @@ h2 {
   content: '\e02a';
 }
 
-.l-right {
+.l__right {
   float: right;
 }
 
@@ -784,12 +784,12 @@ button {
     margin: 50px -30px 10px;
   }
 
-  .textarea-default {
+  .textarea__default {
     margin: 8px -30px 0;
   }
 }
 
-.textarea-default {
+.textarea__default {
   display: block;
   width: calc(100% + 40px);
   max-width: calc(100% + 50px);

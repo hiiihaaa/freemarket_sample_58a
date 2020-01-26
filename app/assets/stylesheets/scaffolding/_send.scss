@@ -1,0 +1,15 @@
+#copyjs1 {
+  display: none;
+}
+#copyjs2 {
+  display: none;
+}
+
+.form__group{
+&--brand {
+  display: none;
+}
+&--size{
+  display: none;
+}
+}
