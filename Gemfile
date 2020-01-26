@@ -81,6 +81,6 @@ gem 'devise'
 gem "jquery-rails"
 gem 'font-awesome-rails'
 gem 'payjp'
-# gem 'font-awesome-sass', "< 5.0.13"
+gem 'font-awesome-sass'
 gem 'pry-rails'
 gem 'twilio-ruby', '~> 5.31.1'
