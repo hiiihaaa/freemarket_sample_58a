@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  before_action :set_product, only: [:destroy]
+
   def purchase
   end
   
@@ -18,7 +20,6 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    product = Product.find(params[:id])
     product.destroy if product.user_id == current_user.id
   end
 
@@ -28,5 +29,11 @@ class ProductsController < ApplicationController
   end
 
   def create
+  end
+
+  private
+
+  def set_product
+    @product = Product.find(params[:id])
   end
 end

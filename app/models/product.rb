@@ -1,10 +1,9 @@
 class Product < ApplicationRecord
-  # belongs_to :user
-  # belongs_to :user
-  # has_many_attached :images
-  # belongs_to :user
-  # has_many :comments
-  # has_many :categories
+  belongs_to :user
+  has_many_attached :images
+  belongs_to :user
+  has_many :comments
+  has_many :categories
 
   def previous
     Product.where("id < ?", self.id).order("id DESC").first
