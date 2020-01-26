@@ -19,7 +19,7 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    product.destroy if product.user_id == current_user.id
+    @product.destroy if @product.user_id == current_user.id
   end
 
   def new
