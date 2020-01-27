@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
 
   root 'top#index'
+  
+  resources :products do
+    collection do
+      get "cate_children" 
+      get "grand_children" 
+    end
+  end
+
 
   devise_scope :user do
     post 'users', to: 'devise/registrations#create'
