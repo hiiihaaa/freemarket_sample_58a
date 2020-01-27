@@ -1,5 +1,5 @@
 %ul.content__main--latest-items__box--merchandises
-  = @products.each do |product|
+  - @products.each do |product|
     %li.content__main--latest-items__box--merchandises__merchandise
       = link_to "test", class: "content__main--latetst-items__box--merchandises__merchandise--block" do
         %figure.content__main--latest-items__box--merchandises__merchandise--block__element
@@ -9,4 +9,4 @@
           .content__main--latest-items__box--merchandises__merchandise--block__element--pic_box
             %span{"aria-label": "Price"}
               = "¥#{product.price.to_s(:delimited)}"
-              -# image is not yet available.
+              
