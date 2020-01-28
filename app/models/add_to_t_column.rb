@@ -1,0 +1,2 @@
+class AddToTColumn < ApplicationRecord
+end
