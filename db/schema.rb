@@ -22,16 +22,21 @@ ActiveRecord::Schema.define(version: 2020_01_19_232840) do
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "product_id"
     t.string "name"
-    t.string "layer"
     t.string "ancestry"
   end
 
   create_table "charge_methods", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "layer"
     t.string "ancestry"
+    t.index ["ancestry"], name: "index_charge_methods_on_ancestry"
+  end
+
+  create_table "charge_mothods", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "layer"
+    t.string "ancestry"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["ancestry"], name: "index_charge_methods_on_ancestry"
+    t.index ["ancestry"], name: "index_charge_mothods_on_ancestry"
   end
 
   create_table "credit_cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -51,42 +56,9 @@ ActiveRecord::Schema.define(version: 2020_01_19_232840) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "periods", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "period"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "prduct_charge_methods", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "method_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "product_categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "product_id"
-    t.integer "categories_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "product_images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "product_id"
     t.string "image_url"
-  end
-
-  create_table "product_periods", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "product_id"
-    t.integer "send_periods_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "product_send_areas", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "product_id"
-    t.integer "send_areas_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -103,41 +75,15 @@ ActiveRecord::Schema.define(version: 2020_01_19_232840) do
     t.string "purchase_status"
     t.integer "category_id"
     t.integer "user_id"
-<<<<<<< HEAD
-=======
     t.integer "size_id"
     t.integer "status_id"
     t.integer "bearsize_id"
     t.integer "sendmethod_id"
     t.integer "address_id"
     t.integer "period_id"
->>>>>>> parent of 711faaf... Revert "Merge pull request #44 from hiiihaaa/WIP]商品出品ページ"
-  end
-
-  create_table "products_statuses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "product_id"
-    t.integer "status_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-<<<<<<< HEAD
-=======
-  end
-
-  create_table "send_areas", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "area"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "address_id"
   end
 
   create_table "send_methods", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "statuses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "status_id"
-    t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -157,7 +103,6 @@ ActiveRecord::Schema.define(version: 2020_01_19_232840) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
->>>>>>> parent of 711faaf... Revert "Merge pull request #44 from hiiihaaa/WIP]商品出品ページ"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

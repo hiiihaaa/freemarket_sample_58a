@@ -130,6 +130,7 @@
           %th 発送日の目安
           %td
             = @product.shipping_date
+            -# = f.collection_select :period_id, Period.all,:id ,:period ,{prompt:"---"},{class:"collection_select"}
   .item-price-box.text-center
     %span.item-price.bold
       = "¥#{@product.price.to_s(:delimited)}"
@@ -284,10 +285,10 @@
                 = image_tag @other_product_image[num].image_url, class: "lazyloaded", alt: ""
               .items-box-body
                 %h3.items-box-name.font-2
-                  = category.product.name
+                  -# = category.product.name
                 .items-box-num
                   .items-box-price.font-5
-                    = "¥#{category.product.price.to_s(:delimited)}"
+                    -# = "¥#{category.product.price.to_s(:delimited)}"
                   .font-2
                     %i.icon-like-border
                     %span

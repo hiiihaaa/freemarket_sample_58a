@@ -1,11 +1,9 @@
 class Product < ApplicationRecord
-<<<<<<< HEAD
   belongs_to :user
-  has_many_attached :images
-  belongs_to :user
-  has_many :comments
-  has_many :categories
-=======
+  has_many :product_images
+  # has_many_attached :images
+  # has_many :categories
+
   has_one    :category
   accepts_nested_attributes_for :category
   has_one    :status
@@ -24,6 +22,11 @@ class Product < ApplicationRecord
   belongs_to_active_hash :address
   belongs_to_active_hash :status
 
->>>>>>> parent of 711faaf... Revert "Merge pull request #44 from hiiihaaa/WIP]商品出品ページ"
-
+  def previous
+    Product.where("id < ?", self.id).order("id DESC").first
+  end
+ 
+  def next
+    Product.where("id > ?", self.id).order("id ASC").first
+  end
 end
