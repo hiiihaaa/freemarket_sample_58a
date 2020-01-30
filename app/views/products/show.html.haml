@@ -112,7 +112,7 @@
         %tr
           %th 商品の状態
           %td 
-            = @product.status
+            = @product.status.status
         %tr
           %th 配送料の負担
           %td
@@ -126,11 +126,12 @@
           %td
             = link_to "都道府県URL" do
               = @product.shipping_from
+              -# = @product.address.address
         %tr
           %th 発送日の目安
           %td
             = @product.shipping_date
-            -# = f.collection_select :period_id, Period.all,:id ,:period ,{prompt:"---"},{class:"collection_select"}
+            = @product.period.period
   .item-price-box.text-center
     %span.item-price.bold
       = "¥#{@product.price.to_s(:delimited)}"
