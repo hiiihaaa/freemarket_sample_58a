@@ -109,6 +109,14 @@
             = link_to "ブランドURL" do
               %div 
               = @product.brand
+        -if @product.size_id == nil
+        -else
+          %tr
+            %th サイズ
+            %td
+              = link_to "ブランドURL" do
+                %div 
+                = @product.size.size
         %tr
           %th 商品の状態
           %td 
