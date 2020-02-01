@@ -3,7 +3,7 @@
     .pc-header-top
       %div
         = link_to root_path do
-          = image_tag "https://web-jp-assets.mercdn.net/_next/static/images/logo-acdd90ac4f472d5a6f7a330d33ab1225.svg", size: "134x36", alt: "mercari"
+          -# = image_tag "https://web-jp-assets.mercdn.net/_next/static/images/logo-acdd90ac4f472d5a6f7a330d33ab1225.svg", size: "134x36", alt: "mercari"
       %form.pc-header-form{action: "検索URL"}
         %input.input-default{name: "keyword", placeholder: "何かお探しですか？", type: "search", value: ""}/
         %i.icon-search
@@ -61,7 +61,7 @@
           .owl-stage{style: "width: 900px;"}
             .owl-item{style: "width: 300px;"}
               .owl-item-inner
-                = image_tag @product_image.image_url, class: "owllazy", style: "opacity: 1;"
+                -# = image_tag @product_image.image_url, class: "owllazy", style: "opacity: 1;"
         .owl-nav.disabled
           .owl-prev prev
           .owl-next next
@@ -69,7 +69,7 @@
           .owl-dot
             %span
             .owl-dot-inner
-              = image_tag @product_image.image_url
+              -# = image_tag @product_image.image_url
     .item-prige-box.text-center.visible-sp
       %span.item-price.bold ¥X,XXX
       %span.item-tax (税込)
@@ -256,7 +256,7 @@
           %section.items-box
             = link_to "/products/#{product.id}" do
               %figure.items-box-photo.__web-inspector-hide-shortcut__
-                = image_tag @product_user_other_image[num].image_url, class: "lazyloaded", alt: ""
+                -# = image_tag @product_user_other_image[num].image_url, class: "lazyloaded", alt: ""
               .items-box-body
                 %h3.items-box-name.font-2
                   = product.name
