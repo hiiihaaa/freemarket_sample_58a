@@ -1,13 +1,12 @@
 Rails.application.routes.draw do
 
   root 'top#index'
-  get "users" => "users#index"
 
   devise_scope :user do
     post 'users', to: 'devise/registrations#create'
   end
   devise_for :users
-  resources :users, only: [:edit, :show]
+  resources :users, only: [:edit, :show, :index]
 
   resources :credit_cards, only: [:new, :show] do
     collection do
