@@ -9,6 +9,7 @@
 }
 
 a {
+  display: block;
   color: #0099e8;
   text-decoration: none;
   touch-action: manipulation;
@@ -131,6 +132,7 @@ input {
   z-index: 1001;
   background: #fff;
   height: 100px;
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
 }
 
 .pc-header-inner {
@@ -249,7 +251,7 @@ h2 {
   content: '\e02a';
 }
 
-.l__right {
+.l-right {
   float: right;
 }
 
@@ -304,6 +306,7 @@ h2 {
 
 .l-single-container {
   width: 700px;
+  background: #fff;
 }
 
 .product_name {
@@ -784,12 +787,12 @@ button {
     margin: 50px -30px 10px;
   }
 
-  .textarea__default {
+  .textarea-default {
     margin: 8px -30px 0;
   }
 }
 
-.textarea__default {
+.textarea-default {
   display: block;
   width: calc(100% + 40px);
   max-width: calc(100% + 50px);
@@ -823,6 +826,7 @@ textarea {
 }
 
 .btn-default {
+  margin: 16px 0 16px 0;
   display: block;
   width: 100%;
   line-height: 48px;
@@ -1229,3 +1233,18 @@ button {
   display: flex;
   flex-wrap: wrap;
 }
+
+.listing-item-change-box {
+  margin: 24px 0 24px 0;
+  background: #fff;
+  padding: 8px 16px 8px 16px;
+}
+.x-single-container {
+  width: 700px;
+  margin: 0 auto;
+  background: #fff;
+}
+.white-link {
+  text-decoration : none; 
+  color: #ffffff; 
+  }
