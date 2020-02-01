@@ -128,13 +128,12 @@
         %tr
           %th 配送の方法
           %td
-            = @product.shipping_method
+            = @product.sendmethod.name
         %tr
           %th 配送元の地域
           %td
             = link_to "都道府県URL" do
-              = @product.shipping_from
-              -# = @product.address.address
+              = @product.address.name
         %tr
           %th 発送日の目安
           %td
