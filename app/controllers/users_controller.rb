@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   end
   def index
   end
-  def logout
+  def destroy
   end
   def show
     redirect_to controller: 'devise/sessions', action: 'new'
