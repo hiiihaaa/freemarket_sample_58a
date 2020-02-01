@@ -3,9 +3,11 @@
   color: rgb(255, 255, 255);
   font-size: 12px;
   padding: 0px 20px 10px;
+  width: auto;
   &__details {
-    width: 700px;
+    width: 1020px;
     margin: 0px auto;
+    display: flex;
     &--box {
       display: inline-block;
       margin-top: 18px;
@@ -53,8 +55,8 @@
     }
   }
   &__end {
-    width: 700px;
-    margin: 55px auto 0px;
+    width: 1020px;
+    margin: 30px auto 20px;
     -webkit-box-align: center;
     align-items: center;
     display: flex;
