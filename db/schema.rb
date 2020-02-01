@@ -10,11 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_30_042408) do
+ActiveRecord::Schema.define(version: 2020_01_19_055550) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "product_id"
     t.string "name"
+    t.string "ancestry"
+  end
+
+  create_table "charge_mothods", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "layer"
+    t.string "ancestry"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["ancestry"], name: "index_charge_mothods_on_ancestry"
   end
 
   create_table "credit_cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -24,6 +33,12 @@ ActiveRecord::Schema.define(version: 2019_12_30_042408) do
   end
 
   create_table "customers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -46,6 +61,13 @@ ActiveRecord::Schema.define(version: 2019_12_30_042408) do
     t.string "brand"
     t.string "purchase_status"
     t.integer "category_id"
+    t.integer "user_id"
+    t.integer "size_id"
+    t.integer "status_id"
+    t.integer "bearsize_id"
+    t.integer "sendmethod_id"
+    t.integer "address_id"
+    t.integer "period_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -67,64 +89,4 @@ ActiveRecord::Schema.define(version: 2019_12_30_042408) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "product_id"
-    t.string "name"
-  end
-
-  create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.text "content"
-    t.bigint "product_id"
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["product_id"], name: "index_comments_on_product_id"
-    t.index ["user_id"], name: "index_comments_on_user_id"
-  end
-
-  create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "product_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["product_id"], name: "index_likes_on_product_id"
-    t.index ["user_id"], name: "index_likes_on_user_id"
-  end
-
-  create_table "product_images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "product_id"
-    t.string "image_url"
-  end
-
-  create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
-    t.string "size"
-    t.string "status"
-    t.string "shipping_fee"
-    t.string "shipping_method"
-    t.string "shipping_from"
-    t.string "shipping_date"
-    t.integer "price"
-    t.string "brand"
-    t.string "purchase_status"
-    t.integer "user_id"
-    t.text "product_detail"
-  end
-
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "nickname", null: false
-    t.string "firstname", null: false
-    t.string "lastname", null: false
-    t.string "firstname_kana", null: false
-    t.string "lastname_kana", null: false
-    t.datetime "birthday", null: false
-    t.string "image"
-  end
-
-  add_foreign_key "comments", "products"
-  add_foreign_key "comments", "users"
-  add_foreign_key "likes", "products"
-  add_foreign_key "likes", "users"
 end
