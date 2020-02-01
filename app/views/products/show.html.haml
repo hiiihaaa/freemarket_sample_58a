@@ -36,9 +36,9 @@
       .l-right
         %ul.pc-header-login-nav
           %li
-            = link_to "新規会員登録","新規会員登録URL", class: "sp-header-btn btn-red"
+            = link_to "新規会員登録",new_user_registration_path, class: "sp-header-btn btn-red"
           %li
-            = link_to "ログイン","ログイン画面URL", class: "sp-header-btn header-login"
+            = link_to "ログイン",user_session_path, class: "sp-header-btn header-login"
 %section.product_detail.l-single-container
   %h1.product_name
     = @product.name
@@ -58,7 +58,7 @@
     .item_image
       .owl-carousel.owl-loaded.owl-drag
         .owl-stage-outer
-          .owl-stage{style: "left: -600px; width: 900px;"}
+          .owl-stage{style: "width: 900px;"}
             .owl-item{style: "width: 300px;"}
               .owl-item-inner
                 = image_tag @product_image.image_url, class: "owllazy", style: "opacity: 1;"
@@ -132,8 +132,7 @@
             = @product.shipping_date
   .item-price-box.text-center
     %span.item-price.bold
-      ¥
-      = @product.price
+      = "¥#{@product.price.to_s(:delimited)}"
     %span.item-tax (税込)
     %span.item-shipping-fee
       = @product.shipping_fee
@@ -155,6 +154,20 @@
       = link_to "安心安全への取り組みURL", target: "_blank" do
         %i.icon-lock
         %span あんしん・あんぜんへの取り組み
+-if user_signed_in? && current_user.id == @user.id
+  .x-single-container
+    .listing-item-change-box
+      = link_to "URL", class: "btn-default btn-red" do
+        %span 商品の編集
+      %p.text-center
+        %span or
+      %form{action: "URL", method: "POST", novalidate: "novalidate"}
+        %input{name: "__csrf_value", type: "hidden", value: "何かの文字列"}
+        %button{type: "submit", class: "btn-default btn-gray"}
+          %span 出品を一旦停止する
+      %button{"data-modal": "delete-item", "data-open": "modal", class: "btn-default btn-gray"}
+        = link_to 'この商品を削除する', product_path, class: "white-link", method: :delete
+-else
 .item-detail-message
   .message-container
     .message-content
@@ -200,14 +213,18 @@
           %input{name: "redirect_url_key", type: "hidden", value: "item_detail"}/
           %input{name: "__csrf_value", type: "hidden", value: "何か"}/
 %ul.nav-item-link-prev-next.clearfix
-  %li.nav-item-link-prev
-    = link_to "別商品(左)URL" do
-      %i.icon-arrow-left
-      "商品名"
-  %li.nav-item-link-next
-    = link_to "別商品(右)URL" do
-      "商品名"
-      %i.icon-arrow-right
+  -if @product.previous == nil
+  -else
+    %li.nav-item-link-prev
+      = link_to "/products/#{@product.previous.id}" do
+        %i.icon-arrow-left
+        = @product.previous.name
+  -if @product.next == nil
+  -else
+    %li.nav-item-link-next
+      = link_to "/products/#{@product.next.id}" do
+        = @product.next.name
+        %i.icon-arrow-right
 .item-social-media-box
   .text-center
     .fb-save.fb_iframe_widget{"data-uri": "何かのURL?", "fb-iframe-plugin-query": "何かのURL", "fb-xfbml-state": "rendered"}
@@ -232,49 +249,51 @@
       = link_to "URL" do
         = @user.nickname 
         さんのその他の出品
-    -num = 0
-    -@product_user_other.each do |product|
-      .items-box-content.clearfix
-        %section.items-box
-          = link_to "商品ページURL" do
-            %figure.items-box-photo.__web-inspector-hide-shortcut__
-              = image_tag @product_user_other_image[num].image_url, class: "lazyloaded", alt: ""
-            .items-box-body
-              %h3.items-box-name.font-2
-                = product.name
-              .items-box-num
-                .items-box-price.font-5 
-                  ¥
-                  = product.price
-                .font-2
-                  %i.icon-like-border
-                  %span
-                    X
-      -num += 1
+    .items-box-set
+      -num = 0
+      -@product_user_other.each do |product|
+        .items-box-content.clearfix
+          %section.items-box
+            = link_to "/products/#{product.id}" do
+              %figure.items-box-photo.__web-inspector-hide-shortcut__
+                = image_tag @product_user_other_image[num].image_url, class: "lazyloaded", alt: ""
+              .items-box-body
+                %h3.items-box-name.font-2
+                  = product.name
+                .items-box-num
+                  .items-box-price.font-5 
+                    = "¥#{product.price.to_s(:delimited)}"
+                  .font-2
+                    %i.icon-like-border
+                    %span
+                      X
+        -num += 1
+        -break if num== 6
   %section.items-box-container.clearfix.related-item-column
     %h2.items-box-head
       = link_to "カテゴリーURL" do
         = @category.name
         その他の商品
-    -num = 0
-    -@category_same.each do |category|
-      .items-box-content.clearfix
-        %section.items-box
-          = link_to "商品ページURL" do
-            %figure.items-box-photo
-              = image_tag @other_product_image[num].image_url, class: "lazyloaded", alt: ""
-            .items-box-body
-              %h3.items-box-name.font-2
-                = category.product.name
-              .items-box-num
-                .items-box-price.font-5
-                  ¥
-                  = category.product.price
-                .font-2
-                  %i.icon-like-border
-                  %span
-                    X
-      -num += 1
+    .items-box-set
+      -num = 0
+      -@category_same.each do |category|
+        .items-box-content.clearfix
+          %section.items-box
+            = link_to "/products/#{category.id}" do
+              %figure.items-box-photo
+                = image_tag @other_product_image[num].image_url, class: "lazyloaded", alt: ""
+              .items-box-body
+                %h3.items-box-name.font-2
+                  = category.product.name
+                .items-box-num
+                  .items-box-price.font-5
+                    = "¥#{category.product.price.to_s(:delimited)}"
+                  .font-2
+                    %i.icon-like-border
+                    %span
+                      X
+        -num += 1
+        -break if num== 6
 %aside.modal{"data-close": "modal", "data-modal": "report-item"}
   .modal-inner.modal-banner
     .modal-body
@@ -287,8 +306,9 @@
 %nav.bread-crumbs.pos-bottom
   %ul
     %li{itemscope: "", itemtype: "URL"}
-      = link_to "メルカリURL", itemprop: "url" do
+      = link_to root_path, itemprop: "url" do
         %span{itemprop: "title"} メルカリ
       %i.icon-arrow-right2
     %li{itemscope: "", itemtype: "URL"}
-      %span{itemprop: "title"} 商品名
+      %span{itemprop: "title"} 
+        = @product.name

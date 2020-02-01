@@ -1,0 +1,38 @@
+.put-up-btns {
+  position: fixed;
+  right: 32px;
+  bottom: 32px;
+  z-index: 2;
+  &__circle {
+    display: block;
+    &--button {
+      height: 160px;
+      width: 160px;
+      position: fixed;
+      bottom: 32px;
+      right: 32px;
+      border-radius: 50%;
+      background-color: #ea352d;
+      text-align: center;
+      cursor: pointer;
+      &__letter {
+        display: block;
+        color: #fff;
+        font-size: 22px;
+        margin: 28px 0 0;
+      }
+      &__camera {
+        display: block;
+        color: #fff;
+        font-size: 70px;
+        margin: 5px auto 0px;
+        height: 60px;
+        width: 54px;
+        path {
+          fill: currentColor;
+          fill-rule: nonzero;
+        }
+      }
+    }
+  }
+}

@@ -62,12 +62,6 @@ ActiveRecord::Schema.define(version: 2020_01_19_055550) do
     t.string "purchase_status"
     t.integer "category_id"
     t.integer "user_id"
-    t.integer "size_id"
-    t.integer "status_id"
-    t.integer "bearsize_id"
-    t.integer "sendmethod_id"
-    t.integer "address_id"
-    t.integer "period_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
