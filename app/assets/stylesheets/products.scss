@@ -9,6 +9,7 @@
 }
 
 a {
+  display: block;
   color: #0099e8;
   text-decoration: none;
   touch-action: manipulation;
@@ -21,6 +22,7 @@ body {
   font-size: 14px;
   color: #333;
   line-height: 1;
+  font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
 }
 
 section {
@@ -130,6 +132,7 @@ input {
   z-index: 1001;
   background: #fff;
   height: 100px;
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
 }
 
 .pc-header-inner {
@@ -298,10 +301,12 @@ h2 {
   padding: 24px 40px 40px;
   background-color: #fff;
   margin: 40px auto 0;
+  padding-bottom: 70px;
 }
 
 .l-single-container {
   width: 700px;
+  background: #fff;
 }
 
 .product_name {
@@ -821,6 +826,7 @@ textarea {
 }
 
 .btn-default {
+  margin: 16px 0 16px 0;
   display: block;
   width: 100%;
   line-height: 48px;
@@ -1057,8 +1063,8 @@ ul {
 }
 
 .items-box-content {
-  width: auto;
-  margin: 0 auto;
+  width: 33.3%;
+  margin: 0;
 }
 
 .items-box {
@@ -1222,3 +1228,23 @@ button {
 .bread-crumbs li:last-child {
   font-weight: 600;
 }
+
+.items-box-set {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.listing-item-change-box {
+  margin: 24px 0 24px 0;
+  background: #fff;
+  padding: 8px 16px 8px 16px;
+}
+.x-single-container {
+  width: 700px;
+  margin: 0 auto;
+  background: #fff;
+}
+.white-link {
+  text-decoration : none; 
+  color: #ffffff; 
+  }
