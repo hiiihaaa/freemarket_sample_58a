@@ -344,7 +344,6 @@ DEPENDENCIES
   erb2haml
   fog-aws
   font-awesome-rails
-  font-awesome-sass
   haml-rails
   jbuilder (~> 2.5)
   jquery-rails
