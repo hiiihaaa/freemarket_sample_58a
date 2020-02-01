@@ -6,7 +6,7 @@
 }
 
 .header {
-  width: 1000px;
+  // width: 1000px;
   margin: 0px auto;
   padding: 8px 0px 0px;
   &__upper {
@@ -104,31 +104,6 @@
     }
     &--rightbox {
       display: flex;
-      // &__mypage {
-      //   position: relative;
-      //   display: block;
-      //   height: 44px;
-      //   line-height: 32px;
-      //   font-size: 0;
-      //   color: black;
-      //   // 
-      //   display: inline-block;
-      //   position: relative;
-      //   text-align: center;
-      //   vertical-align: middle;
-      //   // 
-      //   overflow: hidden;
-      //   border-radius: 50%;
-      //   // 
-      //   vertical-align: bottom;
-      //   // 
-      //   margin-left: 10px;
-      //   font-size: 14px;
-      //   vertical-align: bottom;
-      //   &--btn {
-
-      //   }
-      // }
       &__mypage {
         text-align: center;
         margin-left: 11px;
