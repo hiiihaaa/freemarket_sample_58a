@@ -22,7 +22,7 @@
         child_js.style.display = "block";
         child.forEach(function(child){
         var child_html = "";
-        var child_html = ($("<option>").val($(child).attr('id')).text($(child).attr('layer')));
+        var child_html = ($("<option>").val($(child).attr('id')).text($(child).attr('name')));
         $("#child_js").append(child_html);
         })
     })
@@ -51,7 +51,7 @@ $.ajax({
     brand.style.display ="block";
     grand_child.forEach(function(grand_child){
     var grandchild_html = "";
-    var grandchild_html = ($("<option>").val($(grand_child).attr('id')).text($(grand_child).attr('layer')));
+    var grandchild_html = ($("<option>").val($(grand_child).attr('id')).text($(grand_child).attr('name')));
     $("#grandchild_js").append(grandchild_html);
     })
     $('#child_js').on('change', function(e){
