@@ -18,10 +18,6 @@ class Product < ApplicationRecord
   accepts_nested_attributes_for :size
   has_one    :image
   accepts_nested_attributes_for :image
-  has_one    :address
-  accepts_nested_attributes_for :address
-  has_one    :sendmethod
-  accepts_nested_attributes_for :sendmethod
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :address
   belongs_to_active_hash :status
