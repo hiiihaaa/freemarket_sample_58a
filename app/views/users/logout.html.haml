@@ -1,0 +1,7 @@
+%main.mypage-container
+  .mypage-content
+    / ログアウト
+    %section.mypage-content__logout
+      %form.mypage-content__logout-form
+        .mypage-content__logout-form__content
+          = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn-default btn-red"

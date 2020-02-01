@@ -184,3 +184,16 @@
     }
   }
 }
+
+/* ログアウト */
+&__logout {
+  background-color: $white;
+  width: 700px;
+}
+&__logout-form {
+  padding: 64px;
+  &__content {
+  max-width: 320px;
+  margin: $margin-auto;
+  }
+}
