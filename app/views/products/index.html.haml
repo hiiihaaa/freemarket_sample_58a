@@ -44,7 +44,7 @@
                 %label
                   カテゴリー
                   %span.form__require 必須
-                  = f.collection_select :category_id, Category.where(ancestry: nil) ,:id,:layer ,{prompt: "---"} ,{class: "collection_select ,parent" ,id: "c_parents",action: ""}
+                  = f.collection_select :category_id, Category.where(ancestry: nil) ,:id,:name ,{prompt: "---"} ,{class: "collection_select ,parent" ,id: "c_parents",action: ""}
                   %select#child_js.collection_select{class: "child"}
                     %option ---
                   %select#grandchild_js.collection_select{class: "gr_child"}
