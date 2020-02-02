@@ -24,7 +24,6 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
-    @product.users << current_user
   end
 
   def create
@@ -34,5 +33,9 @@ class ProductsController < ApplicationController
 
   def set_product
     @product = Product.find(params[:id])
+  end
+
+  def product_params
+    params.require(:product).permit(:name,:description, :brand, :price, :status_id, :category_id, :size_id, :status_id, :bearsize_id, :sendmethod_id, :address_id, :period_id, :charge_method_id).merge(user_id: current_user.id)
   end
 end
