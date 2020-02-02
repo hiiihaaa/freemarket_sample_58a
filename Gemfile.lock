@@ -346,7 +346,7 @@ DEPENDENCIES
   erb2haml
   fog-aws
   font-awesome-rails
-  font-awesome-sass (~> 5.12.0)
+  font-awesome-sass
   haml-rails
   jbuilder (~> 2.5)
   jquery-rails
@@ -358,7 +358,6 @@ DEPENDENCIES
   puma (~> 3.11)
   rails (~> 5.2.3)
   sass-rails (~> 5.0)
-  sassc (= 2.2.1)
   selenium-webdriver
   spring
   spring-watcher-listen (~> 2.0.0)
