@@ -5,7 +5,7 @@ class Product < ApplicationRecord
   belongs_to :user
   belongs_to :category, optional: true
   belongs_to :period,   optional: true
-  belongs_to :charge_method, optional: true
+  belongs_to :charge_method, foreign_key: 'product_id',optional: true
 
 
 

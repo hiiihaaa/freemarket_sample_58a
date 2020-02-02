@@ -84,3 +84,5 @@ gem 'payjp'
 gem 'font-awesome-sass'
 gem 'pry-rails'
 gem 'twilio-ruby', '~> 5.31.1'
+gem 'active_hash'
+gem 'ancestry', require: true 
