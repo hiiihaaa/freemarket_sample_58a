@@ -2,9 +2,9 @@ class ProductsController < ApplicationController
   before_action :set_product, only: [:destroy]
 
 
-  before_action :beforenew
-  before_action :charge_method_children1, only: [:new, :create]
-  before_action :charge_method_children2, only: [:new, :create]
+  # before_action :beforenew
+  # before_action :charge_method_children1, only: [:new, :create]
+  # before_action :charge_method_children2, only: [:new, :create]
 
 
   def purchase
@@ -12,12 +12,12 @@ class ProductsController < ApplicationController
   
   def index
     @product = Product.new
-    @category = Category.new
-    @parents = Category.where(ancestry: nil)
-    @charge_method_parents = ChargeMethod.where(ancestry: nil)
-    @status = Status.all
-    @sendarea = Address.name
-    @period = Period.all
+    # @category = Category.new
+    # @parents = Category.where(ancestry: nil)
+    # @charge_method_parents = ChargeMethod.where(ancestry: nil)
+    # @status = Status.all
+    # @sendarea = Address.name
+    # @period = Period.all
   end
 
   def show
@@ -59,13 +59,13 @@ class ProductsController < ApplicationController
     redirect_to root_path
   end
 
-  def beforenew
-    @charge_method_parents = ChargeMethod.where(ancestry: nil)
-  end
+  # def beforenew
+  #   @charge_method_parents = ChargeMethod.where(ancestry: nil)
+  # end
 
-  def cate_children
-    @cate_children = Category.find(params[:parent]).children
-  end
+  # def cate_children
+  #   @cate_children = Category.find(params[:parent]).children
+  # end
 
 
   private

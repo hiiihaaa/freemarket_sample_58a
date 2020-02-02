@@ -102,7 +102,7 @@
           %td
             = link_to "カテゴリーURL" do
               %div 
-                = @category.name
+                = @product.category.name
         %tr
           %th ブランド
           %td
@@ -272,28 +272,28 @@
   %section.items-box-container.clearfix.related-item-column
     %h2.items-box-head
       = link_to "カテゴリーURL" do
-        = @category.name
+        = @product.category.name
         その他の商品
     .items-box-set
       -num = 0
-      -@category_same.each do |category|
-        .items-box-content.clearfix
-          %section.items-box
-            = link_to "/products/#{category.id}" do
-              %figure.items-box-photo
-                = image_tag @other_product_image[num].image_url, class: "lazyloaded", alt: ""
-              .items-box-body
-                %h3.items-box-name.font-2
-                  = category.product.name
-                .items-box-num
-                  .items-box-price.font-5
-                    = "¥#{category.product.price.to_s(:delimited)}"
-                  .font-2
-                    %i.icon-like-border
-                    %span
-                      X
-        -num += 1
-        -break if num== 6
+      -# -@category_same.each do |category|
+      -#   .items-box-content.clearfix
+      -#     %section.items-box
+      -#       = link_to "/products/#{category.id}" do
+      -#         %figure.items-box-photo
+      -#           = image_tag @other_product_image[num].image_url, class: "lazyloaded", alt: ""
+      -#         .items-box-body
+      -#           %h3.items-box-name.font-2
+      -#             = category.product.name
+      -#           .items-box-num
+      -#             .items-box-price.font-5
+      -#               = "¥#{category.product.price.to_s(:delimited)}"
+      -#             .font-2
+      -#               %i.icon-like-border
+      -#               %span
+      -#                 X
+      -#   -num += 1
+      -#   -break if num== 6
 %aside.modal{"data-close": "modal", "data-modal": "report-item"}
   .modal-inner.modal-banner
     .modal-body

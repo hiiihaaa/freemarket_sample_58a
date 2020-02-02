@@ -208,13 +208,13 @@ categories =[
 
 
 categories.each do |category|
-  @layer1 = Category.create(name: category[:layer1])
+  layer1 = Category.create(name: category[:layer1])
 
     category[:layer1_chaild].each do |layer1_chaild|
-      @layer2 = @layer1.children.create(name: layer1_chaild[:layer2])
+      layer2 = layer1.children.create(name: layer1_chaild[:layer2])
 
         layer1_chaild[:layer2_chaild].each do |layer2_chaild|
-          @layer2.children.create(name: layer2_chaild)
+          layer2.children.create(name: layer2_chaild)
         end
     end
 end
