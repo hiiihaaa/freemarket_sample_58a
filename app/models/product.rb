@@ -7,7 +7,6 @@ class Product < ApplicationRecord
 
   def previous
     Product.where("id < ?", self.id).order("id DESC").first
-    # binding.pry
   end
  
   def next
