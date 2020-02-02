@@ -3,9 +3,9 @@ class Product < ApplicationRecord
   has_many   :comments
 
   belongs_to :user
-  belongs_to :category
-  belongs_to :period
-  belongs_to :charge_method
+  belongs_to :category, optional: true
+  belongs_to :period,   optional: true
+  belongs_to :charge_method, optional: true
 
 
 

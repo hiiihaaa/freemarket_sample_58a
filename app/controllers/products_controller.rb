@@ -23,12 +23,12 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
     @user = User.find(@product.user_id)
-    @product_image = ProductImage.find_by(product_id: @product.id)
+    # @product_image = ProductImage.find_by(product_id: @product.id)
     @category = Category.find_by(product_id: @product.id)
     @product_user_other = Product.where.not(id: @product.id).where(user_id: @product.user_id)
-    @product_user_other_image = ProductImage.where(product_id: @product_user_other)
-    @category_same = Category.where.not(product_id: @product.id).where(name: @category.name)
-    @other_product_image = ProductImage.where(product_id: @category_same)
+    # @product_user_other_image = ProductImage.where(product_id: @product_user_other)
+    # @category_same = Category.where.not(product_id: @product.id).where(name: @category.name)
+    # @other_product_image = ProductImage.where(product_id: @category_same)
   end
 
   def destroy
@@ -48,9 +48,10 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(user_params)
-    @product.save
+    @product.save!
     redirect_to root_path
-  end
+    end
+
 
   def update
     @product = Product.new(user_params)
@@ -87,7 +88,7 @@ class ProductsController < ApplicationController
   end
 
   def user_params
-    params.require(:product).permit(:id,:name,:description,:brand,:price,:status_id,:size,:category_id,:size_id,:status_id,:bearsize_id,:sendmethod_id,:address_id,:period_id)
+    params.require(:product).permit(:name,:description,:brand,:price,:status_id,:category_id,:size_id,:status_id,:bearsize_id,:sendmethod_id,:address_id,:period_id).merge(user_id: current_user.id)
   end
 
 end
