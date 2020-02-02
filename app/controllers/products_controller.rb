@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [:destroy]
+  before_action :set_product, only: [:destroy, :show]
 
   def purchase
   end
@@ -8,7 +8,7 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @product = Product.find(params[:id])
+    # @product = Product.find(params[:id])
     @user = User.find(@product.user_id)
     @product_image = ProductImage.find_by(product_id: @product.id)
     @category = Category.find_by(product_id: @product.id)
@@ -20,6 +20,9 @@ class ProductsController < ApplicationController
 
   def destroy
     @product.destroy if @product.user_id == current_user.id
+    @product_all = Category.where(product_id: @product.id)
+    @product_all.destroy_all if @product.user_id == current_user.id
+    redirect_to root_path
   end
 
   def new
