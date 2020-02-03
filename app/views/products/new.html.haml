@@ -54,7 +54,7 @@
                   %label
                     サイズ
                     %span.form__require 必須
-                  -# = f.collection_select :size_id, Size.all, :id, :size,{prompt:"---"}, {class:"collection_select"}
+                  = f.collection_select :size_id, Size.all, :id, :size,{prompt:"---"}, {class:"collection_select"}
                 .sell__form--box.form__group--brand#brands
                   %label
                     ブランド
@@ -64,7 +64,7 @@
                   %label
                     商品の状態
                     %span.form__require 必須
-                  -# = f.collection_select :status_id, Status.all, :id, :status,{prompt:"---"}, {class:"collection_select"}
+                  = f.collection_select :status_id, Status.all, :id, :status,{prompt:"---"}, {class:"collection_select"}
             .sell__content.clearfix
               .price__1
                 配送について
@@ -75,28 +75,28 @@
                     %label
                       配送料の負担
                       %span.form__require 必須
-                    -# = f.collection_select :bearsize_id, ChargeMethod.where(ancestry: nil) ,:id ,:layer ,{prompt:"---"}, {class:"collection_select ,parent_11" ,id: "parent2"}
+                    = f.collection_select :bearsize_id, ChargeMethod.where(ancestry: nil) ,:id ,:layer ,{prompt:"---"}, {class:"collection_select ,parent_11" ,id: "parent2"}
               #copyjs1.form__group--send--JS
                 .sell__form--box
                   #copysend.form__group--category
                     %label
                       配送料の方法
                       %span.form__require 必須
-                    -# = f.collection_select :sendmethod_id, ChargeMethod.find(1).children ,:id ,:layer ,{prompt:"---"}, {class:"collection_select ,children_22" ,id: "child1"}
+                    = f.collection_select :sendmethod_id, ChargeMethod.find(1).children ,:id ,:layer ,{prompt:"---"}, {class:"collection_select ,children_22" ,id: "child1"}
               #copyjs2.form__group--send--JS
                 .sell__form--box
                   #copysend.form__group--category
                     %label
                       配送料の方法
                       %span.form__require 必須
-                    -# = f.collection_select :sendmethod_id, ChargeMethod.find(2).children ,:id ,:layer ,{prompt:"---"}, {class:"collection_select ,children_22" ,id: "child2"}
+                    = f.collection_select :sendmethod_id, ChargeMethod.find(2).children ,:id ,:layer ,{prompt:"---"}, {class:"collection_select ,children_22" ,id: "child2"}
               #beforecopy.form__group--send--2
                 .sell__form--box
                   .form__group--category
                     %label
                       発送元の地域
                       %span.form__require 必須
-                    -# = f.collection_select :address_id, Address.all, :id, :name,{prompt:"---"}, {class:"collection_select"}
+                    = f.collection_select :address_id, Address.all, :id, :name,{prompt:"---"}, {class:"collection_select"}
                 .form__group--send--2
                   .sell__form--box
                     .form-group__category
@@ -104,7 +104,7 @@
                         発送までの日数
                         %span.form__require 必須
                       %div
-                        -# = f.collection_select :period_id, Period.all,:id ,:period ,{prompt:"---"},{class:"collection_select"}
+                        = f.collection_select :period_id, Period.all,:id ,:period ,{prompt:"---"},{class:"collection_select"}
             .sell__content
               .sell__content--en
                 .price__1

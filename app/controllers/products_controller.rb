@@ -27,6 +27,9 @@ class ProductsController < ApplicationController
   end
 
   def create
+    @product = Product.new(product_params)
+    @product.save!
+    redirect_to root_path
   end
 
   private

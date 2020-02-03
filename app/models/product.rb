@@ -1,13 +1,13 @@
 class Product < ApplicationRecord
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  
   belongs_to :user
-  has_many_attached :images
-  belongs_to :user
-  has_many :comments
-  has_many :categories
+  belongs_to :category, optional: true
+  belongs_to :period,   optional: true
+  belongs_to :charge_method, optional: true
 
   def previous
     Product.where("id < ?", self.id).order("id DESC").first
-    # binding.pry
   end
  
   def next
