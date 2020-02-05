@@ -348,7 +348,7 @@ DEPENDENCIES
   erb2haml
   fog-aws
   font-awesome-rails
-  font-awesome-sass (~> 5.12.0)
+  font-awesome-sass
   gretel
   haml-rails
   jbuilder (~> 2.5)
