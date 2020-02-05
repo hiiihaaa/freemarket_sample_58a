@@ -303,12 +303,5 @@
       .modal-btn.modal-btn-cancel{"data-close": "modal"} キャンセル
       = link_to "URL" do
         %button.modal-btn.modal-btn-submit はい
-%nav.bread-crumbs.pos-bottom
-  %ul
-    %li{itemscope: "", itemtype: "URL"}
-      = link_to root_path, itemprop: "url" do
-        %span{itemprop: "title"} メルカリ
-      %i.icon-arrow-right2
-    %li{itemscope: "", itemtype: "URL"}
-      %span{itemprop: "title"} 
-        = @product.name
+- breadcrumb :product
+= render "layouts/breadcrumbs"
