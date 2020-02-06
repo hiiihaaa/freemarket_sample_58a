@@ -24,6 +24,6 @@ crumb :profile do
 end
 
 crumb :identification do
-  link "本人確認", user_path
+  link "本人情報の確認", user_path
   parent :mypage
 end
