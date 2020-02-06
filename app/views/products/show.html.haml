@@ -50,9 +50,9 @@
     さんから出品されました。
     = @product.brand
     の商品で、
-    = @product.shipping_from
+    = @product.address.name
     から
-    = @product.shipping_date
+    -# = @product.period.period
     されます。
   .product_main_content.claarfix
     .item_image
@@ -109,10 +109,18 @@
             = link_to "ブランドURL" do
               %div 
               = @product.brand
+        -if @product.size_id == nil
+        -else
+          %tr
+            %th サイズ
+            %td
+              = link_to "ブランドURL" do
+                %div 
+                = @product.size.size
         %tr
           %th 商品の状態
           %td 
-            = @product.status
+            = @product.status.status
         %tr
           %th 配送料の負担
           %td
@@ -125,11 +133,11 @@
           %th 配送元の地域
           %td
             = link_to "都道府県URL" do
-              = @product.shipping_from
+              = @product.address.name
         %tr
           %th 発送日の目安
           %td
-            = @product.shipping_date
+            -# = @product.period.period
   .item-price-box.text-center
     %span.item-price.bold
       = "¥#{@product.price.to_s(:delimited)}"
