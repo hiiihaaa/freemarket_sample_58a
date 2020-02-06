@@ -1195,12 +1195,12 @@ button {
   outline: 0;
 }
 
-.bread-crumbs {
+.breadcrumbs-list {
   background: #f5f5f5;
   box-shadow: none;
   position: relative;
   border-top: 1px solid #eee;
-  margin-left: 100px;
+  margin-left: 10%;
 
   li {
     text-overflow: ellipsis;
@@ -1211,6 +1211,7 @@ button {
   }
 
   a {
+    display: inline-block;
     color: #333;
   }
 
