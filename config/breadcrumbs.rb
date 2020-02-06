@@ -17,3 +17,13 @@ crumb :credit do
   link "クレジットカード情報入力", new_credit_card_path
   parent :mypage
 end
+
+crumb :profile do
+  link "プロフィール", edit_user_path
+  parent :mypage
+end
+
+crumb :identification do
+  link "本人確認", user_path
+  parent :mypage
+end
