@@ -1,19 +1,18 @@
-%body
-  %header
-    = render partial: "/render_partial/user_header"
-  = form_for @user,url: step3_phones_path,method: :post, local: true do |form|
-    .main
-      .user__info 電話番号の確認
-      .user__input
-        .user__input--center
-          .user__input--phones 携帯電話の番号
-          = form.fields_for @phone  do |p|
-            = p .text_field :number ,class:"user__input--phone",placeholder:" 例 携帯電話の番号入力"
-            %p.user__input--font 本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
-    .registration
-      = form.submit class:"registration__sms",value:"SMSを送信する"
-      .registration__phone ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
-      =link_to "",class: "registration__needphone" do
-        電話番号の確認が必要な理由>
-  %footer
-    = render partial: "/render_partial/user_footer"
+%header
+  = render partial: "/render_partial/user_header"
+= form_for @user,url: step3_phones_path,method: :post, local: true do |form|
+  .main
+    .user__info 電話番号の確認
+    .user__input
+      .user__input--center
+        .user__input--phones 携帯電話の番号
+        = form.fields_for @phone  do |p|
+          = p .text_field :number ,class:"user__input--phone",placeholder:" 例 携帯電話の番号入力"
+          %p.user__input--font 本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
+  .registration
+    = form.submit class:"registration__sms",value:"SMSを送信する"
+    .registration__phone ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
+    =link_to "",class: "registration__needphone" do
+      電話番号の確認が必要な理由>
+%footer
+  = render partial: "/render_partial/user_footer"
