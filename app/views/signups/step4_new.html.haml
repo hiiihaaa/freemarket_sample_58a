@@ -1,0 +1,31 @@
+%body
+  %header
+    = render partial: "/render_partial/user_header"
+  = form_with model:@phone,local: true,url: step4_phones_path,method: :post do |form|
+    .main
+      .user__info 電話番号認証
+      .user__input
+        .user__input--center
+          .user__input--phone2 認証番号
+          = form .text_field :comfirm_number ,class:"user__input--phone",placeholder:" 例 認証番号の入力"
+          %p.user__input--font SMSで届いた番号を入力してください。
+          = form.submit class:"registration__sms",value:"認証して完了"
+          =@messages
+      .user__info 
+      .user__input
+        .user__input--center 
+          .user__input--30seconds 30秒たっても認証番号が届かない方へ
+          .user__input--listen 電話で認証番号を聞くこともできます。
+          =button_to "",{class: "registration__sms"} do
+            電話で認証番号を聞く（通話無料） 
+      
+      .user__info 
+      .user__input 
+        .user__input--center 
+          .user__input--resend 電話番号を再送することもできます。もう一度電話番号を入力して下さい。
+          .user__input--center
+          =link_to new_phones_path , class:"registration__needphone" do
+            電話番号を再入力する
+          .user__input--smallfont smsが届かない場合はSMS受信設定を確認して、もう一度電話番号を入力してください。
+  %footer
+    = render partial: "/render_partial/user_footer"
