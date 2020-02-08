@@ -3,10 +3,14 @@ Rails.application.routes.draw do
   root 'top#index'
   get "users" => "users#index"
 
+  # View作成用無理やりルーティング。あとで消す。kajitani
+  get "users/destroy"
+
   devise_scope :user do
     post 'users', to: 'devise/registrations#create'
   end
   devise_for :users
+
   resources :users, only: [:edit, :show]
 
   resources :signups, only: [:index] do
