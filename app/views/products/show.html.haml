@@ -102,12 +102,12 @@
           %td
             = link_to "カテゴリーURL" do
               %div 
-                -if @category.ancestry == nil or @category.parent.ancestry == nil
-                -else
+                -if !(@category.ancestry == nil) and !(@category.parent.ancestry == nil)
                   = @category.parent.parent.name
-                -if @category.ancestry == nil
                 -else
+                -if !(@category.ancestry == nil)
                   = @category.parent.name
+                -else
                 = @category.name
         %tr
           %th ブランド
@@ -115,14 +115,14 @@
             = link_to "ブランドURL" do
               %div 
               = @product.brand
-        -if @product.size_id == nil
-        -else
+        -if !(@product.size_id == nil)
           %tr
             %th サイズ
             %td
               = link_to "ブランドURL" do
                 %div 
                 = @product.size.size
+        -else
         %tr
           %th 商品の状態
           %td 
@@ -227,18 +227,18 @@
           %input{name: "redirect_url_key", type: "hidden", value: "item_detail"}/
           %input{name: "__csrf_value", type: "hidden", value: "何か"}/
 %ul.nav-item-link-prev-next.clearfix
-  -if @product.previous == nil
-  -else
+  -if !(@product.previous == nil)
     %li.nav-item-link-prev
       = link_to "/products/#{@product.previous.id}" do
         %i.icon-arrow-left
         = @product.previous.name
-  -if @product.next == nil
   -else
+  -if !(@product.next == nil)
     %li.nav-item-link-next
       = link_to "/products/#{@product.next.id}" do
         = @product.next.name
         %i.icon-arrow-right
+  -else
 .item-social-media-box
   .text-center
     .fb-save.fb_iframe_widget{"data-uri": "何かのURL?", "fb-iframe-plugin-query": "何かのURL", "fb-xfbml-state": "rendered"}
