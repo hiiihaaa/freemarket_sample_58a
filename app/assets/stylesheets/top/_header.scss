@@ -1,0 +1,186 @@
+.headers {
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+  position: relative;
+  z-index: 3;
+}
+
+.header {
+  width: 1000px;
+  margin: 0px auto;
+  padding: 8px 0px 0px;
+  &__upper {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    &--leftbox {
+      -webkit-box-align: center;
+      align-items: center;
+      display: flex;
+      height: 40px;
+      margin-right: 45px;
+    }
+    &--form {
+      position: relative;
+      width: 100%;
+      &__input {
+        background-color: rgb(245, 245, 245);
+        font-size: 16px;
+        height: 40px;
+        line-height: 1.4em;
+        position: relative;
+        width: 100%;
+        -webkit-appearance: none;
+        border-width: 1px;
+        border-style: solid;
+        border-color: rgb(204, 204, 204);
+        border-image: initial;
+        border-radius: 4px;
+        outline: none;
+        padding: 0px 50px 0px 10px;
+        transition: all 0.3s ease-out 0s;
+      }
+      &__search {
+        background-color: transparent;
+        cursor: pointer;
+        height: 40px;
+        position: absolute;
+        right: 0px;
+        top: 0px;
+        width: 40px;
+        -webkit-appearance: none;
+        border-width: initial;
+        border-style: none;
+        border-color: initial;
+        border-image: initial;
+        border-radius: 0px 4px 4px 0px;
+        padding: 0px;
+        &--search_btn {
+          max-width: 100%;
+          max-height: 100%;
+          color: rgb(34, 34, 34);
+          height: 14px;
+          width: 14px;
+          margin-top: 2px;
+          fill: currentColor;
+          fill-rule: nonzero;
+        }
+      }
+    }
+  }
+  &__lower {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    margin-top: 8px;
+    &--leftbox {
+      display: flex;
+      margin-left: -3px;
+      &__search {
+        padding-left: 0px;
+        cursor: pointer;
+        height: 44px;
+        position: relative;
+        z-index: 3;
+        padding: 0px 10px;
+        &--box {
+          display: block;
+          font-size: 14px;
+          font-weight: 600;
+          line-height: 36px;
+          white-space: nowrap;
+          &__icon {
+            max-width: 100%;
+            max-height: 100%;
+            color: rgb(234, 53, 45);
+            height: 12px;
+            margin-right: 4px;
+            
+            fill: currentColor;
+            fill-rule: nonzero;
+          }
+        }
+      }
+    }
+    &--rightbox {
+      display: flex;
+      &__mypage {
+        text-align: center;
+        margin-left: 11px;
+        &--btn {
+          background-color: rgb(0, 149, 238);
+          color: rgb(255, 255, 255);
+          display: block;
+          font-size: 14px;
+          border-width: 1px;
+          border-style: solid;
+          border-color: rgb(0, 149, 238);
+          border-image: initial;
+          border-radius: 4px;
+          padding: 8px 10px;
+          transition: all 0.3s ease-out 0s;
+        }
+      }
+      &__log_out {
+        text-align: center;
+        margin-left: 11px;
+        &--btn {
+          background-color: rgb(255, 255, 255);
+          color: rgb(0, 149, 238);
+          display: block;
+          font-size: 14px;
+          border-width: 1px;
+          border-style: solid;
+          border-color: rgb(0, 149, 238);
+          border-image: initial;
+          border-radius: 4px;
+          padding: 8px 10px;
+          transition: all 0.3s ease-out 0s;
+        }
+      }
+      &__sign_up {
+        text-align: center;
+        margin-left: 11px;
+        &--btn {
+          background-color: rgb(234, 53, 45);
+          color: rgb(255, 255, 255);
+          display: block;
+          font-size: 14px;
+          border-width: 1px;
+          border-style: solid;
+          border-color: rgb(234, 53, 45);
+          border-image: initial;
+          border-radius: 4px;
+          padding: 8px 10px
+        }
+      }
+      &__log_in {
+        text-align: center;
+        margin-left: 11px;
+        &--btn {
+          background-color: rgb(255, 255, 255);
+          color: rgb(0, 149, 238);
+          display: block;
+          font-size: 14px;
+          border-width: 1px;
+          border-style: solid;
+          border-color: rgb(0, 149, 238);
+          border-image: initial;
+          border-radius: 4px;
+          padding: 8px 10px;
+          transition: all 0.3s ease-out 0s;
+        }
+      }
+    }
+  }
+}
+
+.main_logo {
+  color: inherit;
+  text-decoration: none;
+}
+
+.mercari_logo {
+  height: 36px;
+  width: 134px;
+}

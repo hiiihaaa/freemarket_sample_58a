@@ -1,0 +1,34 @@
+%body
+  %header
+    %p.logo
+      %img{alt: "mercari", src: "https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?1855818912"}
+  %h1.main
+    .new__registration
+      アカウントをお持ちでない方はこちら
+      = button_to "新規会員登録", step1_signups_path, {method: :get,class:"new__registration--button"}
+    .rogin
+      .rogin__center
+        %button.rogin__facebook
+          =link_to "" ,class:"rogin__facebook--icon"do
+            = fa_icon 'facebook', class: "icon" 
+          facebookでログイン
+        %button.rogin__google
+          =link_to "" do
+            = fa_icon 'google', class: "rogin__google--icon" 
+          googleでログイン
+      .rogin__input
+        = form_with(model: @user, local: true,url: session_path(resource_name)) do |form|
+          = form.label :email
+          = form .email_field :email ,class:"rogin__input--mail",placeholder:"メールアドレス"
+          = render 'devise/shared/error_messages' , resource: resource
+          = form .password_field :password ,class:"rogin__input--password",placeholder:"パスワード", autocomplete: "off"
+
+          .reCAPTCHA
+            %input.user__input--password{:name => "password", :type => "checkbox"}>/
+            私はロボットではありません
+          .rogin__input--button
+            = form .submit "ログイン",class:"rogin__input--rogin"
+            %p.rogin__password--forget パスワードをお忘れの方
+  %footer
+    = render partial: "render_partial/user_footer"
+

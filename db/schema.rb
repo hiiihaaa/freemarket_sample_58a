@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2020_02_08_181312) do
+=======
+ActiveRecord::Schema.define(version: 2020_02_07_203111) do
+
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "product_id"
@@ -24,6 +28,7 @@ ActiveRecord::Schema.define(version: 2020_02_08_181312) do
     t.index ["ancestry"], name: "index_charge_methods_on_ancestry"
   end
 
+
   create_table "charge_mothods", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "layer"
     t.string "ancestry"
@@ -31,6 +36,7 @@ ActiveRecord::Schema.define(version: 2020_02_08_181312) do
     t.datetime "updated_at", null: false
     t.index ["ancestry"], name: "index_charge_mothods_on_ancestry"
   end
+
 
   create_table "credit_cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id"
@@ -49,6 +55,7 @@ ActiveRecord::Schema.define(version: 2020_02_08_181312) do
     t.datetime "updated_at", null: false
   end
 
+
   create_table "phones", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "number"
     t.string "comfirm_number"
@@ -56,6 +63,12 @@ ActiveRecord::Schema.define(version: 2020_02_08_181312) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_phones_on_user_id"
+=======
+  create_table "periods", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "period"
+    t.string "ancestry"
+    t.index ["ancestry"], name: "index_periods_on_ancestry"
+
   end
 
   create_table "product_images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -85,6 +98,7 @@ ActiveRecord::Schema.define(version: 2020_02_08_181312) do
     t.integer "period_id"
   end
 
+
   create_table "user_identifications", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "post_number", null: false
     t.string "prefecture", null: false
@@ -96,6 +110,7 @@ ActiveRecord::Schema.define(version: 2020_02_08_181312) do
     t.datetime "updated_at", null: false
     t.string "telnumber"
   end
+
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -117,4 +132,5 @@ ActiveRecord::Schema.define(version: 2020_02_08_181312) do
   end
 
   add_foreign_key "phones", "users"
+
 end

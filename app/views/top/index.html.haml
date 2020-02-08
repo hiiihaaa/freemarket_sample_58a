@@ -1,0 +1,50 @@
+.headers
+  = render partial: "top/header"
+.content
+  .content__main
+    .content__main--advertisement_bar
+      = render partial: "top/advertisement-bar"
+    .content__main--famous-items
+      .content__main--famous-items__title
+        人気のカテゴリー
+      .content__main--famous-items__box
+        %ul.content__main--famous-items__box--btns
+          %li.content__main--famous-items__box--btns__title
+            = link_to "test", class: "content__main--famous-items__box--btns__title--font" do
+              レディース
+          %li.content__main--famous-items__box--btns__title
+            = link_to "test", class: "content__main--famous-items__box--btns__title--font" do
+              メンズ
+          %li.content__main--famous-items__box--btns__title
+            = link_to "test", class: "content__main--famous-items__box--btns__title--font" do
+              家具・スマホ・カメラ
+          %li.content__main--famous-items__box--btns__title
+            = link_to "test", class: "content__main--famous-items__box--btns__title--font" do
+              おもちゃ・ホビー・グッズ
+    .content__main--latest-items
+      = render partial: "top/latest-items"
+    .content__main--famous-items
+      .content__main--famous-items__title
+        人気のブランド
+      .content__main--famous-items__box
+        %ul.content__main--famous-items__box--btns
+          %li.content__main--famous-items__box--btns__title
+            = link_to "test", class: "content__main--famous-items__box--btns__title--font" do
+              シャネル
+          %li.content__main--famous-items__box--btns__title
+            = link_to "test", class: "content__main--famous-items__box--btns__title--font" do
+              ルイヴィトン
+          %li.content__main--famous-items__box--btns__title
+            = link_to "test", class: "content__main--famous-items__box--btns__title--font" do
+              シュプリーム
+          %li.content__main--famous-items__box--btns__title
+            = link_to "test", class: "content__main--famous-items__box--btns__title--font" do
+              ナイキ
+    .content__main--latest-items
+      = render partial: "top/latest-items"
+.put-up-btns
+  = render partial: "top/put-up-btns"
+%aside.download-bar
+  = render partial: "top/download-bar"
+%footer.footer
+  = render partial: "top/footer"
