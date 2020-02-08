@@ -11,10 +11,12 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @user = User.find(@product.user_id)
     @product_image = ProductImage.find_by(product_id: @product.id)
-    @category = Category.find_by(product_id: @product.id)
+    @category = Category.find_by(id: @product.category_id)
     @product_user_other = Product.where.not(id: @product.id).where(user_id: @product.user_id)
     @product_user_other_image = ProductImage.where(product_id: @product_user_other)
-    @category_same = Category.where.not(product_id: @product.id).where(name: @category.name)
+    @charge_method = ChargeMethod.find_by(id: @product.bearsize_id)
+    @charge_method2 = ChargeMethod.find_by(id: @product.sendmethod_id)
+    @category_same = Product.where.not(id: @product.id).where(category_id: @product.category_id)
     @other_product_image = ProductImage.where(product_id: @category_same)
   end
 
