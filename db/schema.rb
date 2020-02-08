@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_19_055550) do
+ActiveRecord::Schema.define(version: 2020_01_19_232840) do
+
+  create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "address_id"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "product_id"
@@ -18,12 +25,12 @@ ActiveRecord::Schema.define(version: 2020_01_19_055550) do
     t.string "ancestry"
   end
 
-  create_table "charge_mothods", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "charge_methods", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "layer"
     t.string "ancestry"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["ancestry"], name: "index_charge_mothods_on_ancestry"
+    t.index ["ancestry"], name: "index_charge_methods_on_ancestry"
   end
 
   create_table "credit_cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -62,6 +69,17 @@ ActiveRecord::Schema.define(version: 2020_01_19_055550) do
     t.string "purchase_status"
     t.integer "category_id"
     t.integer "user_id"
+    t.integer "size_id"
+    t.integer "status_id"
+    t.integer "bearsize_id"
+    t.integer "sendmethod_id"
+    t.integer "address_id"
+    t.integer "period_id"
+  end
+
+  create_table "send_methods", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
