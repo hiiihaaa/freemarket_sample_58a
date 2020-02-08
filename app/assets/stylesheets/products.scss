@@ -361,8 +361,8 @@ h2 {
 
 .owl-item-inner {
   position: relative;
-  width: 100%;
-  height: 0;
+  width: 30px;
+  height: 30px;
   padding: 0 0 100%;
 }
 
@@ -1249,3 +1249,12 @@ button {
   text-decoration : none; 
   color: #ffffff; 
   }
+
+.big_image {
+  height : 300px;
+  width : 300px;
+}
+.small_image {
+  height : 70px;
+  width : 70px;
+}
