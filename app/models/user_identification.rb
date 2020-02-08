@@ -4,6 +4,6 @@ class UserIdentification < ApplicationRecord
   validates :post_number, presence: true
   validates :prefecture, presence: true
   validates :city, presence: true
-  validates :black, presence: true
+  validates :block, presence: true
   validates :telnumber, presence: true
 end

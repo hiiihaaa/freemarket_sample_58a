@@ -1,22 +1,22 @@
 class UserIdentificationsController < ApplicationController
   def new
+    
   end
 
   def create
-    @user_identification = UserIdentification.new(
-      post_number: params[:post_number],
-      prefecture: params[:prefecture],
-      city: params[:city],
-      block: params[:block],
-      building: params[:building],
-      telnumber: params[:telnumber],
-      users_id: params[:user_id]
-    )
+    @user_identification = UserIdentification.new(useridentification_params)
 
     if @user_identification.save
       redirect_to index_path
+    else
+      render :new
     end
 
+  end
+
+  private
+  def useridentification_params
+    params.permit(:post_number,:prefecture,:city,:block,:building,:telnumber).merge(user_id: current_user.id)
   end
 
 end
