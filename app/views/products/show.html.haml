@@ -61,7 +61,6 @@
           .owl-stage{style: "width: 900px;"}
             .owl-item{style: "width: 300px;"}
               .owl-item-inner
-                -# = image_tag @product_image.image_url, class: "owllazy", style: "opacity: 1;"
                 - @product.product_images.each do |img|
                   = image_tag img.image_url.to_s
         .owl-nav.disabled
@@ -71,7 +70,6 @@
           .owl-dot
             %span
             .owl-dot-inner
-              -# = image_tag @product_image.image_url
     .item-prige-box.text-center.visible-sp
       %span.item-price.bold ¥X,XXX
       %span.item-tax (税込)
