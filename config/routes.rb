@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   get 'index' => 'index#index'
   get "/user_identifications/new" => "user_identifications#new"
   post "/user_identifications/new" => "user_identifications#create"
-
   # View作成用無理やりルーティング。あとで消す。kajitani
   get "users/destroy"
 
