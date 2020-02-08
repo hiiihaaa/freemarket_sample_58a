@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
   root 'top#index'
+  
+  get 'top/search', to: 'products#search'
+
+  
   get "users" => "users#index"
 
   devise_scope :user do
@@ -32,5 +36,6 @@ Rails.application.routes.draw do
   end
   
   resources :comments, only: [:index, :create] 
+
 
 end

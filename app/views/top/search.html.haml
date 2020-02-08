@@ -1,0 +1,22 @@
+.headers
+  = render partial: "top/header"
+.content
+  %h2
+    %span.content__result<>
+      = @q.conditions.first.values.first.value
+    %span.content__result--text<>
+      の検索結果
+  .content__num
+    1-
+    = @result.length
+    件表示
+    .content__main--latest-items
+      = render partial: "top/search-items"
+  .content__page
+    = paginate @result
+.put-up-btns
+  = render partial: "top/put-up-btns"
+%aside.download-bar
+  = render partial: "top/download-bar"
+%footer.footer
+  = render partial: "top/footer"

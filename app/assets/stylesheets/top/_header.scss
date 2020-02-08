@@ -6,7 +6,7 @@
 }
 
 .header {
-  width: 1000px;
+  width: 1150px;
   margin: 0px auto;
   padding: 8px 0px 0px;
   &__upper {
@@ -23,7 +23,8 @@
     &--form {
       position: relative;
       width: 100%;
-      &__input {
+      
+      &__input{
         background-color: rgb(245, 245, 245);
         font-size: 16px;
         height: 40px;
@@ -37,9 +38,22 @@
         border-image: initial;
         border-radius: 4px;
         outline: none;
-        padding: 0px 50px 0px 10px;
+        padding: 0px -10px 0px 10px;
         transition: all 0.3s ease-out 0s;
+        
+        input[type="search"] {
+          background: none;
+          font-size: 16px;
+          height: 40px;
+          line-height: 1.4em;
+          position: relative;
+          width: calc(100% - 30px);
+          -webkit-appearance: none;
+          padding: 0px -20px 10px 10px;
+          margin-left: 10px;
+        }
       }
+
       &__search {
         background-color: transparent;
         cursor: pointer;
@@ -54,9 +68,8 @@
         border-color: initial;
         border-image: initial;
         border-radius: 0px 4px 4px 0px;
-        padding: 0px;
+        padding: 12px 0px;
         &--search_btn {
-          max-width: 100%;
           max-height: 100%;
           color: rgb(34, 34, 34);
           height: 14px;
@@ -184,3 +197,5 @@
   height: 36px;
   width: 134px;
 }
+
+
