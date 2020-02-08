@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2020_02_07_203111) do
     t.string "ancestry"
   end
 
+  create_table "charge_methods", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "layer"
     t.string "ancestry"
     t.index ["ancestry"], name: "index_charge_methods_on_ancestry"
