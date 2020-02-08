@@ -18,5 +18,11 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       # t.references :category, foreign_key: true
       # t.timestamps
     end
+    add_column :products, :size_id, :integer
+    add_column :products, :status_id, :integer
+    add_column :products, :bearsize_id, :integer
+    add_column :products, :sendmethod_id, :integer
+    add_column :products, :address_id, :integer
+    add_column :products, :period_id, :integer
   end
 end

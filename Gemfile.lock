@@ -24,6 +24,8 @@ GEM
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.0, >= 1.0.3)
+    active_hash (3.1.0)
+      activesupport (>= 5.0.0)
     activejob (5.2.4.1)
       activesupport (= 5.2.4.1)
       globalid (>= 0.3.6)
@@ -46,6 +48,8 @@ GEM
       public_suffix (>= 2.0.2, < 5.0)
     airbrussh (1.4.0)
       sshkit (>= 1.6.1, != 1.7.0)
+    ancestry (3.0.7)
+      activerecord (>= 3.2.0)
     archive-zip (0.12.0)
       io-like (~> 0.3.0)
     arel (9.0.0)
@@ -139,6 +143,8 @@ GEM
     formatador (0.2.5)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    gretel (3.0.9)
+      rails (>= 3.1.0)
     haml (5.1.2)
       temple (>= 0.8.0)
       tilt
@@ -350,6 +356,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_hash
+  ancestry
   bootsnap (>= 1.1.0)
   byebug
   capistrano
@@ -366,6 +374,7 @@ DEPENDENCIES
   fog-aws
   font-awesome-rails
   font-awesome-sass
+  gretel
   haml-rails
   jbuilder (~> 2.5)
   jquery-rails
