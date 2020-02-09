@@ -5,22 +5,8 @@
       -# DBより「仮」部分の名前取得
     = link_to products_path, class: "content__main--latest-items__box--top_bar__more-btn" do
       もっと見る
-  -# = render partial: "top/merchandises"
   %ul.content__main--latest-items__box--merchandises
-    -num = 0
-    -@ladies.each do |ladies|
-      %li.content__main--latest-items__box--merchandises__merchandise
-        = link_to product_path(ladies), class: "content__main--latetst-items__box--merchandises__merchandise--block" do
-          %figure.content__main--latest-items__box--merchandises__merchandise--block__element
-            %figcaption
-              %span
-                = ladies.name
-            .content__main--latest-items__box--merchandises__merchandise--block__element--pic_box
-              = image_tag @ladies_image.image_url.to_s, class: "lazyloaded", alt: ""
-              %span{"aria-label": "Price"}
-                = "¥#{ladies.price.to_s(:delimited)}"
-      -num += 1
-      -break if num== 10
+    = render partial: 'merchandises', collection: @ladies, as:'category'
 .content__main--latest-items__box
   .content__main--latest-items__box--top_bar
     .content__main--latest-items__box--top_bar__title
@@ -29,20 +15,7 @@
       もっと見る
   -# = render partial: "top/merchandises"
   %ul.content__main--latest-items__box--merchandises
-    -num = 0
-    -@mens.each do |mens|
-      %li.content__main--latest-items__box--merchandises__merchandise
-        = link_to product_path(mens), class: "content__main--latetst-items__box--merchandises__merchandise--block" do
-          %figure.content__main--latest-items__box--merchandises__merchandise--block__element
-            %figcaption
-              %span
-                = mens.name
-            .content__main--latest-items__box--merchandises__merchandise--block__element--pic_box
-              = image_tag @mens_image.image_url.to_s, class: "lazyloaded", alt: ""
-              %span{"aria-label": "Price"}
-                = "¥#{mens.price.to_s(:delimited)}"
-      -num += 1
-      -break if num== 10
+    = render partial: 'merchandises', collection: @mens, as:'category'
 .content__main--latest-items__box
   .content__main--latest-items__box--top_bar
     .content__main--latest-items__box--top_bar__title
@@ -51,20 +24,7 @@
       もっと見る
   -# = render partial: "top/merchandises"
   %ul.content__main--latest-items__box--merchandises
-    -num = 0
-    -@electricals.each do |electricals|
-      %li.content__main--latest-items__box--merchandises__merchandise
-        = link_to product_path(electricals), class: "content__main--latetst-items__box--merchandises__merchandise--block" do
-          %figure.content__main--latest-items__box--merchandises__merchandise--block__element
-            %figcaption
-              %span
-                = electricals.name
-            .content__main--latest-items__box--merchandises__merchandise--block__element--pic_box
-              = image_tag @electricals_image.image_url.to_s, class: "lazyloaded", alt: ""
-              %span{"aria-label": "Price"}
-                = "¥#{electricals.price.to_s(:delimited)}"
-      -num += 1
-      -break if num== 10
+    = render partial: 'merchandises', collection: @electricals, as:'category'
 .content__main--latest-items__box
   .content__main--latest-items__box--top_bar
     .content__main--latest-items__box--top_bar__title
@@ -73,17 +33,4 @@
       もっと見る
   -# = render partial: "top/merchandises"
   %ul.content__main--latest-items__box--merchandises
-    -num = 0
-    -@toys.each do |toys|
-      %li.content__main--latest-items__box--merchandises__merchandise
-        = link_to product_path(toys), class: "content__main--latetst-items__box--merchandises__merchandise--block" do
-          %figure.content__main--latest-items__box--merchandises__merchandise--block__element
-            %figcaption
-              %span
-                = toys.name
-            .content__main--latest-items__box--merchandises__merchandise--block__element--pic_box
-              = image_tag @toys_image.image_url.to_s, class: "lazyloaded", alt: ""
-              %span{"aria-label": "Price"}
-                = "¥#{toys.price.to_s(:delimited)}"
-      -num += 1
-      -break if num== 10
+    = render partial: 'merchandises', collection: @toys, as:'category'
