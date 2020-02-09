@@ -1,14 +1,3 @@
--# %ul.content__main--latest-items__box--merchandises
--#   - @products.each do |product|
--#     %li.content__main--latest-items__box--merchandises__merchandise
--#       = link_to product_path(product), class: "content__main--latetst-items__box--merchandises__merchandise--block" do
--#         %figure.content__main--latest-items__box--merchandises__merchandise--block__element
--#           %figcaption
--#             %span
--#               = product.name
--#           .content__main--latest-items__box--merchandises__merchandise--block__element--pic_box
--#             %span{"aria-label": "Price"}
--#               = "¥#{product.price.to_s(:delimited)}"
 %li.content__main--latest-items__box--merchandises__merchandise
   = link_to product_path(category), class: "content__main--latetst-items__box--merchandises__merchandise--block" do
     %figure.content__main--latest-items__box--merchandises__merchandise--block__element
@@ -19,5 +8,3 @@
         = image_tag category.product_images.first.image_url.to_s, class: "lazyloaded", alt: ""
         %span{"aria-label": "Price"}
           = "¥#{category.price.to_s(:delimited)}"
-    -# -num += 1
-    -# -break if num== 10

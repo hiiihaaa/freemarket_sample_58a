@@ -13,7 +13,6 @@
       メンズ新着アイテム
     = link_to "test", class: "content__main--latest-items__box--top_bar__more-btn" do
       もっと見る
-  -# = render partial: "top/merchandises"
   %ul.content__main--latest-items__box--merchandises
     = render partial: 'merchandises', collection: @mens, as:'category'
 .content__main--latest-items__box
@@ -22,7 +21,6 @@
       家具・スマホ・カメラ新着アイテム
     = link_to "test", class: "content__main--latest-items__box--top_bar__more-btn" do
       もっと見る
-  -# = render partial: "top/merchandises"
   %ul.content__main--latest-items__box--merchandises
     = render partial: 'merchandises', collection: @electricals, as:'category'
 .content__main--latest-items__box
@@ -31,6 +29,5 @@
       おもちゃ・ホビー・グッズ新着アイテム
     = link_to "test", class: "content__main--latest-items__box--top_bar__more-btn" do
       もっと見る
-  -# = render partial: "top/merchandises"
   %ul.content__main--latest-items__box--merchandises
     = render partial: 'merchandises', collection: @toys, as:'category'
