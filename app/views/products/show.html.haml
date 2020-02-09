@@ -60,16 +60,25 @@
         .owl-stage-outer
           .owl-stage{style: "width: 900px;"}
             .owl-item{style: "width: 300px;"}
+              -num = 0
               .owl-item-inner
                 - @product.product_images.each do |img|
-                  = image_tag img.image_url.to_s
+                  = image_tag img.image_url.to_s, class: "big_image"
+                  -break if num== 0
         .owl-nav.disabled
           .owl-prev prev
           .owl-next next
         .owl-dots
-          .owl-dot
-            %span
-            .owl-dot-inner
+          -num = 0
+          - @product.product_images.each do |img|
+            -if num == 0
+              -num += 1
+            -else
+              .owl-dot
+                %span
+                  = image_tag img.image_url.to_s, class: "small_image"
+              -num += 1
+          .owl-dot-inner
     .item-prige-box.text-center.visible-sp
       %span.item-price.bold ¥X,XXX
       %span.item-tax (税込)
