@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   end
   devise_for :users
 
-  resources :users, only: [:edit, :show]
+  resources :users, only: [:edit, :show, :update]
 
   resources :signups, only: [:index] do
     collection do
