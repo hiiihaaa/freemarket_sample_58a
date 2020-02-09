@@ -23,7 +23,7 @@
     .header__lower--rightbox
       - if user_signed_in?
         .header__lower--rightbox__mypage
-          = link_to "test", class: "header__lower--rightbox__mypage--btn" do
+          = link_to users_path, class: "header__lower--rightbox__mypage--btn" do
             マイページ
             -# ユーザーマイページのリンクを貼り付け
         .header__lower--rightbox__log_out
