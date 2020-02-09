@@ -50,9 +50,9 @@
     さんから出品されました。
     = @product.brand
     の商品で、
-    = @product.address.name
+    = @product.shipping_from
     から
-    = @product.period.period
+    = @product.shipping_date
     されます。
   .product_main_content.claarfix
     .item_image
@@ -60,25 +60,16 @@
         .owl-stage-outer
           .owl-stage{style: "width: 900px;"}
             .owl-item{style: "width: 300px;"}
-              -num = 0
               .owl-item-inner
-                - @product.product_images.each do |img|
-                  = image_tag img.image_url.to_s, class: "big_image"
-                  -break if num== 0
+                -# = image_tag @product_image.image_url, class: "owllazy", style: "opacity: 1;"
         .owl-nav.disabled
           .owl-prev prev
           .owl-next next
         .owl-dots
-          -num = 0
-          - @product.product_images.each do |img|
-            -if num == 0
-              -num += 1
-            -else
-              .owl-dot
-                %span
-                  = image_tag img.image_url.to_s, class: "small_image"
-              -num += 1
-          .owl-dot-inner
+          .owl-dot
+            %span
+            .owl-dot-inner
+              -# = image_tag @product_image.image_url
     .item-prige-box.text-center.visible-sp
       %span.item-price.bold ¥X,XXX
       %span.item-tax (税込)
@@ -111,12 +102,6 @@
           %td
             = link_to "カテゴリーURL" do
               %div 
-                -if !(@category.ancestry == nil) and !(@category.parent.ancestry == nil)
-                  = @category.parent.parent.name
-                -else
-                -if !(@category.ancestry == nil)
-                  = @category.parent.name
-                -else
                 = @category.name
         %tr
           %th ブランド
@@ -124,35 +109,27 @@
             = link_to "ブランドURL" do
               %div 
               = @product.brand
-        -if !(@product.size_id == nil)
-          %tr
-            %th サイズ
-            %td
-              = link_to "ブランドURL" do
-                %div 
-                = @product.size.size
-        -else
         %tr
           %th 商品の状態
           %td 
-            = @product.status.status
+            = @product.status
         %tr
           %th 配送料の負担
           %td
-            = @charge_method.layer
+            = @product.shipping_fee
         %tr
           %th 配送の方法
           %td
-            = @charge_method2.layer
+            = @product.shipping_method
         %tr
           %th 配送元の地域
           %td
             = link_to "都道府県URL" do
-              = @product.address.name
+              = @product.shipping_from
         %tr
           %th 発送日の目安
           %td
-            = @product.period.period
+            = @product.shipping_date
   .item-price-box.text-center
     %span.item-price.bold
       = "¥#{@product.price.to_s(:delimited)}"
@@ -236,18 +213,18 @@
           %input{name: "redirect_url_key", type: "hidden", value: "item_detail"}/
           %input{name: "__csrf_value", type: "hidden", value: "何か"}/
 %ul.nav-item-link-prev-next.clearfix
-  -if !(@product.previous == nil)
+  -if @product.previous == nil
+  -else
     %li.nav-item-link-prev
       = link_to "/products/#{@product.previous.id}" do
         %i.icon-arrow-left
         = @product.previous.name
+  -if @product.next == nil
   -else
-  -if !(@product.next == nil)
     %li.nav-item-link-next
       = link_to "/products/#{@product.next.id}" do
         = @product.next.name
         %i.icon-arrow-right
-  -else
 .item-social-media-box
   .text-center
     .fb-save.fb_iframe_widget{"data-uri": "何かのURL?", "fb-iframe-plugin-query": "何かのURL", "fb-xfbml-state": "rendered"}
@@ -279,7 +256,7 @@
           %section.items-box
             = link_to "/products/#{product.id}" do
               %figure.items-box-photo.__web-inspector-hide-shortcut__
-                = image_tag @product_user_other_image[num].image_url.to_s, class: "lazyloaded", alt: ""
+                -# = image_tag @product_user_other_image[num].image_url, class: "lazyloaded", alt: ""
               .items-box-body
                 %h3.items-box-name.font-2
                   = product.name
@@ -304,13 +281,13 @@
           %section.items-box
             = link_to "/products/#{category.id}" do
               %figure.items-box-photo
-                = image_tag @other_product_image[num].image_url.to_s, class: "lazyloaded", alt: ""
+                = image_tag @other_product_image[num].image_url, class: "lazyloaded", alt: ""
               .items-box-body
                 %h3.items-box-name.font-2
-                  = category.name
+                  = category.product.name
                 .items-box-num
                   .items-box-price.font-5
-                    = "¥#{category.price.to_s(:delimited)}"
+                    = "¥#{category.product.price.to_s(:delimited)}"
                   .font-2
                     %i.icon-like-border
                     %span
