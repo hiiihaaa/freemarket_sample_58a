@@ -36,7 +36,7 @@
         %figure
           = image_tag "https://static.mercdn.net/thumb/members/103058894.jpg?1538909507", size: "60x60"
         %h2.mypage-user-icon__name.bold
-          = current_user.nickname
+          = "nickname"
         .mypage-user-icon__number
           .mypage-user-icon__number--rate
             評価
@@ -204,7 +204,7 @@
       %h3.mypage-side-nav__head 設定
       %ul.mypage-side-nav__list.margin
         %li
-          = link_to edit_user_path(current_user.id), class: "mypage-side-nav__list__item" do
+          = link_to users_path, class: "mypage-side-nav__list__item" do
             プロフィール
             = icon "fas", "angle-right" , class: "mypage-side-nav__list__icon"
         %li
@@ -228,6 +228,6 @@
             電話番号の確認
             = icon "fas", "angle-right" , class: "mypage-side-nav__list__icon"
         %li
-          = link_to "", method: :delete, action: "destroy", class: "mypage-side-nav__list__item" do
+          = link_to users_path, method: :delete, action: "destroy", class: "mypage-side-nav__list__item" do
             ログアウト
             = icon "fas", "angle-right" , class: "mypage-side-nav__list__icon"
