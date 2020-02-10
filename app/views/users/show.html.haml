@@ -14,7 +14,7 @@
         %p
           登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
         %p.text-right
-          %a{href: "確認書類ページ", target: "_blank"}
+          = link_to "確認書類ページ", target: "_blank" do
             本人確認書類のアップロードについて   
       .form-group
         %label お名前
@@ -53,7 +53,7 @@
       %button.btn-default.btn-red{type: "submit"} 登録する
       .form-group.text-right
         %p
-          %a{href: "URL", target: "_blank"}
+          = link_to "URL", target: "_blank" do
             本人情報の登録について
 %footer.footer
   = render './shareParts/topFooter'
