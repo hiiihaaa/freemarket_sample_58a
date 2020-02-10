@@ -17,13 +17,18 @@
             本人確認書類のアップロードについて   
       .form-group
         %label お名前
-        %p 吉村 勇作
+        %p 
+        = @user.firstname
+        = @user.lastname
       .form-group
         %label お名前カナ
-        %p ヨシムラ ユウサク
+        %p 
+        = @user.firstname_kana
+        = @user.lastname_kana
       .form-group
         %label 生年月日
-        %p 196/09/16
+        %p 
+        = @user.birthday.strftime('%Y/%m/%d')
       .form-group
         %label{for: "zip_code"} 郵便番号
         %span.form-arbitrary 任意
