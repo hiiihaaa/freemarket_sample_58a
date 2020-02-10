@@ -6,6 +6,5 @@ class UsersController < ApplicationController
   def destroy
   end
   def show
-    redirect_to controller: 'devise/sessions', action: 'new'
   end
 end
