@@ -6,18 +6,12 @@ Rails.application.routes.draw do
 
   
   get "users" => "users#index"
-  get 'index' => 'index#index'
-  get "/user_identifications/new" => "user_identifications#new"
-  post "/user_identifications/new" => "user_identifications#create"
-  # View作成用無理やりルーティング。あとで消す。kajitani
-  get "users/destroy"
 
   devise_scope :user do
     post 'users', to: 'devise/registrations#create'
   end
   devise_for :users
-
-  resources :users, only: [:edit, :show, :update]
+  resources :users, only: [:edit, :show]
 
   resources :signups, only: [:index] do
     collection do

@@ -1,33 +1,29 @@
 .content__main--latest-items__box
   .content__main--latest-items__box--top_bar
     .content__main--latest-items__box--top_bar__title
-      レディース新着アイテム
+      「仮」新着アイテム1
       -# DBより「仮」部分の名前取得
     = link_to products_path, class: "content__main--latest-items__box--top_bar__more-btn" do
       もっと見る
-  %ul.content__main--latest-items__box--merchandises
-    = render partial: 'merchandises', collection: @ladies, as:'category'
+  = render partial: "top/merchandises"
 .content__main--latest-items__box
   .content__main--latest-items__box--top_bar
     .content__main--latest-items__box--top_bar__title
-      メンズ新着アイテム
+      「仮」新着アイテム2
     = link_to "test", class: "content__main--latest-items__box--top_bar__more-btn" do
       もっと見る
-  %ul.content__main--latest-items__box--merchandises
-    = render partial: 'merchandises', collection: @mens, as:'category'
+  = render partial: "top/merchandises"
 .content__main--latest-items__box
   .content__main--latest-items__box--top_bar
     .content__main--latest-items__box--top_bar__title
-      家具・スマホ・カメラ新着アイテム
+      「仮」新着アイテム3
     = link_to "test", class: "content__main--latest-items__box--top_bar__more-btn" do
       もっと見る
-  %ul.content__main--latest-items__box--merchandises
-    = render partial: 'merchandises', collection: @electricals, as:'category'
+  = render partial: "top/merchandises"
 .content__main--latest-items__box
   .content__main--latest-items__box--top_bar
     .content__main--latest-items__box--top_bar__title
-      おもちゃ・ホビー・グッズ新着アイテム
+      「仮」新着アイテム4
     = link_to "test", class: "content__main--latest-items__box--top_bar__more-btn" do
       もっと見る
-  %ul.content__main--latest-items__box--merchandises
-    = render partial: 'merchandises', collection: @toys, as:'category'
+  = render partial: "top/merchandises"
