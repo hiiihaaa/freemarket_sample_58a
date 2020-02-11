@@ -7,7 +7,10 @@
   margin: 0 auto 0;
   width: 1020px;
 }
-
+.mypage-side{
+  margin-top:-40px;
+  margin-right: 20px;
+}
 /*mypage_content*/
 .mypage-user-icon {
   position: relative;
@@ -50,6 +53,7 @@
 }
 
 .mypage-content {
+  margin-left: 60px;
   width: 700px;
   &__tabs {
     display: flex;
