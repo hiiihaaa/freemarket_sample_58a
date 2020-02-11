@@ -19,6 +19,8 @@ class ProductsController < ApplicationController
     @charge_method2 = ChargeMethod.find_by(id: @product.sendmethod_id)
     @category_same = Product.where.not(id: @product.id).where(category_id: @product.category_id)
     @other_product_image = ProductImage.where(product_id: @category_same)
+    @q = Product.ransack(params[:q])
+    @result = @q.result(distinct: true)
   end
 
   def destroy
@@ -42,7 +44,7 @@ class ProductsController < ApplicationController
     @result = @q.result.page(params[:page]).per(132)
     render "top/search"
   end
-
+  
   private
 
   def set_product
