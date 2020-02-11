@@ -27,6 +27,8 @@ class ProductsController < ApplicationController
     :currency => 'jpy',                   #単位：日本円
     :description => '決済に関する説明'
     )
+    @product.purchase_status = "2"
+    @product.save
     redirect_to root_path
   end
   
