@@ -63,6 +63,7 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
+    @product.purchase_status = "1"
     @product.save!
     redirect_to root_path
   end
