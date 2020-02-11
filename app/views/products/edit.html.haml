@@ -1,7 +1,7 @@
 .detailWrapper
   = render './shareParts/detailHeader'
-  .detailMain
-    = form_with(model: @product, local: true, class: "", id: "product-dropzone") do |f|
+  .detailMain#edit_product_img
+    = form_with(model: @product, local: true, class: "", id: "edit_product_wrap") do |f|
       .exhibitionTop
         %h2.caption 商品の情報を入力
       .exhibitionImage
@@ -9,21 +9,22 @@
           出品画像
           %span.red 必須
         %span 最大10枚まで保存できます。
-        #create_product_img 
-          = f.fields_for :product_images do |m|
-            .dropzone-container
-              -# 1〜５のレビュー
-              #preview.exhibitionLR
-              .dropzone-area.dpz-area
-                = m.label :image_url, class: "dropzone-box", for: "upload-image" do
-                  .input_area
-                    = m.file_field :image_url, multiple: true, name: 'product_images[image][]', id: "upload-image", class: "upload-image", 'data-image': 0
-                  %p.drop ここをクリックしてください
-            .dropzone-container2
-              #preview2.exhibitionLR
-              .dropzone-area2.dpz-area
-                = m.label :image_url, class: "dropzone-box", for: "upload-image" do
-                  %p.drop ここをクリックしてください
+        
+        = f.fields_for :product_images, @product.product_images.first do |m|
+          .dropzone-container
+            -# 1〜５のレビュー
+            #preview.exhibitionLR
+            .dropzone-area.dpz-area
+              = m.label :image_url, class: "dropzone-box", for: "upload-image" do
+                .input_area
+                  = m.file_field :image_url, multiple: true, name: 'product_images[image][]', class: "upload-image", 'data-image': 0, id: "upload-image"
+                %p.drop ここをクリックしてください
+          -# 6〜10のレビュー
+          .dropzone-container2
+            #preview2.exhibitionLR
+            .dropzone-area2.dpz-area
+              = m.label :image_url, class: "dropzone-box", for: "upload-image" do
+                %p.drop ここをクリックしてください
 
       .exhibitionInfo
         .caption
@@ -128,7 +129,7 @@
           .price__9
             #profit.l__right
 
-      .sell__content.clearfix
+      .sell__content
         .bottom
           %p
             =link_to "禁止されている出品" ,"/jp/help_center/getting_started/prohibited_conduct/"
@@ -143,7 +144,7 @@
             また、出品をもちまして
             =link_to "加盟店規約" ,"/jp/seller_terms/"
             に同意したことになります。
-        = f.submit "出品する" ,class:"btn-default btn-red",type: 'button', onclick: 'submit();'
+        = f.submit "編集する", class: "btn-red edit_product"
         %a.btn-default.btn-gray{href: "../"} もどる
   = render partial: './shareParts/detailFooter'
 

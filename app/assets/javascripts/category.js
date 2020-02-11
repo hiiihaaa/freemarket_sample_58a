@@ -18,21 +18,27 @@ $(function(){
         data: {parent: c_parents}
       })
 
-      .done(function(child){ 
+      .done(function(child){
+        console.log("2")
+        child_js.style.display = "none";
+        $("#child_js").children().remove();
+        grandchild_js.style.display ="none";
+        $("#grandchild_js").children().remove();
+
         child_js.style.display = "block";
         child.forEach(function(child){
-          var child_html = "";
           var child_html = ($("<option>").val($(child).attr('id')).text($(child).attr('name')));
-          $("#child_js").append(child_html);
+          $("#child_js").append(child_html)
         })
       })
     }else if(c_parents == ""){
       child_js.style.display ="none";
+      $("#child_js").children().remove();
       grandchild_js.style.display ="none";
-      $("#grandchild_js").remove();
-      $("#child_js").remove();
+      $("#grandchild_js").children().remove();
     }
   })
+
 
   $('#child_js').on('change', function(e){
     var id = document.getElementById("child_js").value;
@@ -44,22 +50,24 @@ $(function(){
         dataType: 'json',
         data: {parent: id}
       })
-      .done(function(grand_child){ 
+      .done(function(grand_child){
+        grandchild_js.style.display ="none";
+        $("#grandchild_js").children().remove();
+
         grandchild_js.style.display ="block";
         size.style.display ="block";
         brand.style.display ="block";
         grand_child.forEach(function(grand_child){
-          var grandchild_html = "";
           var grandchild_html = ($("<option>").val($(grand_child).attr('id')).text($(grand_child).attr('name')));
           $("#grandchild_js").append(grandchild_html);
         })
+
         $('#child_js').on('change', function(e){
-          $("#grandchild_js").remove();
         });
       });
     }else if(id == "---"){
       grandchild_js.style.display ="none";
-      $("#grandchild_js").remove();
+      $("#grandchild_js").children().remove();
     }
   })
 });
