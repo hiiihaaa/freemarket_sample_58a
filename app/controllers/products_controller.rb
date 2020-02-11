@@ -5,6 +5,8 @@ class ProductsController < ApplicationController
   end
   
   def index
+    @q = Product.ransack(params[:q])
+    @result = @q.result.page.page
   end
 
   def show
@@ -33,6 +35,14 @@ class ProductsController < ApplicationController
     @product = Product.new(product_params)
     @product.save!
     redirect_to root_path
+  end
+
+  def search
+    @q = Product.ransack(params[:q])
+
+    @result = @q.result.page(params[:page]).per(132)
+
+    render "top/search"
   end
 
   private

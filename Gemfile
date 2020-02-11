@@ -87,3 +87,5 @@ gem 'twilio-ruby', '~> 5.31.1'
 gem 'gretel'
 gem 'active_hash'
 gem 'ancestry'
+gem 'ransack'
+gem "kaminari"

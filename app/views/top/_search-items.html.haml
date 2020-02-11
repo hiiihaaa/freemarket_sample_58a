@@ -1,0 +1,11 @@
+%ul.content__main--latest-items__box--merchandises
+  - @result.each do |result|
+    %li.content__main--latest-items__box--merchandises__merchandise
+      = link_to product_path(result), class: "content__main--latetst-items__box--merchandises__merchandise--block" do
+        %figure.content__main--latest-items__box--merchandises__merchandise--block__element
+          %figcaption
+            %span
+              = result.name
+          .content__main--latest-items__box--merchandises__merchandise--block__element--pic_box
+            %span{"aria-label": "Price"}
+              = "¥#{result.price.to_s(:delimited)}"
