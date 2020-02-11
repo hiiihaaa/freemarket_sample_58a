@@ -33,23 +33,28 @@
       .form-group
         %label{for: "zip_code"} 郵便番号
         %span.form-arbitrary 任意
-        %p xxx-xxxx
+        %p 
+        = @user_identification.post_number
       .form-group
         %label{for: "zip_code"} 都道府県
         %span.form-arbitrary 任意
-        %p xx県
+        %p 
+        = @user_identification.prefecture
       .form-group
         %label{for: "zip_code"} 市区町村
         %span.form-arbitrary 任意
-        %p XX市
+        %p 
+        = @user_identification.city
       .form-group
         %label{for: "zip_code"} 番地
         %span.form-arbitrary 任意
-        %p XXXXXXX
+        %p 
+        = @user_identification.block
       .form-group
         %label{for: "zip_code"} 建物名
         %span.form-arbitrary 任意
-        %p XXXXXXX
+        %p 
+        = @user_identification.building
       %button.btn-default.btn-red{type: "submit"} 登録する
       .form-group.text-right
         %p

@@ -7,6 +7,7 @@ class UsersController < ApplicationController
   end
   def show
     @user = current_user
+    @user_identification = UserIdentification.find_by(user_id: @user.id)
   end
   def edit
     @user = User.find(params[:id])
