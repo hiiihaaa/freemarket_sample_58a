@@ -84,6 +84,8 @@ gem 'payjp'
 gem 'font-awesome-sass'
 gem 'pry-rails'
 gem 'twilio-ruby', '~> 5.31.1'
+gem 'ransack'
+gem "kaminari"
 gem 'gretel'
 gem 'active_hash'
 gem 'ancestry'

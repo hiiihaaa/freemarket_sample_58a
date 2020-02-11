@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   def index
   end
   def show
-    @user = current_user
+    redirect_to controller: 'devise/sessions', action: 'new'
   end
   def edit
     @user = User.find(params[:id])

@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
   root 'top#index'
+  
+  get 'top/search', to: 'products#search'
+
+  
   get "users" => "users#index"
   get 'index' => 'index#index'
   get "/user_identifications/new" => "user_identifications#new"
@@ -54,5 +58,6 @@ Rails.application.routes.draw do
   end
   
   resources :comments, only: [:index, :create] 
+
 
 end
