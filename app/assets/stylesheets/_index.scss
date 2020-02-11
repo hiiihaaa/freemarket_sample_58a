@@ -16,7 +16,9 @@
 //   border-image: initial;
 //   font: inherit;
 // }
-
+.slider li {
+  list-style: none;
+}
 .content {
   max-width: 700px;
   padding: 0px;
