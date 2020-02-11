@@ -48,6 +48,7 @@ Rails.application.routes.draw do
     collection do
       get "cate_children" 
       get "grand_children" 
+      get 'top/search'
     end
 
     resources :likes, only: [:create]
