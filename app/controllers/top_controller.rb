@@ -9,4 +9,10 @@ class TopController < ApplicationController
     @electricals = Product.where(category_id: 903..988).limit(10)
     @toys = Product.where(category_id: 690..802).limit(10)
   end
+  def search
+    @q = Product.ransack(params[:q])
+    @result = @q.result.page(params[:page]).per(132)
+    render "top/search"
+  end
+
 end
