@@ -92,7 +92,7 @@ class SignupsController < ApplicationController
       if @user.save
         session[:id] = @user.id
         sign_in User.find(@user.id) unless user_signed_in?
-        redirect_to root_path and return #本番環境ではここを変更する必要あり（アドレスへ繋げる）
+        redirect_to user_identifications_new_path and return #本番環境ではここを変更する必要あり（アドレスへ繋げる）
       else
         redirect_to step4_new_phones_path
       end
