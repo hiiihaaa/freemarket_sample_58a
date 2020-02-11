@@ -29,7 +29,7 @@ class ProductsController < ApplicationController
     )
     @product.purchase_status = "2"
     @product.save
-    redirect_to root_path
+    redirect_to product_path
   end
   
   def index
