@@ -79,9 +79,10 @@
                   = image_tag img.image_url.to_s, class: "small_image"
               -num += 1
           .owl-dot-inner
-      -# 条件分岐でのちに実装するが現在商品の購入状態を区別できないためとりあえず保留にしておく
-      -# .item-sold-out-badge
-      -#   %div SOLD
+      -if @product.purchase_status == "2"
+        .item-sold-out-badge
+          %div SOLD
+      -else
     .item-prige-box.text-center.visible-sp
       %span.item-price.bold ¥X,XXX
       %span.item-tax (税込)
@@ -162,10 +163,11 @@
     %span.item-tax (税込)
     %span.item-shipping-fee
       = @product.shipping_fee
-  = link_to "購入画面に進む", "購入画面URL", class: "item-buy-btn"
-  -# のちに条件分岐で実装するが現在商品の購入状態を区別できないため保留
-  -# .item-buy-btn.disabled
-  -#   売り切れました
+  -if @product.purchase_status == "2"
+    .item-buy-btn.disabled
+      売り切れました
+  -else
+    = link_to "購入画面に進む", "購入画面URL", class: "item-buy-btn"
   .item-description.f14
     %p.item-description-inner
       = @product.description
@@ -286,6 +288,10 @@
             = link_to "/products/#{product.id}" do
               %figure.items-box-photo.__web-inspector-hide-shortcut__
                 = image_tag @product_user_other_image[num].image_url.to_s, class: "lazyloaded", alt: ""
+                -if product.purchase_status == "2"
+                  .item-sold-out-badge-small
+                    %div SOLD
+                -else
               .items-box-body
                 %h3.items-box-name.font-2
                   = product.name
@@ -311,6 +317,10 @@
             = link_to "/products/#{category.id}" do
               %figure.items-box-photo
                 = image_tag @other_product_image[num].image_url.to_s, class: "lazyloaded", alt: ""
+                -if category.purchase_status == "2"
+                  .item-sold-out-badge-small
+                    %div SOLD
+                -else
               .items-box-body
                 %h3.items-box-name.font-2
                   = category.name
