@@ -7,9 +7,9 @@ class UserIdentificationsController < ApplicationController
     @user_identification = UserIdentification.new(useridentification_params)
 
     if @user_identification.save
-      redirect_to index_path
+      redirect_to root_path
     else
-      render :new
+      redirect_to user_identifications_new_path
     end
 
   end
