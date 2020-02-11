@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :move_to_signin
+  before_action :search
   def move_to_signin
     redirect_to user_session_path unless user_signed_in?
   end
@@ -14,7 +15,6 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
   def destroy
-    
   end
   def update
     user = User.find(params[:id])
@@ -26,5 +26,10 @@ class UsersController < ApplicationController
   private
   def user_params
     params.require(:user).permit(:nickname,:profiles)
+  end
+
+  def search
+    @q = Product.ransack(params[:q])
+    @result = @q.result(distinct: true)
   end
 end

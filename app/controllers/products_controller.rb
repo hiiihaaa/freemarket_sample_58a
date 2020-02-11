@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :destroy]
-
+  before_action :search
   def purchase
     @product = Product.find(params[:id])
     credit_card = CreditCard.where(user_id: current_user.id).first
@@ -33,8 +33,6 @@ class ProductsController < ApplicationController
   end
   
   def index
-    @q = Product.ransack(params[:q])
-    @result = @q.result.page.page
   end
 
   def show
@@ -47,8 +45,6 @@ class ProductsController < ApplicationController
     @charge_method2 = ChargeMethod.find_by(id: @product.sendmethod_id)
     @category_same = Product.where.not(id: @product.id).where(category_id: @product.category_id)
     @other_product_image = ProductImage.where(product_id: @category_same)
-    @q = Product.ransack(params[:q])
-    @result = @q.result(distinct: true)
   end
 
   def destroy
@@ -75,6 +71,10 @@ class ProductsController < ApplicationController
   end
   
   private
+  def search
+    @q = Product.ransack(params[:q])
+    @result = @q.result(distinct: true)
+  end
 
   def set_product
     @product = Product.find(params[:id])
