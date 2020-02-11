@@ -39,9 +39,7 @@ class ProductsController < ApplicationController
 
   def search
     @q = Product.ransack(params[:q])
-
     @result = @q.result.page(params[:page]).per(132)
-
     render "top/search"
   end
 
