@@ -169,7 +169,7 @@
     .item-buy-btn.disabled
       売り切れました
   -else
-    = link_to "購入画面に進む", "購入画面URL", class: "item-buy-btn"
+    = link_to "購入画面に進む", purchase_product_path, class: "item-buy-btn"
   .item-description.f14
     %p.item-description-inner
       = @product.description

@@ -42,7 +42,7 @@ Rails.application.routes.draw do
   resources :products do
     member do
       get :purchase
-      post :pay, to: "product#pay"
+      post :pay, to: "products#pay"
     end
 
     collection do
