@@ -89,3 +89,5 @@ gem 'active_hash'
 gem 'ancestry'
 gem 'ransack'
 gem "kaminari"
+gem 'gon'
+gem 'aws-sdk'
