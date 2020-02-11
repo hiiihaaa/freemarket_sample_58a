@@ -28,7 +28,6 @@
         .header__lower--rightbox__log_in
           = link_to new_credit_card_path, class: "header__lower--rightbox__log_in--btn" do
             ログイン
-
 %main.mypage-container
   .mypage-content
     %section.mypage-user-icon
@@ -36,7 +35,7 @@
         %figure
           = image_tag "https://static.mercdn.net/thumb/members/103058894.jpg?1538909507", size: "60x60"
         %h2.mypage-user-icon__name.bold
-          = "nickname"
+          = current_user.nickname
         .mypage-user-icon__number
           .mypage-user-icon__number--rate
             評価
@@ -131,103 +130,103 @@
         %ul.mypage-content__tab-content-active
           %li.mypage-content__tab-content__not-found.bold
             取引中の商品がありません
-
   .mypage-side
-    %nav.mypage-side-nav
-      %ul.mypage-side-nav__list
-        %li
-          = link_to users_path, class: "mypage-side-nav__list__item active" do
-            マイページ
-            = icon "fas", "angle-right" , class: "mypage-side-nav__list__icon"
-        %li
-          = link_to users_path, class: "mypage-side-nav__list__item" do
-            お知らせ
-            = icon "fas", "angle-right" , class: "mypage-side-nav__list__icon"
-        %li
-          = link_to users_path, class: "mypage-side-nav__list__item" do
-            やることリスト
-            = icon "fas", "angle-right" , class: "mypage-side-nav__list__icon"
-        %li
-          = link_to users_path, class: "mypage-side-nav__list__item" do
-            いいね！一覧
-            = icon "fas", "angle-right" , class: "mypage-side-nav__list__icon"
-        %li
-          = link_to users_path, class: "mypage-side-nav__list__item" do
-            出品する
-            = icon "fas", "angle-right" , class: "mypage-side-nav__list__icon"
-        %li
-          = link_to users_path, class: "mypage-side-nav__list__item" do
-            出品した商品 - 出品中
-            = icon "fas", "angle-right" , class: "mypage-side-nav__list__icon"
-        %li
-          = link_to users_path, class: "mypage-side-nav__list__item" do
-            出品した商品 - 取引中
-            = icon "fas", "angle-right" , class: "mypage-side-nav__list__icon"
-        %li
-          = link_to users_path, class: "mypage-side-nav__list__item" do
-            出品した商品 - 売却済み
-            = icon "fas", "angle-right" , class: "mypage-side-nav__list__icon"
-        %li
-          = link_to users_path, class: "mypage-side-nav__list__item" do
-            購入した商品 - 取引中
-            = icon "fas", "angle-right" , class: "mypage-side-nav__list__icon"
-        %li
-          = link_to users_path, class: "mypage-side-nav__list__item" do
-            購入した商品 - 過去の取引
-            = icon "fas", "angle-right" , class: "mypage-side-nav__list__icon"
-        %li
-          = link_to users_path, class: "mypage-side-nav__list__item" do
-            ニュース一覧
-            = icon "fas", "angle-right" , class: "mypage-side-nav__list__icon"
-        %li
-          = link_to users_path, class: "mypage-side-nav__list__item" do
-            評価一覧
-            = icon "fas", "angle-right" , class: "mypage-side-nav__list__icon"
-        %li
-          = link_to users_path, class: "mypage-side-nav__list__item" do
-            ガイド
-            = icon "fas", "angle-right" , class: "mypage-side-nav__list__icon"
-        %li
-          = link_to users_path, class: "mypage-side-nav__list__item" do
-            お問い合わせ
-            = icon "fas", "angle-right" , class: "mypage-side-nav__list__icon"
-      %h3.mypage-side-nav__head メルペイ
-      %ul.mypage-side-nav__list.margin
-        %li
-          = link_to users_path, class: "mypage-side-nav__list__item" do
-            売上・振込申請
-            = icon "fas", "angle-right" , class: "mypage-side-nav__list__icon"
-        %li
-          = link_to users_path, class: "mypage-side-nav__list__item" do
-            ポイント
-            = icon "fas", "angle-right" , class: "mypage-side-nav__list__icon"
-      %h3.mypage-side-nav__head 設定
-      %ul.mypage-side-nav__list.margin
-        %li
-          = link_to users_path, class: "mypage-side-nav__list__item" do
-            プロフィール
-            = icon "fas", "angle-right" , class: "mypage-side-nav__list__icon"
-        %li
-          = link_to users_path, class: "mypage-side-nav__list__item" do
-            発送元・お届け先住所変更
-            = icon "fas", "angle-right" , class: "mypage-side-nav__list__icon"
-        %li
-          = link_to users_path, controller: "payments", method: :get, action: "index", class: "mypage-side-nav__list__item" do
-            支払い方法
-            = icon "fas", "angle-right" , class: "mypage-side-nav__list__icon"
-        %li
-          = link_to users_path, class: "mypage-side-nav__list__item" do
-            メール/パスワード
-            = icon "fas", "angle-right" , class: "mypage-side-nav__list__icon"
-        %li
-          = link_to users_path, class: "mypage-side-nav__list__item" do
-            本人情報
-            = icon "fas", "angle-right" , class: "mypage-side-nav__list__icon"
-        %li
-          = link_to users_path, class: "mypage-side-nav__list__item" do
-            電話番号の確認
-            = icon "fas", "angle-right" , class: "mypage-side-nav__list__icon"
-        %li
-          = link_to users_path, method: :delete, action: "destroy", class: "mypage-side-nav__list__item" do
-            ログアウト
-            = icon "fas", "angle-right" , class: "mypage-side-nav__list__icon"
+    =render './shareParts/topSidebar'
+    -# %nav.mypage-side-nav
+    -#   %ul.mypage-side-nav__list
+    -#     %li
+    -#       = link_to users_path, class: "mypage-side-nav__list__item active" do
+    -#         マイページ
+    -#         = icon "fas", "angle-right" , class: "mypage-side-nav__list__icon"
+    -#     %li
+    -#       = link_to users_path, class: "mypage-side-nav__list__item" do
+    -#         お知らせ
+    -#         = icon "fas", "angle-right" , class: "mypage-side-nav__list__icon"
+    -#     %li
+    -#       = link_to users_path, class: "mypage-side-nav__list__item" do
+    -#         やることリスト
+    -#         = icon "fas", "angle-right" , class: "mypage-side-nav__list__icon"
+    -#     %li
+    -#       = link_to users_path, class: "mypage-side-nav__list__item" do
+    -#         いいね！一覧
+    -#         = icon "fas", "angle-right" , class: "mypage-side-nav__list__icon"
+    -#     %li
+    -#       = link_to users_path, class: "mypage-side-nav__list__item" do
+    -#         出品する
+    -#         = icon "fas", "angle-right" , class: "mypage-side-nav__list__icon"
+    -#     %li
+    -#       = link_to users_path, class: "mypage-side-nav__list__item" do
+    -#         出品した商品 - 出品中
+    -#         = icon "fas", "angle-right" , class: "mypage-side-nav__list__icon"
+    -#     %li
+    -#       = link_to users_path, class: "mypage-side-nav__list__item" do
+    -#         出品した商品 - 取引中
+    -#         = icon "fas", "angle-right" , class: "mypage-side-nav__list__icon"
+    -#     %li
+    -#       = link_to users_path, class: "mypage-side-nav__list__item" do
+    -#         出品した商品 - 売却済み
+    -#         = icon "fas", "angle-right" , class: "mypage-side-nav__list__icon"
+    -#     %li
+    -#       = link_to users_path, class: "mypage-side-nav__list__item" do
+    -#         購入した商品 - 取引中
+    -#         = icon "fas", "angle-right" , class: "mypage-side-nav__list__icon"
+    -#     %li
+    -#       = link_to users_path, class: "mypage-side-nav__list__item" do
+    -#         購入した商品 - 過去の取引
+    -#         = icon "fas", "angle-right" , class: "mypage-side-nav__list__icon"
+    -#     %li
+    -#       = link_to users_path, class: "mypage-side-nav__list__item" do
+    -#         ニュース一覧
+    -#         = icon "fas", "angle-right" , class: "mypage-side-nav__list__icon"
+    -#     %li
+    -#       = link_to users_path, class: "mypage-side-nav__list__item" do
+    -#         評価一覧
+    -#         = icon "fas", "angle-right" , class: "mypage-side-nav__list__icon"
+    -#     %li
+    -#       = link_to users_path, class: "mypage-side-nav__list__item" do
+    -#         ガイド
+    -#         = icon "fas", "angle-right" , class: "mypage-side-nav__list__icon"
+    -#     %li
+    -#       = link_to users_path, class: "mypage-side-nav__list__item" do
+    -#         お問い合わせ
+    -#         = icon "fas", "angle-right" , class: "mypage-side-nav__list__icon"
+    -#   %h3.mypage-side-nav__head メルペイ
+    -#   %ul.mypage-side-nav__list.margin
+    -#     %li
+    -#       = link_to users_path, class: "mypage-side-nav__list__item" do
+    -#         売上・振込申請
+    -#         = icon "fas", "angle-right" , class: "mypage-side-nav__list__icon"
+    -#     %li
+    -#       = link_to users_path, class: "mypage-side-nav__list__item" do
+    -#         ポイント
+    -#         = icon "fas", "angle-right" , class: "mypage-side-nav__list__icon"
+    -#   %h3.mypage-side-nav__head 設定
+    -#   %ul.mypage-side-nav__list.margin
+    -#     %li
+    -#       = link_to edit_user_path(current_user.id), class: "mypage-side-nav__list__item" do
+    -#         プロフィール
+    -#         = icon "fas", "angle-right" , class: "mypage-side-nav__list__icon"
+    -#     %li
+    -#       = link_to users_path, class: "mypage-side-nav__list__item" do
+    -#         発送元・お届け先住所変更
+    -#         = icon "fas", "angle-right" , class: "mypage-side-nav__list__icon"
+    -#     %li
+    -#       = link_to users_path, controller: "payments", method: :get, action: "index", class: "mypage-side-nav__list__item" do
+    -#         支払い方法
+    -#         = icon "fas", "angle-right" , class: "mypage-side-nav__list__icon"
+    -#     %li
+    -#       = link_to users_path, class: "mypage-side-nav__list__item" do
+    -#         メール/パスワード
+    -#         = icon "fas", "angle-right" , class: "mypage-side-nav__list__icon"
+    -#     %li
+    -#       = link_to users_path, class: "mypage-side-nav__list__item" do
+    -#         本人情報
+    -#         = icon "fas", "angle-right" , class: "mypage-side-nav__list__icon"
+    -#     %li
+    -#       = link_to users_path(current_user.id), class: "mypage-side-nav__list__item" do
+    -#         電話番号の確認
+    -#         = icon "fas", "angle-right" , class: "mypage-side-nav__list__icon"
+    -#     %li
+    -#       = link_to "", method: :delete, action: "destroy", class: "mypage-side-nav__list__item" do
+    -#         ログアウト
+    -#         = icon "fas", "angle-right" , class: "mypage-side-nav__list__icon"

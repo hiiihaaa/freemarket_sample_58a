@@ -1,0 +1,171 @@
+header{
+  height: 128px;
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+.logo{
+  width: 185px;
+  height: 49px;
+  padding-top: 40px;
+  margin: 0px;
+}
+.process{
+  width: 508px;
+  height: 32px;
+  display: flex;
+  font-size: 12px;
+  padding-top: 40px;
+  padding-left: 40px;
+  color: #ccc;
+  font-weight: bold;
+  &__info{
+    text-align: center;
+    box-sizing: border-box;
+    margin-left: 20px;
+  &--first,&--second,&--third,&--fourth,&--fifth{
+    text-align: center;
+    }
+  &__tel,&--second{
+      color:red;
+      position: relative;
+    }
+  &--first::after{
+    content: "";
+    z-index: 100;
+    display: block;
+    width: 92px;
+    /* widthで線の長さ調節 colorをつける場合はここを変える ※process__info--redをrelativeで親要素としている、redにすることによって他を親とする場合はコピペしてそれぞれwidthを調整して変更*/
+    height: 2px;
+    background: red;
+     /*redに変更*/   
+    position: absolute;
+    top: 6px;
+    left: 25px;
+     /* 微調整する必要あり*/
+  }
+  &--second{
+    color:red;
+    position: relative;
+  }
+&--second::after{
+  content: "";
+  z-index: 100;
+  display: block;
+  width: 285px;
+  /* widthで線の長さ調節 colorをつける場合はここを変える ※process__info--redをrelativeで親要素としている、redにすることによって他を親とする場合はコピペしてそれぞれwidthを調整して変更*/
+  height: 2px;
+  background: #ccc;
+   /*redに変更*/   
+  position: absolute;
+  top: 6px;
+  left: 40px;
+   /* 微調整する必要あり*/
+}
+}
+  li{
+    list-style: none;
+    margin-right: 30px;
+  }
+}
+}
+.process__tel{
+  color: red;
+}
+
+.main{
+  background-color: #f5f5f5;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.user__input{
+  width: 700px;
+  margin: 0 auto;
+  background-color: white;
+&--phone2{
+  font-weight: 600;
+  padding-bottom: 15px;
+}
+&--center{
+  margin: 0 auto;
+  width: 347px;
+} 
+&--30seconds{
+  font-weight: 600;
+  margin-top: 20px;
+}
+&--listen{
+  font-size: 15px;
+  margin-bottom: 40px;
+}
+&--font{
+  font-size: 13px;
+  width: 320px;
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+&--resend{
+  font-weight: 600;
+}
+&--smallfont{
+  font-size: 14px;
+}
+}
+
+
+.registration{
+  margin: 0 auto;
+  width: 700px;
+  height: 200px;
+  display:flex;
+  flex-direction:column;
+  background-color: white;
+  padding: 24px 16px 10px 16px;
+  box-sizing: border-box;
+  &__sms{
+    font-size: 14px;
+    width: 332px;
+    height: 50px;
+    border-radius: 4px;
+    background-color: red;
+    color: white;
+    margin: 0 auto;
+  }
+  &__phone{
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 0px;
+    width: 332px;
+    margin:0 auto;
+    padding-top: 10px;
+  }
+  &__needphone{
+    width: 330px;
+    font-weight: 200;
+    text-align: left;
+    color: #0099eb;
+    display: inline-block;
+    margin: 0 auto;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  }
+  footer{
+    background-color: #f5f5f5;
+    width: 684px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 30px 0px 30px 0px;
+    font-size: 13px;
+    .footer__logo{
+      &--privacy{
+      margin-left: 10px;}
+      &--url{
+      width: 80px;
+      height: 65px;
+      margin:0 auto;
+      padding-top: 35px;}
+      &--small{
+      padding-top: 5px;
+      font-size: 10px;}
+     }
+    }

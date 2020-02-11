@@ -3,11 +3,13 @@
     .header__upper--leftbox
       = link_to root_path, class: "main_logo" do
         = image_tag "logo-mercari.svg", alt: "mercari", class: "mercari_logo"
-    %form.header__upper--form{action: "test"}
-      %input.header__upper--form__input{name: "keyword", placeholder: "何かお探しですか？", type: "search", value: ""}/
-      %button.header__upper--form__search
-        %svg.header__upper--form__search--search_btn{"aria-hidden" => "true", :height => "16", :viewbox => "0 0 16 16", :width => "16"}
-          %path{d: "M11.435 10.063h-.723l-.256-.247a5.92 5.92 0 0 0 1.437-3.87 5.946 5.946 0 1 0-5.947 5.947 5.92 5.92 0 0 0 3.87-1.437l.247.256v.723L14.637 16 16 14.637l-4.565-4.574zm-5.489 0A4.111 4.111 0 0 1 1.83 5.946 4.111 4.111 0 0 1 5.946 1.83a4.111 4.111 0 0 1 4.117 4.116 4.111 4.111 0 0 1-4.117 4.117z"}
+    .header__upper--form
+      = search_form_for @q ,url: top_search_products_path, method: :get do |f|
+        .header__upper--form__input
+          = f.search_field :name_or_description_cont_any ,placeholder: "何かお探しですか？"
+        %button{type: "search",class: "header__upper--form__search"}
+          %svg.header__upper--form__search
+            %path{d: "M11.435 10.063h-.723l-.256-.247a5.92 5.92 0 0 0 1.437-3.87 5.946 5.946 0 1 0-5.947 5.947 5.92 5.92 0 0 0 3.87-1.437l.247.256v.723L14.637 16 16 14.637l-4.565-4.574zm-5.489 0A4.111 4.111 0 0 1 1.83 5.946 4.111 4.111 0 0 1 5.946 1.83a4.111 4.111 0 0 1 4.117 4.116 4.111 4.111 0 0 1-4.117 4.117z"}
   .header__lower
     .header__lower--leftbox
       .header__lower--leftbox__search
@@ -23,7 +25,7 @@
     .header__lower--rightbox
       - if user_signed_in?
         .header__lower--rightbox__mypage
-          = link_to "test", class: "header__lower--rightbox__mypage--btn" do
+          = link_to users_path, class: "header__lower--rightbox__mypage--btn" do
             マイページ
             -# ユーザーマイページのリンクを貼り付け
         .header__lower--rightbox__log_out

@@ -1,0 +1,64 @@
+.user_edit
+  = render './shareParts/topHeader'
+  - breadcrumb :identification
+  = render "layouts/breadcrumbs"
+.user_content
+  .main__side
+    =render './shareParts/topSidebar'
+  .l-content
+    %section.l-chapter-container.mypage-identification
+      %h2.l-chapter-head 本人情報の登録
+      .l-single-inner
+        %p
+          お客さまの本人情報をご登録ください。
+        %p
+          登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
+        %p.text-right
+          = link_to "確認書類ページ", target: "_blank" do
+            本人確認書類のアップロードについて   
+      .form-group
+        %label お名前
+        %p 
+        = @user.firstname
+        = @user.lastname
+      .form-group
+        %label お名前カナ
+        %p 
+        = @user.firstname_kana
+        = @user.lastname_kana
+      .form-group
+        %label 生年月日
+        %p 
+        = @user.birthday.strftime('%Y/%m/%d')
+      .form-group
+        %label{for: "zip_code"} 郵便番号
+        %span.form-arbitrary 任意
+        %p 
+        = @user_identification.post_number
+      .form-group
+        %label{for: "zip_code"} 都道府県
+        %span.form-arbitrary 任意
+        %p 
+        = @user_identification.prefecture
+      .form-group
+        %label{for: "zip_code"} 市区町村
+        %span.form-arbitrary 任意
+        %p 
+        = @user_identification.city
+      .form-group
+        %label{for: "zip_code"} 番地
+        %span.form-arbitrary 任意
+        %p 
+        = @user_identification.block
+      .form-group
+        %label{for: "zip_code"} 建物名
+        %span.form-arbitrary 任意
+        %p 
+        = @user_identification.building
+      %button.btn-default.btn-red{type: "submit"} 登録する
+      .form-group.text-right
+        %p
+          = link_to "URL", target: "_blank" do
+            本人情報の登録について
+%footer.footer
+  = render './shareParts/topFooter'

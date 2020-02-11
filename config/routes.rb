@@ -2,12 +2,34 @@ Rails.application.routes.draw do
 
   root 'top#index'
   get "users" => "users#index"
+  get 'index' => 'index#index'
+  get "/user_identifications/new" => "user_identifications#new"
+  post "/user_identifications/new" => "user_identifications#create"
+  # View作成用無理やりルーティング。あとで消す。kajitani
+  get "users/destroy"
 
   devise_scope :user do
     post 'users', to: 'devise/registrations#create'
   end
   devise_for :users
-  resources :users, only: [:edit, :show]
+
+  resources :users, only: [:edit, :show, :update]
+
+  resources :signups, only: [:index] do
+    collection do
+      get 'step1'   
+      post 'step1', to: 'signups#step1_validates' 
+      get 'step2'  
+      post 'step2', to: 'signups#step2' 
+      resource :phones,only: [:new] do
+        collection do
+      post 'step3', to: "signups#step3"
+      get  "step4_new", to: "signups#step4_new"
+      post "step4", to: "signups#step4"
+       end
+      end
+    end   
+  end    
 
   resources :credit_cards, only: [:new, :show] do
     collection do
@@ -20,12 +42,13 @@ Rails.application.routes.draw do
   resources :products do
     member do
       get :purchase
-      post :pay, to: "product#pay"
+      post :pay, to: "products#pay"
     end
 
     collection do
       get "cate_children" 
       get "grand_children" 
+      get 'top/search'
     end
 
     resources :likes, only: [:create]
