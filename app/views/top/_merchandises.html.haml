@@ -6,5 +6,9 @@
           = category.name
       .content__main--latest-items__box--merchandises__merchandise--block__element--pic_box
         = image_tag category.product_images.first.image_url.to_s, class: "lazyloaded", alt: ""
+        -if category.purchase_status == "2"
+          .item-sold-out-badge-very-small
+            %div SOLD
+        -else
         %span{"aria-label": "Price"}
           = "¥#{category.price.to_s(:delimited)}"

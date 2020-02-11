@@ -260,3 +260,32 @@
   width: 100%;
   z-index: 1;
 }
+.item-sold-out-badge-very-small:after {
+  border-width: 65px 65px 0 0;
+}
+.item-sold-out-badge-very-small:after {
+border-color: #ea352d transparent transparent transparent;
+}
+.item-sold-out-badge-very-small:after {
+display: block;
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+z-index: 1;
+width: 0;
+height: 0;
+border-style: solid;
+}
+.item-sold-out-badge-very-small>div {
+position: absolute;
+left: 0;
+z-index: 2;
+color: #fff;
+-webkit-transform: rotate(-45deg);
+transform: rotate(-45deg);
+letter-spacing: 2px;
+font-weight: 600;
+top: 14px;
+font-size: 16px;
+}
