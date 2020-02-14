@@ -1,5 +1,8 @@
 .user_edit
-  = render './shareParts/topHeader'
+  .headers
+    = render partial: "top/header"
+  .put-up-btns
+    = render partial: "top/put-up-btns"
   - breadcrumb :identification
   = render "layouts/breadcrumbs"
 .user_content
