@@ -1,0 +1,194 @@
+header{
+  height: 128px;
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+.logo{
+  width: 185px;
+  height: 49px;
+  padding-top: 40px;
+  margin: 0px;
+}
+.process3{
+  width: 508px;
+  height: 32px;
+  display: flex;
+  font-size: 12px;
+  padding-top: 40px;
+  padding-left: 40px;
+  color: #ccc;
+  font-weight: bold;
+  &__info3{
+    text-align: center;
+    box-sizing: border-box;
+    margin-left: 20px;
+  &--first,&--second,&--third,&--fourth,&--fifth{
+    text-align: center;
+    }
+  &__tel,&--second{
+      color:red;
+      position: relative;
+    }
+  &--first::after{
+    content: "";
+    z-index: 100;
+    display: block;
+    width: 92px;
+    /* widthで線の長さ調節 colorをつける場合はここを変える ※process__info--redをrelativeで親要素としている、redにすることによって他を親とする場合はコピペしてそれぞれwidthを調整して変更*/
+    height: 2px;
+    background: red;
+     /*redに変更*/   
+    position: absolute;
+    top: 6px;
+    left: 25px;
+     /* 微調整する必要あり*/
+  }
+
+  &--second{
+    color:red;
+    position: relative;
+  }
+&--second::after{
+  content: "";
+  z-index: 100;
+  display: block;
+  width: 285px;
+  /* widthで線の長さ調節 colorをつける場合はここを変える ※process__info--redをrelativeで親要素としている、redにすることによって他を親とする場合はコピペしてそれぞれwidthを調整して変更*/
+  height: 2px;
+  background: #ccc;
+   /*redに変更*/   
+  position: absolute;
+  top: 6px;
+  left: 40px;
+   /* 微調整する必要あり*/
+}
+
+  }
+  li{
+    list-style: none;
+    margin-right: 30px;
+  }
+}
+}
+.process__tel{
+  color: red;
+}
+
+
+
+
+.main {
+  background-color: #f5f5f5;
+}
+
+.user__info {
+  font-size: 22px;
+  font-weight: bold;
+  width: 700px;
+  height: 97px;
+  text-align: center;
+  padding: 32px;
+  margin: 0 auto;
+  border-bottom: solid 1px;
+  border-color: #ccc;
+  background-color: white;
+  box-sizing: border-box;
+}
+
+.user__addressinput {
+  width: 668px;
+  margin: 0 auto;
+  padding: 24px 16px 40px 16px;
+  background-color: white;
+
+&--center {
+  width: 343px;
+  margin: 0 auto;
+}
+
+&--entry {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+
+
+
+.user__input--lastname {
+  width: 100px;
+  height: 28px;
+  padding: 10px 16px 8px 16px;
+  margin-top: 8px;
+  box-sizing: content-box;
+  font-size: 15px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.margin {
+  margin-top: 10px;
+}
+
+.user__input--name, .user__input--zipcode, .user__input--prefectures, .user__input--citytownvillage, .user__input--banchi, .user__input--buildings, .user__input--tel {
+  width: 300px;
+  height: 28px;
+  padding: 10px 16px 8px 16px;
+  margin-top: 8px;
+  box-sizing: content-box;
+  font-size: 15px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.margin-b {
+  margin-top: 35px;
+}
+
+.changegray {
+  border: solid 1px;
+  background-color: gray;
+  color: white;
+  font-weight: 100;
+  padding: 2px 4px;
+  margin-left: 8px;
+}
+
+.next__page {
+  width: 341px;
+  height: 48px;
+  background-color: red;
+  color: white;
+  cursor: pointer;
+  font-size: 15px;
+  margin-top: 35px;
+}}
+.changecolor {
+  border: solid 1px;
+  background-color: red;
+  color: white;
+  font-weight: 100;
+  padding: 2px 4px;
+  margin-left: 8px;
+}
+
+
+footer{
+  background-color: #f5f5f5;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 30px 0px 30px 0px;
+  font-size: 13px;
+  .footer__logo{
+    &--privacy{
+    margin-left: 10px;}
+    &--url{
+    width: 80px;
+    height: 65px;
+    margin:0 auto;
+    padding-top: 35px;}
+    &--small{
+    padding-top: 5px;
+    font-size: 10px;}
+   }
+  }
