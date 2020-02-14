@@ -1,0 +1,92 @@
+registration_new{
+  height: 750px;
+}
+header{
+  height: 128px;
+  background-color: #f5f5f5;
+}
+.logo{
+  width: 185px;
+  height: 49px;
+  margin:0 auto;
+}
+.main{
+  background-color: #f5f5f5;
+  margin: 0px;
+}
+.new-registration{
+  height: 97px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 22px;
+  width: 700px;
+  background-color: white;
+  line-height: 97px;
+  border-bottom: 1px solid #f5f5f5;
+}
+.registration{
+  margin: 0 auto;
+  width: 700px;
+  height: 300px;
+  display:flex;
+  flex-direction:column;
+  background-color: white;
+  padding: 24px 16px 10px 16px;
+}
+button{
+  font-size: 14px;
+  width: 323px;
+  height: 50px;
+  margin: 0 auto;
+  border-radius: 4px;
+}
+.registration__mail{
+  background-color: red;
+  color: white;
+&--icon{
+  color: white;
+}
+}
+.registration__facebook{
+  background-color: #385185;
+  color: white;
+  margin-top: 16px;
+  &--icon{
+    color: white;
+  }
+}
+.registration__google{
+  margin-top: 16px;
+  border: 1px solid;
+  background-color: white;
+  margin-bottom: 20px;
+}
+
+footer{
+  background-color: #f5f5f5;
+ 
+}
+footer p{
+  margin-top: 0;
+  color: #333;
+  padding: 70px 0 0px 0;
+  font-size: 12px;
+  text-align: center;
+}
+.privacy{
+  margin-right: 10px;
+}
+.terms{
+  margin-right: 10px;
+}
+.footer__logo--url{
+  width: 80px;
+  height: 65px;
+  margin:0 auto;
+  padding-top: 35px;
+}
+.fotter__logo--small{
+  padding-top: 25px;
+  font-size: 10px;
+}
+

@@ -5,5 +5,4 @@ class UserIdentification < ApplicationRecord
   validates :prefecture, presence: true
   validates :city, presence: true
   validates :block, presence: true
-  validates :telnumber, presence: true
 end

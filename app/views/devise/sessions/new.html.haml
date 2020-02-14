@@ -11,11 +11,11 @@
         %button.rogin__facebook
           =link_to "" ,class:"rogin__facebook--icon"do
             = fa_icon 'facebook', class: "icon" 
-          facebookでログイン
+            facebookでログイン
         %button.rogin__google
           =link_to "" do
             = fa_icon 'google', class: "rogin__google--icon" 
-          googleでログイン
+            googleでログイン
       .rogin__input
         = form_with(model: @user, local: true,url: session_path(resource_name)) do |form|
           = form.label :email
