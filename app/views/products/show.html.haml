@@ -192,7 +192,7 @@
 -if user_signed_in? && current_user.id == @user.id
   .x-single-container
     .listing-item-change-box
-      = link_to "URL", class: "btn-default btn-red" do
+      = link_to edit_product_path, class: "btn-default btn-red" do
         %span 商品の編集
       %p.text-center
         %span or
