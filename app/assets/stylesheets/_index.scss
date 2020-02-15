@@ -28,6 +28,7 @@
 
 .content__main {
   position: relative;
+
 }
 
 .content__main--famous-items {
@@ -290,4 +291,8 @@ letter-spacing: 2px;
 font-weight: 600;
 top: 14px;
 font-size: 16px;
+}
+.content__main--advertisement_bar img{
+  width: 240%;
+  margin-left: -489px; 
 }
