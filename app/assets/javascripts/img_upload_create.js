@@ -1,4 +1,4 @@
-$(function(){
+$(document).on('turbolinks:load',function(){
   var dropzone = $('.dropzone-area');
   var dropzone2 = $('.dropzone-area2');
   var input_area = $('.input_area');

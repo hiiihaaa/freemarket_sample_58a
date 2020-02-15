@@ -43,11 +43,8 @@
           .caption
             カテゴリー
             %span.red 必須
-          = f.collection_select :category_id, Category.where(ancestry: nil) ,:id, :name ,{prompt: "---"}, {class: "collection_select, parent, detailInput", id: "c_parents", action: ""}
-          %select#child_js.collection_select{class: "child, detailInput"}
-            %option ---
-          %select#grandchild_js.collection_select{class: "gr_child, detailInput"}
-            %option ---
+          .listing_category
+            = f.collection_select :category_id, Category.where(ancestry: nil) , :id, :name, {prompt: "---"}, {class: "collection_select, parent, detailInput", id: "c_parents", action: ""}
 
           .sell__form--box.form__group--size#size
             .caption

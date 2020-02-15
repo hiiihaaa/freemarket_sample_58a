@@ -1,4 +1,4 @@
-$(function(){
+$(document).on('turbolinks:load', function(){
   var dropzone = $('.dropzone-area');
   var dropzone2 = $('.dropzone-area2');
   var appendzone = $(".dropzone-container2")
@@ -23,6 +23,7 @@ $(function(){
 
   // 登録済画像のプレビュー表示
   gon.product_images.forEach(function(image, index){
+
     var img = $(`<div class= "add_img"><div class="img_area"><img class="img_view"></div></div>`);
 
     // カスタムデータ属性を付与
@@ -307,7 +308,6 @@ $(function(){
         formData.append("new_images[images][]", file)
       });
     }
-
     $.ajax({
       url:         '/products/' + gon.product.id,
       type:        "PATCH",

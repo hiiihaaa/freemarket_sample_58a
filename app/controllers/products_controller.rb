@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [:show, :edit, :destroy]
+  before_action :set_product, only: [:show, :edit, :update, :destroy]
   before_action :search
 
   def purchase
@@ -81,7 +81,7 @@ class ProductsController < ApplicationController
 
     #写真のデータをバイナリデータに
     require 'base64'
-
+    require 'aws-sdk'
     gon.product_images_binary_datas =[]
 
     #本番環境と開発環境での場合分け
@@ -106,6 +106,7 @@ class ProductsController < ApplicationController
 
 
   def update
+
     # 登録済画像のidの配列を生成
     ids = @product.product_images.map{|img| img.id }
     # 登録済画像のうち、編集後もまだ残っている画像のidの配列を生成(文字列から数値に変換)
@@ -114,7 +115,6 @@ class ProductsController < ApplicationController
     exist_ids.clear if exist_ids[0] == 0
 
     if (exist_ids.length != 0 || new_image_params[:images][0] != " ") && @product.update(product_edit_params)
-
       # 登録済画像のうち削除ボタンをおした画像を削除
       unless ids.length == exist_ids.length
         # 削除する画像のidの配列を生成
@@ -129,7 +129,7 @@ class ProductsController < ApplicationController
           @product.product_images.create(image_url: img, product_id: @product.id)
         end
       end
-      redirect_to root_path and return
+      redirect_to root_path
       
       flash[:notice] = '編集が完了しました'
     else
