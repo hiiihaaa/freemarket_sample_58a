@@ -167,11 +167,13 @@
     %span.item-tax (税込)
     %span.item-shipping-fee
       = @product.shipping_fee
-  -if @product.purchase_status == "2"
-    .item-buy-btn.disabled
-      売り切れました
+  -if user_signed_in? && current_user.id == @user.id
   -else
-    = link_to "購入画面に進む", purchase_product_path, class: "item-buy-btn"
+    -if @product.purchase_status == "2"
+      .item-buy-btn.disabled
+        売り切れました
+    -else
+      = link_to "購入画面に進む", purchase_product_path, class: "item-buy-btn"
   .item-description.f14
     %p.item-description-inner
       = @product.description
