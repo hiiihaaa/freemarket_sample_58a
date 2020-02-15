@@ -146,10 +146,12 @@
           %th 配送料の負担
           %td
             = @charge_method.layer
-        %tr
-          %th 配送の方法
-          %td
-            = @charge_method2.layer
+        -if !(@product.sendmethod_id == nil)
+          %tr
+            %th 配送の方法
+            %td
+              = @charge_method2.layer
+        -else
         %tr
           %th 配送元の地域
           %td
