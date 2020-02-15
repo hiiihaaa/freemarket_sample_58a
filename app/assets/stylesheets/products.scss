@@ -372,6 +372,7 @@ h2 {
 
 .owl-dots {
   line-height: 0;
+  font-size: 0;
 }
 
 .owl-dot {
@@ -400,9 +401,6 @@ h2 {
 
 .text-center {
   text-align: center;
-}
-.text-center span{
-  margin-left: 100px;
 }
 
 .visible-sp {
@@ -1262,8 +1260,8 @@ button {
   width : 300px;
 }
 .small_image {
-  height : 70px;
-  width : 70px;
+  height : 60px;
+  width : 60px;
 }
 .item-sold-out-badge:after {
     border-width: 120px 120px 0 0;
@@ -1322,4 +1320,8 @@ letter-spacing: 2px;
 font-weight: 600;
 top: 20px;
 font-size: 24px;
+}
+.small-btn{
+  width :10px;
+  height: 20px;
 }

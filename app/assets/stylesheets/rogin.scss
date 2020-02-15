@@ -67,7 +67,8 @@ button{
   &__facebook{
     background-color: #385185;
     color: white;
-    margin-bottom: 16px;}
+    margin-bottom: 16px;
+    }
 
 }
 .icon{
@@ -79,7 +80,9 @@ button{
   margin: 0 auto;
 
   &--mail,&--password{
-    @include button;}
+    @include button;
+    border: 1px solid;
+    border-radius: 5px;}
 
     &--button{
       text-align: center;
@@ -89,7 +92,8 @@ button{
       background-color: red;
       color: white;
       @include button;
-      margin: 0 auto;}
+      margin: 0 auto;
+    }
 }
 .reCAPTCHA{
   width: 323px;

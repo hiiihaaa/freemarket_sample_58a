@@ -1,69 +1,36 @@
-!!!
-%html
-  %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %meta{:charset => "UTF-8"}/
-    %link{:href => "/Users/apple/Desktop/projects/freemarket_sample_58a/app/assets/stylesheets/user.adress.css", :rel => "stylesheet"}/
-    %link{:href => "https://use.fontawesome.com/releases/v5.6.1/css/all.css", :rel => "stylesheet"}/
-  %body
-    %header
-      %p.logo
-        %img{:alt => "mercari", :src => "https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?1855818912"}/
-      %ul.process
-        %li.process__info
-          会員情報
-          .process__info--first ●
-        %li.process__tel
-          電話番号認証
-          .process__info--second ●
-        %li.process__area
-          お届け先住所入力
-          .process__info--third ●
-        %li.process__payment
-          支払い方法
-          .process__info--fourth ●
-        %li.process__complete
-          完了
-          .process__info--fifth ●
-
-    
-  = form_with(model: @user_identification,local: true) do |form|
-    .main
-      .user__info 住所入力
-      .user__input
-        .user__input--center
-          .user__input--postcode.margin-b
-            郵便番号
-            %span.changecolor 必須
-            = form .text_field :post_number ,class:"user__input--zipcode",placeholder:"例 123-4567"
-          .user__input--prefecture.margin-b
-            都道府県
-            %span.changecolor 必須
-            = form .text_field :prefecture ,class:"user__input--prefectures",placeholder:"例 東京都"
-          .user__input--prefecture.margin-b
-            市町村
-            %span.changecolor 必須
-            = form .text_field :city ,class:"user__input--prefectures",placeholder:"例 渋谷区"
-          .user__input--banchis.margin-b
-            番地
-            %span.changecolor 必須
-            = form .text_field :block ,class:"user__input--banchi",placeholder:"例 1丁目3-56"
-          .user__input--building.margin-b
-            建物名
-            %span.changegray 任意
-            = form .text_field :building ,class:"user__input--buildings",placeholder:"例 森ビル３階"
-          .user__input--phone.margin-b
-            電話番号
-            %span.changegray 任意
-            = form .text_field :telnumber ,class:"user__input--tel",placeholder:"例 090-1111-1111"
-          = form.submit class:"next__page",value:"次へ進む"
-    %footer
-      .footer__logo
-        %p
-          %a.privacy{:href => ""} プライバシーポリシー
-          %a.terms{:href => ""} メルカリ利用規約
-          %a{:href => ""} 特定商取引に関する表記
-        %p.footer__logo--url
-          %img{:src => "https://www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?3609274330"}/
-        %p.fotter__logo--small © Mercari, Inc.nishigami
+.user__identifications
+  %header
+    = render partial: "/render_partial/user_header"
+= form_with(model: @user_identification,local: true) do |form|
+  .main
+    .user__info 住所入力
+    .user__addressinput
+      .user__addressinput--center
+        .user__addressinput--postcode.margin-b
+          郵便番号
+          %span.changecolor 必須
+          = form .text_field :post_number ,class:"user__input--zipcode",placeholder:"例 123-4567"
+        .user__addressinput--prefecture.margin-b
+          都道府県
+          %span.changecolor 必須
+          = form .text_field :prefecture ,class:"user__input--prefectures",placeholder:"例 東京都"
+        .user__addressinput--prefecture.margin-b
+          市町村
+          %span.changecolor 必須
+          = form .text_field :city ,class:"user__input--prefectures",placeholder:"例 渋谷区"
+        .user__addressinput--banchis.margin-b
+          番地
+          %span.changecolor 必須
+          = form .text_field :block ,class:"user__input--banchi",placeholder:"例 1丁目3-56"
+        .user__addressinput--building.margin-b
+          建物名
+          %span.changegray 任意
+          = form .text_field :building ,class:"user__input--buildings",placeholder:"例 森ビル３階"
+        .user__addressinput--phone.margin-b
+          電話番号
+          %span.changegray 任意
+          = form .text_field :telnumber ,class:"user__input--tel",placeholder:"例 090-1111-1111"
+        = form.submit class:"next__page",value:"次へ進む"
+  %footer
+    = render partial: "/render_partial/user_footer"
 

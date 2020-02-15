@@ -1,69 +1,21 @@
-
-%header
-  = render partial: "/render_partial/user_header"
-
-= form_with(model: @user, local: true) do |form|
-  .user
-    .user__info 会員情報入力
-    .user__input
-      .user__input--center
-        .user__input--entry
-          ニックネーム
-          %span.changecolor 必須
-          = form .text_field :nickname ,class:"user__input--mail",placeholder:"ニックネーム"
-        - if @user.errors[:nickname].any?
-          %p.errorsmessage ニックネームを入力してください
-        .user__input--entry.margin
-          メールアドレス
-          %span.changecolor 必須
-          = form .text_field :email ,class:"user__input--mail" ,placeholder:"PC・携帯どちらでも可"
-        - if @user.errors[:email].any?
-          %p.errorsmessage メールアドレスを入力してください
-        .user__input--entry.margin
-          パスワード
-          %span.changecolor 必須
-          = form .password_field :password ,class:"user__input--mail field" ,id:"password" ,placeholder:"７文字以上の半角英数字"
-        - if @user.errors[:password].any?
-          %p.errorsmessage ７文字以上の半角英数字を入力してください
-        %p.user__input--mailp ※ 英字と数字の両方を含めて設定してください
-        = succeed "\u{30d1}\u{30b9}\u{30ef}\u{30fc}\u{30c9}\u{3092}\u{8868}\u{793a}\u{3059}\u{308b}" do
-          %input#password-check.user__input--password{name: "password", type: "checkbox"}
-        .user__input--Identification 本人確認
-        %p.user__input--Ip 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
-        .user__input--entry
-          お名前（全角）
-          %span.changecolor 必須
-          = form .text_field :firstname ,class:"user__input--name",placeholder:"例 山田"
-          = form .text_field :lastname,class:"user__input--lastname",placeholder:"例 太郎"
-        - if @user.errors[:firstname].any?
-          %p.errorsmessage 姓を入力してください
-        - if @user.errors[:lastname].any?
-          %p.errorsmessage 名を入力してください
-        .user__input--entry.margin
-          お名前（カナ）
-          %span.changecolor 必須
-          = form .text_field :firstname_kana ,class:"user__input--name" ,placeholder:"例 ヤマダ"
-          = form .text_field :lastname_kana ,class:"user__input--lastname" ,placeholder:"例 タロウ"
-        - if @user.errors[:firstname_kana].any?
-          %p.errorsmessage 姓（カタカナ）を入力してください
-        - if @user.errors[:lastname_kana].any?
-          %p.errorsmessage 名（カタカナ）を入力してください
-        .user__input--entry.margin
-          生年月日
-          %span.changecolor 必須
-          %br/
-          = form .date_select(:birthday,start_year:Time.now.year,prompt:"--",use_month_numbers:true, end_year:1900)
-          - if @user.errors[:lastname_kana].any?
-            %p.errorsmessage 生年月日を入力してください
-          %p.user__input--Ip ※ 本人情報は正しく入力してください。会員登録後修正するには多分お時間を頂く場合がございまするん。
-
-          %p.user__input--Ip.c
-            「次へ進む」のボタンを押すことにより、
-            %span.policy> 利用規約
-            に同意したものとみなします
-          = form.submit class:"next__page",value:"次へ進む"
-
-          .next__page--p 本人情報の登録について&gt;
-
-    %footer
-      = render partial: "/render_partial/user_footer"
+%registration_new
+  %header
+    %p.logo
+      %img{alt: "mercari", src: "https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?1855818912"}
+  %h1.main
+  %p.new-registration 新規会員登録
+  .registration
+    %button.registration__mail
+      =link_to new_user_session_path ,class:"registration__mail--icon" do
+        = fa_icon 'e-mail', class: "icon" 
+        メールアドレスで新規登録
+    %button.registration__facebook
+      =link_to "" ,class:"registration__facebook--icon" do
+        = fa_icon 'facebook', class: "rogin__facebook--icon" 
+        facebookで新規登録
+    %button.registration__google
+      =link_to "" ,class:"rogin__google--icon" do
+        = fa_icon 'google', class: "rogin__google--icon" 
+        googleで新規登録
+  %footer
+    = render partial: "render_partial/user_footer"

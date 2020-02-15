@@ -138,14 +138,13 @@ class ProductsController < ApplicationController
     end
   end
 
-  
+  private
   def search
     @q = Product.ransack(params[:q])
-    @result = @q.result.page(params[:page]).per(132)
+
+    @result = @q.result(distinct: true)
   end
 
-
-  private
   def set_product
     @product = Product.find(params[:id])
   end
