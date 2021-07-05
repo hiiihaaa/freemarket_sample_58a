@@ -1,0 +1,165 @@
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: block;
+  position: relative;
+  background-color: #f5f5f5;
+  font-family: 'Source Sans Pro', Helvetica , Arial, 'YuGothic', 'Meiryo', sans-serif;
+  font-size: 14px;
+  color: #333;
+  line-height: 1;
+}
+
+.container {
+  padding-top: 0;
+  margin-top: 0;
+}
+
+.header {
+  text-align: center;
+  height: 90px;
+
+  img {
+    width: 185px;
+    height: 49px;
+  }
+
+  h1 {
+    margin: 40px 0 0;
+  }
+}
+
+.l-head {
+  padding: 32px 16px;
+  font-size: 22px;
+  line-height: 1.5;
+  text-align: center;
+  margin: 0;
+  border-bottom: 1px solid #eee;
+}
+
+.l-container {
+  width: 700px;
+  margin: 0 auto;
+  background: #fff;
+}
+
+.sell-upload-head {
+  font-size: 16px;
+}
+
+.sell-form {
+  color: #333;
+  display: grid;
+  grid-template-rows: 303px 355px 261px 371px 299px 0 329px;
+  grid-template: repeat(6);
+  width: 100%;
+}
+
+.sell-content {
+  border-top: 1px solid #eee;
+  padding: 40px;
+}
+
+.sell-upload-head {
+  font-size: 16px;
+  padding: 40px;
+}
+
+.form-require, .form-arbitrary, .message-is-seller, .news-private {
+  margin: 0 0 0 8px;
+  padding: 2px 4px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  vertical-align: top;
+  background: #ea352d;
+  font-weight: bold;
+}
+
+.sell-dropbox-container {
+  display: block;
+  margin: 16px auto 0;
+}
+
+.input-default {
+  border-radius: 4px;
+  padding: 10px 8px 10px;
+  border: 1px solid #ccc;
+  background: #fff;
+  line-height: 32px;
+  font-size: 16px;
+  width: 600px;
+  margin-bottom: 40px;
+  margin-top: 10px;
+}
+
+.form-group label {
+  font-weight: 600;
+  font-size: 14px;
+  padding-bottom: 8px;
+}
+
+.textarea-default {
+  display: block;
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 16px;
+  line-height: 1.5;
+  width: 600px;
+}
+
+.select-default {
+  z-index: 2;
+  height: 48px;
+  padding: 0 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  cursor: pointer;
+  width: 400px;
+  margin-top: 8px;
+}
+
+.sell-form-box {
+  float: right;
+  clear: both;
+  width: 400px;
+}
+
+.form-group {
+  margin-top: -32px;
+  padding-bottom: 70px;
+}
+
+.select-wrap {
+  height: 48px;
+}
+
+.sell-price {
+  margin-top: -32px;
+}
+
+.input-default {
+  float: right;
+  clear: both;
+  width: 140px;
+  margin-top: -40px;
+  height: 20px;
+}
+
+footer {
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  text-align: center;
+  width: 456px;
+  height: 220px;
+  margin: 0 auto;
+}
